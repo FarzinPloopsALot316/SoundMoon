@@ -1,2 +1,2 @@
-package PACKAGE_NAME;public class Gun {
+public class Gun extends Weapons{
 }
