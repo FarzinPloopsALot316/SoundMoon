@@ -1,2 +1,2 @@
-public class Food extends Inventory{
+public class Food extends Inventory {
 }
