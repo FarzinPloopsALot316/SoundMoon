@@ -1,4 +1,4 @@
-public class Player {
+public class Player extends Game {
     private int health;
 
     public Player () {
