@@ -31,6 +31,10 @@ public class Game {
         System.out.println(ConsoleUtility.PURPLE + "Remember to have fun! Starting game...");
         wait(3);
         ConsoleUtility.clearScreen();
-        System.out.println(ConsoleUtility.PURPLE + "oh boo hoo vampires and werewolves");
+        System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+        System.out.println("In a distant future, where the world develops in turmoil and overpopulation...");
+        System.out.println("...Lies a land full of viscous beasts and flying creatures.");
+        System.out.println("He opens his dull eyes to the morning day,");
+        System.out.println("");
     }
 }
