@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Inventory class updated, voltageSword.">
+    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Food, Inventory, Player, Sword, and Weapons class updated.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,15 +83,7 @@
       <option name="project" value="LOCAL" />
       <updated>1710296645502</updated>
     </task>
-    <task id="LOCAL-00005" summary="Inventory class updated, voltageSword.">
-      <option name="closed" value="true" />
-      <created>1710297688436</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1710297688436</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -99,7 +91,6 @@
     <MESSAGE value="ConsoleUtility, src classes added, Gun class removed." />
     <MESSAGE value="Player updated." />
     <MESSAGE value="Food, Inventory, Player, Sword, and Weapons class updated." />
-    <MESSAGE value="Inventory class updated, voltageSword." />
-    <option name="LAST_COMMIT_MESSAGE" value="Inventory class updated, voltageSword." />
+    <option name="LAST_COMMIT_MESSAGE" value="Food, Inventory, Player, Sword, and Weapons class updated." />
   </component>
 </project>
