@@ -19,7 +19,7 @@ public class Sword extends Weapons {
     @Override
     public void setBrokeTrue () {
         if (getUses() == 0) {
-            setBrokeTrue();
+            super.setBrokeTrue();
             System.out.println("Your sword, " + getName() + " broke!");
         }
     }
