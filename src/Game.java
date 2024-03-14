@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class Game {
     private Space[][] maze = new Space[7][7];
-    Inventory inventory;
+    //Inventory inventory;
     Player player;
 
     public Game () {
-        this.inventory = new Inventory();
+        //this.inventory = new Inventory();
         this.player = new Player();
     }
 
@@ -59,7 +59,10 @@ public class Game {
         System.out.println("He tries to find himself within the labrinyth of hallways.");
         System.out.println(ConsoleUtility.YELLOW + "Navigate through the labratory hallways. Your destination is O.");
         printMaze1();
-        navigate();
+        if (navigate()) {
+            System.out.println(ConsoleUtility.YELLOW + "After a while, he finds the door to the lobby.");
+        }
+        System.out.println(ConsoleUtility.YELLOW + "okay now ask mr miller about inventory and food.");
     }
 
     private void printMaze1 () {
@@ -125,13 +128,108 @@ public class Game {
                         maze[row][col] = new Space("_");
                         row -= 1;
                     }
-                }
+                } // end of else code
                 for (int i = 0; i < maze.length; i++) { //print out result maze
                     for (int j = 0; j < maze.length; j++) {
                         System.out.print(maze[i][j].getSymbol());
                     }
                     System.out.println();
                 }
+            } // end of UP decision code
+            if (userInput.equals("a")) { //if user chooses to go LEFT by 1.
+                if (col - 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row][col - 1].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("$")) {
+                        foodFind();
+                        maze[row][col - 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col -= 1;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row][col - 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col -= 1;
+                    }
+                } //end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            } // end of LEFT decision code
+            if (userInput.equals("d")) { //if user chooses to go RIGHT by 1.
+                if (col + 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row][col + 1].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("$")) {
+                        foodFind();
+                        maze[row][col + 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col += 1;
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row][col + 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col += 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            }
+            if (userInput.equals("s")) { //if user chooses to go DOWN by 1.
+                if (col + 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row + 1][col].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("$")) {
+                        foodFind();
+                        maze[row + 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row += 1;
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row + 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row += 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            }
+            if (!(userInput.equals("w") || userInput.equals("a") || userInput.equals("s") || userInput.equals("d"))) {
+                System.out.println("INVALID INPUT.");
+                System.out.println(ConsoleUtility.YELLOW + "Press wasd to navigate. USE LOWERCASE LETTERS.");
+                System.out.println(ConsoleUtility.YELLOW + "w for up, a for left, s for down, d for right.");
             }
         }
         return false;
@@ -141,13 +239,13 @@ public class Game {
         int chance = (int) (Math.random() * 15) + 1;
         if (chance <= 10) {
             Food cannedBeans = new Food("cannedBeans", 10);
-            System.out.println(inventory.addToFoodInv(cannedBeans));
+            //System.out.println(inventory.addToFoodInv(cannedBeans));
         } else if (chance > 10 && chance < 15) {
             Food cannedMeat = new Food("cannedFood", 15);
-            System.out.println(inventory.addToFoodInv(cannedMeat));
+            //System.out.println(inventory.addToFoodInv(cannedMeat));
         } else {
             Food herbs = new Food("herbs", 20);
-            inventory.addToFoodInv(herbs);
+            //System.out.println(inventory.addToFoodInv(herbs));
         }
     }
 }
