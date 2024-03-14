@@ -1,4 +1,4 @@
-public class Player extends Game {
+public class Player {
     private int health;
 
     public Player () {
@@ -28,5 +28,10 @@ public class Player extends Game {
             health -= L;
             System.out.println(ConsoleUtility.YELLOW + "You have lost " + L + " health (" + health + ").");
         }
+    }
+
+    public void fillH () {
+        health = 100;
+        System.out.println(ConsoleUtility.YELLOW + "Restored to maximum health (100 health).");
     }
 }

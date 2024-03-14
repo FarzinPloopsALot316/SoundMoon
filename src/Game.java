@@ -1,4 +1,15 @@
+import java.util.Scanner;
+
 public class Game {
+    private Space[][] maze = new Space[7][7];
+    Inventory inventory;
+    Player player;
+
+    public Game () {
+        this.inventory = new Inventory();
+        this.player = new Player();
+    }
+
     public void wait(int seconds) {
         seconds *= 1000;
         try {
@@ -24,6 +35,7 @@ public class Game {
         }
     }
     public void start () {
+        Scanner scan = new Scanner(System.in);
         System.out.println(ConsoleUtility.PURPLE + "Welcome to Sound Moon!");
         System.out.println(ConsoleUtility.RED + "WARNING: DISTURBING CONTENT IS PRESENT, PLAY WITH CAUTION.");
         System.out.println(ConsoleUtility.RED + "PLEASE PLAY THE GAME IN THE TERMINAL FOR THE BEST EXPERIENCE.");
@@ -45,7 +57,13 @@ public class Game {
         System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         wait(6);
         System.out.println("He tries to find himself within the labrinyth of hallways.");
-        /*
+        System.out.println(ConsoleUtility.YELLOW + "Navigate through the labratory hallways. Your destination is O.");
+        printMaze1();
+        navigate();
+    }
+
+    private void printMaze1 () {
+        /* this is how the maze should be printed!
         ______O
         __|____
         ____|__
@@ -54,25 +72,82 @@ public class Game {
         _$_____
         X______
         */
-        String[][] maze = new String[7][7];
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < maze.length; j++) {
-                maze[i][j] = "_";
+                maze[i][j] = new Space("_");
             }
         }
-        maze[6][0] = "X";
-        maze[0][6] = "O";
-        maze[5][1] = "$";
-        maze[4][4] = "|";
-        maze[3][3] = "|";
-        maze[3][5] = "$";
-        maze[2][4] = "|";
-        maze[1][2] = "|";
+        maze[6][0] = new Space("X");
+        maze[0][6] = new Space("O");
+        maze[5][1] = new Space("$");
+        maze[4][4] = new Space("|");
+        maze[3][3] = new Space("|");
+        maze[3][5] = new Space("$");
+        maze[2][4] = new Space("|");
+        maze[1][2] = new Space("|");
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < maze.length; j++) {
-                System.out.println(maze[i]);
+                System.out.print(maze[i][j].getSymbol());
             }
             System.out.println();
+        }
+    }
+
+    private boolean navigate () {
+        Scanner choice = new Scanner(System.in);
+        String currentSymbol = "";
+        String userInput = "";
+        int row = 6;
+        int col = 0;
+        System.out.println(ConsoleUtility.YELLOW + "Press wasd to navigate. Use lowercase letters.");
+        System.out.println(ConsoleUtility.YELLOW + "w for up, a for left, s for down, d for right.");
+        while (!currentSymbol.equals("O")) {
+            userInput = choice.nextLine();
+            if (userInput.equals("w")) { //if user chooses to go UP by 1.
+                if (row - 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row - 1][col].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("$")) {
+                        foodFind();
+                        maze[row - 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row -= 1;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row - 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row -= 1;
+                    }
+                }
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            }
+        }
+        return false;
+    }
+
+    private void foodFind () {
+        int chance = (int) (Math.random() * 15) + 1;
+        if (chance <= 10) {
+            Food cannedBeans = new Food("cannedBeans", 10);
+            System.out.println(inventory.addToFoodInv(cannedBeans));
+        } else if (chance > 10 && chance < 15) {
+            Food cannedMeat = new Food("cannedFood", 15);
+            System.out.println(inventory.addToFoodInv(cannedMeat));
+        } else {
+            Food herbs = new Food("herbs", 20);
+            inventory.addToFoodInv(herbs);
         }
     }
 }
