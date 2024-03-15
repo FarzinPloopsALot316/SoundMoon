@@ -16,4 +16,6 @@ public class Space {
     public String toString() {
         return symbol;
     }
+
+    // added this
 }

@@ -1,4 +1,4 @@
-public class Food extends Inventory {
+public class Food {
     private String name;
     private int healthBuff;
 

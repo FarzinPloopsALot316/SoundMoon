@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class Game {
     private Space[][] maze = new Space[7][7];
-    //Inventory inventory;
+    Inventory inventory;
     Player player;
 
     public Game () {
-        //this.inventory = new Inventory();
+        this.inventory = new Inventory();
         this.player = new Player();
     }
 
@@ -167,7 +167,7 @@ public class Game {
                 }
             } // end of LEFT decision code
             if (userInput.equals("d")) { //if user chooses to go RIGHT by 1.
-                if (col + 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                if (col + 1 > 6) { // if user is along the edge of the maze and surpasses it.
                     System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
                 } else {
                     currentSymbol = maze[row][col + 1].getSymbol();
@@ -197,7 +197,7 @@ public class Game {
                 }
             }
             if (userInput.equals("s")) { //if user chooses to go DOWN by 1.
-                if (col + 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                if (row + 1 > 6) { // if user is along the edge of the maze and surpasses it.
                     System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
                 } else {
                     currentSymbol = maze[row + 1][col].getSymbol();
@@ -239,13 +239,13 @@ public class Game {
         int chance = (int) (Math.random() * 15) + 1;
         if (chance <= 10) {
             Food cannedBeans = new Food("cannedBeans", 10);
-            //System.out.println(inventory.addToFoodInv(cannedBeans));
+            System.out.println(inventory.addToFoodInv(cannedBeans));
         } else if (chance > 10 && chance < 15) {
             Food cannedMeat = new Food("cannedFood", 15);
-            //System.out.println(inventory.addToFoodInv(cannedMeat));
+            System.out.println(inventory.addToFoodInv(cannedMeat));
         } else {
             Food herbs = new Food("herbs", 20);
-            //System.out.println(inventory.addToFoodInv(herbs));
+            System.out.println(inventory.addToFoodInv(herbs));
         }
     }
 }

@@ -1,4 +1,4 @@
-public class Weapons extends Inventory {
+public class Weapons {
     private String name;
     private int uses;
     private int damage;
