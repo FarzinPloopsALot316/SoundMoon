@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Game {
@@ -36,6 +37,7 @@ public class Game {
     }
     public void start () {
         Scanner scan = new Scanner(System.in);
+        String userInput = "";
         System.out.println(ConsoleUtility.PURPLE + "Welcome to Sound Moon!");
         System.out.println(ConsoleUtility.RED + "WARNING: DISTURBING CONTENT IS PRESENT, PLAY WITH CAUTION.");
         System.out.println(ConsoleUtility.RED + "PLEASE PLAY THE GAME IN THE TERMINAL FOR THE BEST EXPERIENCE.");
@@ -62,7 +64,55 @@ public class Game {
         if (navigate()) {
             System.out.println(ConsoleUtility.YELLOW + "After a while, he finds the door to the lobby.");
         }
-        System.out.println(ConsoleUtility.YELLOW + "okay now ask mr miller about inventory and food.");
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+        System.out.println(ConsoleUtility.YELLOW + "His eyes follow the dim lights upon the ceiling of the hallways, as he opens the door.");
+        wait2seconds();
+        System.out.println("\"Mornin'.\" Somebody's voice could be heard in the large room.");
+        System.out.println("The man grips his forehead, the lights vibrating through his skull, the screams reminiscent. \"Who..\"");
+        wait(3);
+        System.out.println("The black haired boy turned his head to meet the eyes of the sickly man, smiling. \"That last fight done took ya' out well!\"");
+        System.out.println("a. What happened?");
+        System.out.println("b. Who are you?");
+        userInput = scan.nextLine().toLowerCase(Locale.ROOT);
+        if (userInput.equals("a")) {
+            System.out.println("\"What... what happened?..\" he mumbles, his chest wrapping him in pain and discomfort.");
+            System.out.println("\"Why, you'se was in a huge tangle, fightin' ties with the devil!\" the boy responded in a loud, Southern accent.");
+            wait(2);
+            System.out.println("\"When you'se was out there fightin' hell and beyond tryna protect that woman, you done end up fried like chicken in oil!\"");
+            waitASecond();
+            System.out.println("He gestured with his hands, expanding them to visualize the scene. \"You realeased this huge of a voltage shock, enough to deprive the whole area of it's current!\"");
+            System.out.println("\"Yo' companions on the battlefield said you done went into cardiac arrest and died for 20 seconds... but by miracle, you'se is a back alive!-\"");
+            wait(3);
+            System.out.println("He realized the man was serious, his blue eyes were cunningly threatening under the glow of the dim lights. \"I- well... you lived is all. Just a minor heart attack in battle.\" Ash cleared his throat.");
+        } else {
+            System.out.println("\"Who are you?\" he groaned.");
+            wait2seconds();
+            System.out.println("\"Name's Ash! I work in the 7th Division, Tech and Coordination headquarters!\" He looked at the man, seeing how his blue eyes showed no passion nor emotion.");
+            waitASecond();
+            System.out.println("His glasses shined with an ominous glow under the dim lights, faintly hiding his piercing stare. He knew he was no longer the man he was 10 years ago.");
+            wait2seconds();
+            System.out.println("\"Yeesh! You ain't lookin' so jolly!\" Ash exclaimed. \"Musta been the huge electric attack you did last night on the battlefield. Shocked you into cardiac arrest...\"");
+            wait2seconds();
+        }
+        System.out.println("The man with glasses shook his head, grabbing his Lancer and his armor from the armory stand. \"I'm leaving. I have duties to attend to.\"");
+        System.out.println("\"WAIT!- But you'se ain't even recovered yet!!-\" Ash watched the man storm out the door, leaving him in the quietness of the room.");
+        System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+        wait(4);
+        System.out.println(ConsoleUtility.PURPLE + "PART 1 COMPLETED.");
+        System.out.println("Current Health: " + player.getH());
+        inventory.printInv();
+        System.out.println("Press q to begin Part 2.");
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("Starting...");
+        waitASecond();
+        randomTip();
+        wait(5);
+        ConsoleUtility.clearScreen();
+
     }
 
     private void printMaze1 () {
@@ -246,6 +296,21 @@ public class Game {
         } else {
             Food herbs = new Food("herbs", 20);
             System.out.println(inventory.addToFoodInv(herbs));
+        }
+    }
+
+    private void randomTip () {
+        int chance = (int) (Math.random() * 10) + 1;
+        if (chance <= 2) {
+            System.out.println("Be sure to use your food wisely! They can really help out in boss fights!");
+        } else if (chance > 2 && chance <= 4) {
+            System.out.println("Be aware of bombs in the maze! Not all $ symbols are to be trusted!");
+        } else if (chance > 4 && chance <= 6) {
+            System.out.println("Careful! Wider range voltage shocks can fry yourself too! Be wise with these attacks!");
+        } else if (chance > 6 && chance <= 8) {
+            System.out.println("The choices you make matter! Take your time, and read through the story carefully!");
+        } else if (chance > 8 && chance <= 10) {
+            System.out.println("Note that there is a limit to your food inventory! You can only hold 2 food items at a time!");
         }
     }
 }

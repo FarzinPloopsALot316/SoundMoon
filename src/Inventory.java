@@ -19,7 +19,7 @@ public class Inventory {
     }
 
     public String addToFoodInv (Food yummy) { //multiple of the same food can be added
-        System.out.println("You found " + yummy + ".");
+        System.out.println("You found " + yummy.getName() + ".");
         Scanner scan = new Scanner(System.in);
         int userInput = -100;
         for (int i = 0; i < foodInv.length; i++) {
@@ -44,5 +44,14 @@ public class Inventory {
             return ConsoleUtility.YELLOW + yummy.getName() + " has been added to your food inventory.";
         }
         return ConsoleUtility.YELLOW + "You toss the " + yummy.getName() + " away.";
+    }
+
+    public void printInv() {
+        System.out.println("Food Inventory: | " + foodInv[0].getName() + " | " + foodInv[1].getName() + " |");
+        String weaponsStr = "";
+        for (int i = 0; i < weaponsInv.size(); i++) {
+            weaponsStr += "| " + weaponsInv.get(i).getName() + " | ";
+        }
+        System.out.println("Weapons Inventory: " + weaponsStr);
     }
 }

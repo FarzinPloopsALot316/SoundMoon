@@ -5,6 +5,10 @@ public class Player {
         this.health = 100;
     }
 
+    public int getH () {
+        return health;
+    }
+
     public boolean addH (int h) { // h = 5 and health is like 97
         if (health == 100) {
             System.out.println(ConsoleUtility.YELLOW + "You are already at full health (100 health).");
