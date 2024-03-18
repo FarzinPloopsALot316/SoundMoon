@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Updated game class with mazes, problems with Inventory and Food.">
+    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Updated game class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inventory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +122,8 @@
     <MESSAGE value="Player updated." />
     <MESSAGE value="Food, Inventory, Player, Sword, and Weapons class updated." />
     <MESSAGE value="Updated game class with mazes, problems with Inventory and Food." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated game class with mazes, problems with Inventory and Food." />
+    <MESSAGE value="Updated game class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated game class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -109,10 +109,58 @@ public class Game {
         }
         System.out.println("Starting...");
         waitASecond();
+        System.out.print("Tip: ");
         randomTip();
         wait(5);
         ConsoleUtility.clearScreen();
-
+        System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+        System.out.println(ConsoleUtility.YELLOW + "He equipped his vibrantly bright armor, it's electric hue sparking with anticipation, with rage and grandeur.");
+        waitASecond();
+        System.out.println("The technology expanded itself into one over the mass of his torn body, the metal clinking together.");
+        System.out.println("The Lancer charged with potential, it's sharp edges shimmering.");
+        wait(3);
+        System.out.println("The man sighed, tilting his glasses back onto the rim of his nose. He felt current seep through his veins; the charge was a feeling he couldn't erase.");
+        wait(3);
+        System.out.println("His receiver notified him of an incoming call. He groans, tapping the receiver to pick up the call.");
+        wait2seconds();
+        System.out.println("\"What, Dee?\" he responded in a deep, raspy breath.");
+        System.out.println("\"Where have you been?! I have been calling you for the past 4 days! You have work to do!\" She yelled with a great annoyance in her tone.");
+        wait(3);
+        System.out.println("\"I was knocked out from a heavy battle. Shocked myself into cardiac arrest. I'm fine, thanks for asking.\" he mocked.");
+        System.out.println("\"First of all, you are to treat your higher ups with a little more respect, Milford.\"");
+        wait2seconds();
+        System.out.println("She tried to keep her composure, holding her breath. \"And second, you are needed in the 31st division for an ongoing investigation.\"");
+        waitASecond();
+        System.out.println("Press q to respond.");
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        waitASecond();
+        System.out.println("\"I'll be there. Call my assistant.\" He coughed, steam coming out of him in a faint hisss... The current in his body sparked a bit.");
+        System.out.println("\"Don't be late.\" She cuts the call off.");
+        System.out.println("He sighs, coughing. The receiver taps out.");
+        wait(3);
+        System.out.println("Press q to start your bike.");
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("He hops onto his bike, which connected to his armor by bluetooth. It hummed to life, the engines roaring.");
+        System.out.println("He revved the bike and drove off into the foggy night, beginning his duties yet again.");
+        wait(6);
+        System.out.println("Press q to continue.");
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.PURPLE + "Teleporting....");
+        wait2seconds();
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.YELLOW + "Maze should print, edit this later.");
+        printMaze31stDivision();
+        navigate();
+        System.out.println(ConsoleUtility.YELLOW + "Player completed maze, edit this later.");
     }
 
     private void printMaze1 () {
@@ -138,6 +186,38 @@ public class Game {
         maze[3][5] = new Space("$");
         maze[2][4] = new Space("|");
         maze[1][2] = new Space("|");
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                System.out.print(maze[i][j].getSymbol());
+            }
+            System.out.println();
+        }
+    }
+
+    private void printMaze31stDivision () {
+        /* this is how the maze should be printed!
+        ______O
+        ____|__
+        ____|__
+        ___|___
+        __|____
+        _|_____
+        X|$____
+        */
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                maze[i][j] = new Space("_");
+            }
+        }
+        maze[6][0] = new Space("X");
+        maze[0][6] = new Space("O");
+        maze[6][1] = new Space("|");
+        maze[5][1] = new Space("|");
+        maze[4][2] = new Space("|");
+        maze[3][3] = new Space("|");
+        maze[2][4] = new Space("|");
+        maze[1][4] = new Space("|");
+        maze[6][2] = new Space("$");
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < maze.length; j++) {
                 System.out.print(maze[i][j].getSymbol());
