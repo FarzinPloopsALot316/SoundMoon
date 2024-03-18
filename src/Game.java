@@ -127,11 +127,12 @@ public class Game {
         System.out.println("\"Where have you been?! I have been calling you for the past 4 days! You have work to do!\" She yelled with a great annoyance in her tone.");
         wait(3);
         System.out.println("\"I was knocked out from a heavy battle. Shocked myself into cardiac arrest. I'm fine, thanks for asking.\" he mocked.");
-        System.out.println("\"First of all, you are to treat your higher ups with a little more respect, Milford.\"");
+        System.out.println("\"First of all, you are to treat your higher ups with a little more respect, Milford.\" she scoffed.");
         wait2seconds();
-        System.out.println("She tried to keep her composure, holding her breath. \"And second, you are needed in the 31st division for an ongoing investigation.\"");
+        System.out.println("Dee tried to keep her composure, holding her breath. \"And second, you are needed in the 31st division for an ongoing investigation.\"");
+        System.out.println("\"I've sent you the location's coordinates already.\"");
         waitASecond();
-        System.out.println("Press q to respond.");
+        System.out.println(ConsoleUtility.PURPLE + "Press q to respond." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
         while (!userInput.equals("q")) {
             userInput = scan.nextLine();
@@ -139,9 +140,9 @@ public class Game {
         waitASecond();
         System.out.println("\"I'll be there. Call my assistant.\" He coughed, steam coming out of him in a faint hisss... The current in his body sparked a bit.");
         System.out.println("\"Don't be late.\" She cuts the call off.");
-        System.out.println("He sighs, coughing. The receiver taps out.");
+        System.out.println("He sighs, coughing again. The receiver taps out.");
         wait(3);
-        System.out.println("Press q to start your bike.");
+        System.out.println(ConsoleUtility.PURPLE + "Press q to start your bike." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
         while (!userInput.equals("q")) {
             userInput = scan.nextLine();
@@ -149,7 +150,7 @@ public class Game {
         System.out.println("He hops onto his bike, which connected to his armor by bluetooth. It hummed to life, the engines roaring.");
         System.out.println("He revved the bike and drove off into the foggy night, beginning his duties yet again.");
         wait(6);
-        System.out.println("Press q to continue.");
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
         while (!userInput.equals("q")) {
             userInput = scan.nextLine();
@@ -157,10 +158,21 @@ public class Game {
         System.out.println(ConsoleUtility.PURPLE + "Teleporting....");
         wait2seconds();
         ConsoleUtility.clearScreen();
-        System.out.println(ConsoleUtility.YELLOW + "Maze should print, edit this later.");
+        System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+        System.out.println(ConsoleUtility.YELLOW + "He hit the brakes, slowing to a halt in front of a dark alleyway.");
+        System.out.println("With great suspicion, he equipped his Lancer from his back, armed and ready.");
+        System.out.println(ConsoleUtility.PURPLE + "Press q to call an agent." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("He taps on his receiver, trying to reach the other agents by signal.");
+        wait2seconds();
+        System.out.println("No response. He squinted his eyes behind his glasses, trying to find the end of the dark labyrinths.");
+        System.out.println("It was obvious that nothing was visible. He sighed, deciding he had no choice but to enter the mass darkness.");
         printMaze31stDivision();
-        navigate();
-        System.out.println(ConsoleUtility.YELLOW + "Player completed maze, edit this later.");
+        System.out.println(navigateWithWeapons());
+        System.out.println("Player completed maze, edit this later.");
     }
 
     private void printMaze1 () {
@@ -194,7 +206,7 @@ public class Game {
         }
     }
 
-    private void printMaze31stDivision () {
+    private void printMaze31stDivision() {
         /* this is how the maze should be printed!
         ______O
         ____|__
@@ -365,17 +377,182 @@ public class Game {
         return false;
     }
 
+    private boolean navigateWithWeapons () {
+        Scanner choice = new Scanner(System.in);
+        String currentSymbol = "";
+        String userInput = "";
+        int row = 6;
+        int col = 0;
+        ohThatsCompletelyNormal();
+        System.out.println(ConsoleUtility.YELLOW + "Press wasd to navigate. Use lowercase letters.");
+        System.out.println(ConsoleUtility.YELLOW + "w for up, a for left, s for down, d for right.");
+        while (!currentSymbol.equals("O")) {
+            userInput = choice.nextLine();
+            if (userInput.equals("w")) { //if user chooses to go UP by 1.
+                if (row - 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row - 1][col].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("$")) {
+                        weaponFind();
+                        maze[row - 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row -= 1;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row - 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row -= 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            } // end of UP decision code
+            if (userInput.equals("a")) { //if user chooses to go LEFT by 1.
+                if (col - 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row][col - 1].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("$")) {
+                        weaponFind();
+                        maze[row][col - 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col -= 1;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row][col - 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col -= 1;
+                    }
+                } //end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            } // end of LEFT decision code
+            if (userInput.equals("d")) { //if user chooses to go RIGHT by 1.
+                if (col + 1 > 6) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row][col + 1].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("$")) {
+                        weaponFind();
+                        maze[row][col + 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col += 1;
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row][col + 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col += 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            }
+            if (userInput.equals("s")) { //if user chooses to go DOWN by 1.
+                if (row + 1 > 6) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row + 1][col].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("$")) {
+                        weaponFind();
+                        maze[row + 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row += 1;
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row + 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row += 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            }
+            if (!(userInput.equals("w") || userInput.equals("a") || userInput.equals("s") || userInput.equals("d"))) {
+                System.out.println("INVALID INPUT.");
+                System.out.println(ConsoleUtility.YELLOW + "Press wasd to navigate. USE LOWERCASE LETTERS.");
+                System.out.println(ConsoleUtility.YELLOW + "w for up, a for left, s for down, d for right.");
+            }
+        }
+        return false;
+    }
+
     private void foodFind () {
         int chance = (int) (Math.random() * 15) + 1;
-        if (chance <= 10) {
+        if (chance <= 7) {
             Food cannedBeans = new Food("cannedBeans", 10);
             System.out.println(inventory.addToFoodInv(cannedBeans));
-        } else if (chance > 10 && chance < 15) {
+        } else if (chance > 7 && chance < 13) {
             Food cannedMeat = new Food("cannedFood", 15);
             System.out.println(inventory.addToFoodInv(cannedMeat));
-        } else {
+        } else if (chance >= 13){
             Food herbs = new Food("herbs", 20);
             System.out.println(inventory.addToFoodInv(herbs));
+        }
+    }
+
+    private void weaponFind () { // lolololololol i love being annoying
+        int chance = (int) (Math.random() * 10) + 1;
+        if (chance <= 4) {
+            System.out.println("You thought your eyes were deceiving you, but you take a second look and see that...");
+            wait(3);
+            System.out.println("Nope sorry. You thought you saw something, but it was just a shiny piece of dust.");
+        } else if (chance > 4 && chance <= 8) {
+            System.out.println("You quicken your gaze towards the ground to see a round explosive on the floor by luck.");
+            wait2seconds();
+            Weapons bigBoomThingy = new Weapons("Bomb", 1, 25);
+            System.out.println(inventory.addToWeaponsInv(bigBoomThingy));
+        } else if (chance > 8) {
+            System.out.println("You thought your eyes were deceiving you, but you take a second look and see that...");
+            wait(3);
+            System.out.println("Glimmering in it's purple hue, lay the grand Prowler Blade in it's presence.");
+            waitASecond();
+            System.out.println("You lift the giant contraption of a sword in your hands, feeling it's weight upon you.");
+            wait2seconds();
+            System.out.println("The Prowler accepts you, as it dwindles it's light down calmly to a neutral glow.");
+            waitASecond();
+            Sword Prowler = new Sword("Prowler", 10, 50, false);
+            System.out.println(inventory.addToWeaponsInv(Prowler));
         }
     }
 
@@ -392,5 +569,56 @@ public class Game {
         } else if (chance > 8 && chance <= 10) {
             System.out.println("Note that there is a limit to your food inventory! You can only hold 2 food items at a time!");
         }
+    }
+
+    private void ohThatsCompletelyNormal () {
+        System.out.println(ConsoleUtility.RED + """
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        In the name of God, I slaughter my people.
+                        """ + ConsoleUtility.YELLOW);
+        wait(3);
+        ConsoleUtility.clearScreen();
     }
 }

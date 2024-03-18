@@ -14,11 +14,11 @@ public class Inventory {
             foodInv[i] = new Food("empty", 0);
         }
         this.weaponsInv = new ArrayList<>();
-        this.voltageSword = new Sword("Lancer", 10);
+        this.voltageSword = new Sword("Lancer", 10, true);
         weaponsInv.add(voltageSword);
     }
 
-    public String addToFoodInv (Food yummy) { //multiple of the same food can be added
+    public String addToFoodInv (Food yummy) { //multiple of the same food can be added but limit to space
         System.out.println("You found " + yummy.getName() + ".");
         Scanner scan = new Scanner(System.in);
         int userInput = -100;
@@ -44,6 +44,22 @@ public class Inventory {
             return ConsoleUtility.YELLOW + yummy.getName() + " has been added to your food inventory.";
         }
         return ConsoleUtility.YELLOW + "You toss the " + yummy.getName() + " away.";
+    }
+
+    public String addToWeaponsInv (Weapons kaboomy) { //if it's the same weapon AND not a bomb disregard, but if it's a bomb it's okay cause users can have multiple bombs
+        System.out.println(ConsoleUtility.YELLOW + "You found " + kaboomy.getName() + ".");
+        for (Weapons currentWeapon : weaponsInv) {
+            if (kaboomy.getName().equals(currentWeapon.getName()) && !kaboomy.getName().equals("Bomb")) {
+                return ConsoleUtility.YELLOW + "However, you already have this weapon, and so you disregard it and drop it aside.";
+            }
+        }
+        weaponsInv.add(kaboomy);
+        String weaponsStr = "";
+        for (int i = 0; i < weaponsInv.size(); i++) {
+            weaponsStr += "| " + weaponsInv.get(i).getName() + " | ";
+        }
+        System.out.println("Weapons Inventory: " + weaponsStr);
+        return ConsoleUtility.YELLOW + kaboomy.getName() + " has been added to your inventory.";
     }
 
     public void printInv() {

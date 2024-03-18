@@ -2,14 +2,14 @@ public class Sword extends Weapons {
     private boolean unbreakable;
     private boolean swordBroke;
 
-    public Sword (String name, int uses, int damage) {
+    public Sword (String name, int uses, int damage, boolean unbreakable) {
         super(name, uses, damage);
-        this.unbreakable = false;
+        this.unbreakable = unbreakable;
     }
 
-    public Sword (String name, int damage) {
+    public Sword (String name, int damage, boolean unbreakable) {
         super(name, damage);
-        this.unbreakable = true;
+        this.unbreakable = unbreakable;
     }
 
     public boolean isUnbreakable() {
