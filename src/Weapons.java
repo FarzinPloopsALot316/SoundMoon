@@ -36,7 +36,6 @@ public class Weapons {
     public int getUses() {
         return uses;
     }
-
     public int getDamage() {
         return damage;
     }

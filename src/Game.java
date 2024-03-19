@@ -630,7 +630,7 @@ public class Game {
     }
 
     private boolean bossFight (int bossHealth, int bossDmg) { //for Werewolves
-        int roundCount = 0;
+        int roundCount = 1;
         while (!(player.getH() <= 0) || !(bossHealth <= 0)) {
             Scanner scan = new Scanner(System.in);
             String userInput = "";
@@ -639,7 +639,7 @@ public class Game {
             System.out.println(ConsoleUtility.PURPLE + "Current Health: " + player.getH());
             System.out.println("Werewolf's Current Health: " + bossHealth);
             inventory.printInv();
-            System.out.println(ConsoleUtility.YELLOW + "Options (USE LOWERCASE INPUT):");
+            System.out.println(ConsoleUtility.GREEN + "Options (USE LOWERCASE INPUT):");
             System.out.println("Press e to use Lancer (10 damage, infinite uses).");
             if (inventory.hasWeapon("Prowler")) {
                 Weapons wantedWeapon = inventory.requestedWeapon("Prowler");
@@ -649,7 +649,7 @@ public class Game {
                 System.out.println("Press f to use a Bomb (25 damage, one use for each Bomb you have).");
             }
             if (inventory.hasFood()) {
-                System.out.println("Press c to heal using your food.");
+                System.out.println("Press c to heal using your food." + ConsoleUtility.YELLOW);
             }
             userInput = scan.nextLine();
             if (userInput.equals("e")) { //if user chooses Lancer
@@ -676,12 +676,22 @@ public class Game {
                 }
             } else if (userInput.equals("r")) { //Prowler
                 Weapons wantedWeapon = inventory.requestedWeapon("Prowler");
-                int hitOrMiss = (int) (Math.random() * 4) + 1; //On the Prowler, there's less of a chance of missing.
-                if (hitOrMiss > 1) {
-                    System.out.println("The Prowler charged it's purple radiance at the beast, as you struck a powerful blow!");
-                    System.out.println("Nice job! The werewolf lost 50 health!"); //poor thing, maybe I should nerf Prowler a bit :) maybe not :)
-                    bossHealth -= wantedWeapon.getDamage();
-                    System.out.println("Werewolf Health: " + bossHealth);
+                int hitOrMiss = (int) (Math.random() * 2) + 1; //On the Prowler, there's more of a chance of missing.
+                if (hitOrMiss == 1) {
+                    int powerfulBlow = (int) (Math.random() * 6) + 1;
+                    if (powerfulBlow == 1) {
+                        System.out.println("A faint hum grew in vibration from the rim of the blade...");
+                        wait2seconds();
+                        System.out.println("A great beam of light fired from the Prowler, searing through the monster's flesh.");
+                        System.out.println("The werewolf roars in great pain, losing 75 health.");
+                        bossHealth -= wantedWeapon.getDamage();
+                        System.out.println("Werewolf Health: " + bossHealth);
+                    } else {
+                        System.out.println("The Prowler charged it's purple radiance at the beast, as you struck a powerful blow!");
+                        System.out.println("The werewolf lost 50 health!");
+                        bossHealth -= wantedWeapon.getDamage();
+                        System.out.println("Werewolf Health: " + bossHealth);
+                    }
                     wantedWeapon.useOnce();
                     wantedWeapon.setBrokeIfSo(); //only happens if uses is 0.
                     if (wantedWeapon.getBroke()) {
@@ -765,6 +775,40 @@ public class Game {
 
     private void ohThatsCompletelyNormal () {
         System.out.println(ConsoleUtility.RED + """
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
                         They watch from above as I slaughter my people.
                         They watch from above as I slaughter my people.
                         They watch from above as I slaughter my people.
