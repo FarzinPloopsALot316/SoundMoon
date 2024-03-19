@@ -649,8 +649,9 @@ public class Game {
                 System.out.println("Press f to use a Bomb (25 damage, one use for each Bomb you have).");
             }
             if (inventory.hasFood()) {
-                System.out.println("Press c to heal using your food." + ConsoleUtility.YELLOW);
+                System.out.println("Press c to heal using your food.");
             }
+            System.out.println("Press g to release Voltage Storm." + ConsoleUtility.YELLOW);
             userInput = scan.nextLine();
             if (userInput.equals("e")) { //if user chooses Lancer
                 int hitOrMiss = (int) (Math.random() * 3) + 1;
