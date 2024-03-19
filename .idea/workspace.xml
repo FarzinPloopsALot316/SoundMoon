@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Minor update">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_18_24__5_00_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_18_24__5_00_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Food.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Food.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inventory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Space.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Space.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sword.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sword.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Weapons.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weapons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Weapons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weapons.java" afterDir="false" />
-    </list>
+    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Minor update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710808363946</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Minor update">
+      <created>1710852433770</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710852433770</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

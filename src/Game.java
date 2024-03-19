@@ -655,9 +655,16 @@ public class Game {
             if (userInput.equals("e")) { //if user chooses Lancer
                 int hitOrMiss = (int) (Math.random() * 3) + 1;
                 if (hitOrMiss >= 2) {
-                    System.out.println("You sliced a vengeful attack with your Lancer, costing the werewolf 10 health.");
-                    bossHealth -= 10;
-                    System.out.println("Werewolf Health: " + bossHealth);
+                    int powerfulBlow = (int) (Math.random() * 3) + 1;
+                    if (powerfulBlow == 1) {
+                        System.out.println("The Lancer charged a powerful wave, which cost the werewolf 20 damage!");
+                        bossHealth -= 20;
+                        System.out.println("Werewolf Health: " + bossHealth);
+                    } else {
+                        System.out.println("You sliced a vengeful attack with your Lancer, costing the werewolf 10 health.");
+                        bossHealth -= 10;
+                        System.out.println("Werewolf Health: " + bossHealth);
+                    }
                 } else {
                     System.out.println("You missed!");
                 }
@@ -684,7 +691,7 @@ public class Game {
                         wait2seconds();
                         System.out.println("A great beam of light fired from the Prowler, searing through the monster's flesh.");
                         System.out.println("The werewolf roars in great pain, losing 75 health.");
-                        bossHealth -= wantedWeapon.getDamage();
+                        bossHealth -= wantedWeapon.getDamage() + 25;
                         System.out.println("Werewolf Health: " + bossHealth);
                     } else {
                         System.out.println("The Prowler charged it's purple radiance at the beast, as you struck a powerful blow!");
