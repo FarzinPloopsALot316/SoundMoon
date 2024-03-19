@@ -36,6 +36,8 @@ public class Game {
         }
     }
     public void start () {
+        waitASecond();
+        ConsoleUtility.clearScreen();
         Scanner scan = new Scanner(System.in);
         String userInput = "";
         System.out.println(ConsoleUtility.PURPLE + "Welcome to Sound Moon!");
@@ -170,9 +172,53 @@ public class Game {
         wait2seconds();
         System.out.println("No response. He squinted his eyes behind his glasses, trying to find the end of the dark labyrinths.");
         System.out.println("It was obvious that nothing was visible. He sighed, deciding he had no choice but to enter the mass darkness.");
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        ohThatsCompletelyNormal();
         printMaze31stDivision();
-        System.out.println(navigateWithWeapons());
-        System.out.println("Player completed maze, edit this later.");
+        if (navigateWithWeapons()) {
+            System.out.println(ConsoleUtility.YELLOW + "He came to the end of the alleyway's path, finding a space between a bunch of heavily graffitied buildings.");
+        }
+        System.out.println("He looked around, gagging from the stench. Flies buzzed around. \"What the hell...\"");
+        waitASecond();
+
+        //trying out Emile's print line tactic
+
+        System.out.println("""
+        He made the last turn, finding a dead body on the floor. A young man, around 19, in uniform, stained in blood.
+        Milford looked away, trying not to pay them mind as he passed them.
+        """);
+        wait(3);
+        System.out.println("""
+        
+        He wasn't watching where he was going. He accidentally kicks a beheaded head on the ground.
+        It rolled across, leaving a trail of blood, into the remaining darkness. A low growl could be heard not so far away.
+        """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to examine." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+        
+        He tries to take a step closer, but a roar echoed through, and suddenly, he felt a strong push into his chest.
+        A large, monsterous paw had reached for him quickly, throwing him into the wall. Milford gets up quickly after impact.
+        """);
+        wait2seconds();
+        System.out.println("""
+        
+        It was a giant werewolf beast. It's fangs glowed a bright white, it's vicious yellow eyes looking at Milford in hungry intent.
+        It readied it's claws, hungry to kill it's newfound prey.
+        Milford showed no fear. He held his Lancer up, preparing for battle.
+        """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to begin battle." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
     }
 
     private void printMaze1 () {
@@ -383,7 +429,6 @@ public class Game {
         String userInput = "";
         int row = 6;
         int col = 0;
-        ohThatsCompletelyNormal();
         System.out.println(ConsoleUtility.YELLOW + "Press wasd to navigate. Use lowercase letters.");
         System.out.println(ConsoleUtility.YELLOW + "w for up, a for left, s for down, d for right.");
         while (!currentSymbol.equals("O")) {
@@ -573,50 +618,55 @@ public class Game {
 
     private void ohThatsCompletelyNormal () {
         System.out.println(ConsoleUtility.RED + """
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
-                        In the name of God, I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
+                        They watch from above as I slaughter my people.
                         """ + ConsoleUtility.YELLOW);
         wait(3);
         ConsoleUtility.clearScreen();
