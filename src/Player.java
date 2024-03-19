@@ -20,7 +20,7 @@ public class Player {
             return true;
         }
         health += h;
-        System.out.println(ConsoleUtility.YELLOW + h + "health has been added (" + health + " health).");
+        System.out.println(ConsoleUtility.YELLOW + h + " health has been added (" + health + " health).");
         return true;
     }
 

@@ -211,13 +211,26 @@ public class Game {
         System.out.println("""
         
         It was a giant werewolf beast. It's fangs glowed a bright white, it's vicious yellow eyes looking at Milford in hungry intent.
-        It readied it's claws, hungry to kill it's newfound prey.
+        It readied it's claws, hungry to kill and devour it's newfound prey.
         Milford showed no fear. He held his Lancer up, preparing for battle.
         """);
         System.out.println(ConsoleUtility.PURPLE + "Press q to begin battle." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
         while (!userInput.equals("q")) {
             userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.PURPLE + "Beginning battle..." + ConsoleUtility.YELLOW);
+        wait2seconds();
+        ConsoleUtility.clearScreen();
+        boolean cleared = bossFight(100, 15);
+        while (!cleared) {
+            player.addH(100);
+            System.out.println(ConsoleUtility.PURPLE + "You died. Press q to restart." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            cleared = bossFight(100, 20);
         }
     }
 
@@ -614,6 +627,140 @@ public class Game {
         } else if (chance > 8 && chance <= 10) {
             System.out.println("Note that there is a limit to your food inventory! You can only hold 2 food items at a time!");
         }
+    }
+
+    private boolean bossFight (int bossHealth, int bossDmg) { //for Werewolves
+        int roundCount = 0;
+        while (!(player.getH() <= 0) || !(bossHealth <= 0)) {
+            Scanner scan = new Scanner(System.in);
+            String userInput = "";
+            System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ROUND " + roundCount + " *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+            System.out.println("PLAYER, IT'S YOUR TURN!");
+            System.out.println(ConsoleUtility.PURPLE + "Current Health: " + player.getH());
+            System.out.println("Werewolf's Current Health: " + bossHealth);
+            inventory.printInv();
+            System.out.println(ConsoleUtility.YELLOW + "Options (USE LOWERCASE INPUT):");
+            System.out.println("Press e to use Lancer (10 damage, infinite uses).");
+            if (inventory.hasWeapon("Prowler")) {
+                Weapons wantedWeapon = inventory.requestedWeapon("Prowler");
+                System.out.println("Press r to use Prowler (50 damage, " + wantedWeapon.getUses() + " uses left).");
+            }
+            if (inventory.hasWeapon("Bomb")) {
+                System.out.println("Press f to use a Bomb (25 damage, one use for each Bomb you have).");
+            }
+            if (inventory.hasFood()) {
+                System.out.println("Press c to heal using your food.");
+            }
+            userInput = scan.nextLine();
+            if (userInput.equals("e")) { //if user chooses Lancer
+                int hitOrMiss = (int) (Math.random() * 3) + 1;
+                if (hitOrMiss >= 2) {
+                    System.out.println("You sliced a vengeful attack with your Lancer, costing the werewolf 10 health.");
+                    bossHealth -= 10;
+                    System.out.println("Werewolf Health: " + bossHealth);
+                } else {
+                    System.out.println("You missed!");
+                }
+                if (checkIfDead(bossHealth)) {
+                    System.out.println("The monster was slain!");
+                    return true;
+                }
+                wait(3);
+                System.out.println("Werewolves turn!");
+                waitASecond();
+                werewolfMoves(bossDmg);
+                if (checkIfDead(player.getH())) {
+                    System.out.println("Player Health: " + player.getH());
+                    wait2seconds();
+                    return false;
+                }
+            } else if (userInput.equals("r")) { //Prowler
+                Weapons wantedWeapon = inventory.requestedWeapon("Prowler");
+                int hitOrMiss = (int) (Math.random() * 4) + 1; //On the Prowler, there's less of a chance of missing.
+                if (hitOrMiss > 1) {
+                    System.out.println("The Prowler charged it's purple radiance at the beast, as you struck a powerful blow!");
+                    System.out.println("Nice job! The werewolf lost 50 health!"); //poor thing, maybe I should nerf Prowler a bit :) maybe not :)
+                    bossHealth -= wantedWeapon.getDamage();
+                    System.out.println("Werewolf Health: " + bossHealth);
+                    wantedWeapon.useOnce();
+                    wantedWeapon.setBrokeIfSo(); //only happens if uses is 0.
+                    if (wantedWeapon.getBroke()) {
+                        inventory.removeBrokenWeapon("Prowler");
+                    }
+                } else {
+                    System.out.println("Yikes! By bad luck, you missed!");
+                    wantedWeapon.useOnce();
+                }
+                if (checkIfDead(bossHealth)) {
+                    System.out.println("The monster was slain!");
+                    return true;
+                }
+                wait(3);
+                System.out.println("Werewolves turn!");
+                waitASecond();
+                werewolfMoves(bossDmg);
+                if (checkIfDead(player.getH())) {
+                    wait2seconds();
+                    System.out.println("Player Health: " + player.getH());
+                    return false;
+                }
+            } else if (userInput.equals("f")) { //BOMB KABOOM
+                Weapons wantedBomb = inventory.requestedWeapon("Bomb");
+                System.out.println("Your bomb cost the werewolf 25 damage!");
+                bossHealth -= wantedBomb.getDamage();
+                System.out.println("Werewolf Health: " + bossHealth);
+                wantedBomb.useOnce();
+                wantedBomb.setBrokeIfSo(); //only happens if uses is 0.
+                if (wantedBomb.getBroke()) {
+                    inventory.removeBomb();
+                }
+                wait(3);
+                System.out.println("Werewolves turn!");
+                waitASecond();
+                werewolfMoves(bossDmg);
+                if (checkIfDead(player.getH())) {
+                    wait2seconds();
+                    System.out.println("Player Health: " + player.getH());
+                    return false;
+                }
+            } else if (userInput.equals("c")) {
+                Food wantedFood = inventory.requestedFood();
+                System.out.println("You ate the " + wantedFood.getName() + ".");
+                player.addH(wantedFood.getHealthBuff());
+                inventory.removeFood(wantedFood.getName());
+                wait2seconds();
+                System.out.println("Werewolves turn!");
+                waitASecond();
+                werewolfMoves(bossDmg);
+            } else { //user is clearly stupid and doesn't know how to follow directions
+                System.out.println("Bruh, invalid input. MAKE SURE YOU TYPE THE RIGHT OPTION, LOWERCASE.");
+            }
+            roundCount++;
+        } //while code ends
+        return false; // this shouldn't happen btw
+    }
+
+    private void werewolfMoves (int dmg) {
+        int hitOrMiss = (int) (Math.random() * 4) + 1;
+        if (hitOrMiss > 1 && hitOrMiss < 4) {
+            System.out.println("The werewolf made his move, swiping his large claws at you.");
+            player.loseH(dmg);
+            waitASecond();
+        } else if (hitOrMiss == 1) {
+            System.out.println("The werewolf missed.");
+            waitASecond();
+        } else {
+            System.out.println("The werewolf struck a huge attack, causing you a lot of pain!");
+            player.loseH(dmg + 10);
+            waitASecond();
+        }
+    }
+
+    private boolean checkIfDead (int healthNumber) {
+        if (healthNumber <= 0) {
+            return true;
+        }
+        return false;
     }
 
     private void ohThatsCompletelyNormal () {

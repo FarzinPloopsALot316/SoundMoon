@@ -19,7 +19,7 @@ public class Weapons {
         uses--;
     }
 
-    public void setBroke() {
+    public void setBrokeIfSo() {
         if (uses == 0) {
             broke = true;
             System.out.println("Your " + name + " broke!");

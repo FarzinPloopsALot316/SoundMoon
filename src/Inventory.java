@@ -62,6 +62,84 @@ public class Inventory {
         return ConsoleUtility.YELLOW + kaboomy.getName() + " has been added to your inventory.";
     }
 
+    public boolean hasWeapon(String weaponName) {
+        for (Weapons currentWeapons : weaponsInv) {
+            if (weaponName.equals(currentWeapons.getName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Weapons requestedWeapon(String weaponName) { // use this only if you can gurantee it's in the user's inv.
+        Weapons returnFiller = new Weapons("This shouldn't exist", 0, 0);
+        for (Weapons currentWeapons : weaponsInv) {
+            if (weaponName.equals(currentWeapons.getName())) {
+                return currentWeapons;
+            }
+        }
+        return returnFiller;
+    }
+
+    public boolean hasFood () {
+        for (Food currentFood : foodInv) {
+            if (!currentFood.getName().equals("empty")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Food requestedFood () {
+        Scanner scan = new Scanner(System.in);
+        int userInput = -1;
+        System.out.println("Which food item do you choose to eat? Choose the corresponding number.");
+        int count = 1;
+        for (Food food : foodInv) {
+            System.out.println(count + ". " + food.getName());
+            count++;
+        }
+        userInput = scan.nextInt();
+        if (userInput < 1 || userInput > foodInv.length) {
+            System.out.println("Wrong input.");
+        }
+        return foodInv[userInput-1];
+    }
+
+    public boolean removeFood (String foodName) {
+        int idx = -1;
+        for (int i = 0; i < foodInv.length; i++) {
+            if (foodInv[i].getName().equals(foodName)) {
+                idx = i;
+                foodInv[idx] = new Food("empty", 0);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void removeBrokenWeapon (String requestedWeapon) {
+        int idx = 0;
+        for (int i = 0; i < weaponsInv.size(); i++) {
+            if (weaponsInv.get(i).getName().equals(requestedWeapon)) {
+                idx = i;
+            }
+        }
+        weaponsInv.remove(idx);
+    }
+
+    public boolean removeBomb () {
+        int idx = 0;
+        for (int i = 0; i < weaponsInv.size(); i++) {
+            if (weaponsInv.get(i).getName().equals("Bomb")) {
+                idx = i;
+                weaponsInv.remove(idx);
+                return true; //stops so that all the bombs don't get removed in one go, that would stink lol
+            }
+        }
+        return false;
+    }
+
     public void printInv() {
         System.out.println("Food Inventory: | " + foodInv[0].getName() + " | " + foodInv[1].getName() + " |");
         String weaponsStr = "";
