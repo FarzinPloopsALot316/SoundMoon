@@ -741,7 +741,7 @@ public class Game {
                     System.out.println("Player Health: " + player.getH());
                     return false;
                 }
-            } else if (userInput.equals("c")) {
+            } else if (userInput.equals("c")) { //healing with food
                 Food wantedFood = inventory.requestedFood();
                 System.out.println("You ate the " + wantedFood.getName() + ".");
                 player.addH(wantedFood.getHealthBuff());
@@ -750,7 +750,30 @@ public class Game {
                 System.out.println("Werewolves turn!");
                 waitASecond();
                 werewolfMoves(bossDmg);
-            } else { //user is clearly stupid and doesn't know how to follow directions
+            } else if (userInput.equals("g")){ //voltage storm, remember to deduce health from the player as well
+                waitASecond();
+                ConsoleUtility.clearScreen();
+                System.out.println(ConsoleUtility.CYAN + "You feel electricity sparkling around you, the current flowing rapidly through your body.");
+                System.out.println("You heart feels as if it's searing alive, being cut in half, but you do what you must do.");
+                wait2seconds();
+                System.out.println("An electromagnetic surge of waves surges from your armor, sucking in the current and electricity around you.");
+                System.out.println("You release it in a large blow, shocking everything around you, including the werewolf.");
+                int stunChance = (int) (Math.random() * 3) + 1;
+                if (stunChance == 4) {
+                    System.out.println(ConsoleUtility.RED + "NOW'S YOUR CHANCE! Attack the werewolf while it's stunned within 2 seconds!" + ConsoleUtility.CYAN);
+                    wait2seconds();
+                    System.out.println("PRESS Q!");
+                    int count = 0;
+                    while (count <= 2 && !(userInput.equals("q"))) { //ask emile or miller about this feature.
+                        userInput = scan.nextLine();
+                        for (int i = 0; i < 2; i++) {
+                            count++;
+                            System.out.println(count + "...");
+                            waitASecond();
+                        }
+                    }
+                }
+            } else { //user is clearly stupid and doesn't know how to follow directions nah jk
                 System.out.println("Bruh, invalid input. MAKE SURE YOU TYPE THE RIGHT OPTION, LOWERCASE.");
             }
             roundCount++;
