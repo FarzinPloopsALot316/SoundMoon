@@ -757,20 +757,29 @@ public class Game {
                 System.out.println("You heart feels as if it's searing alive, being cut in half, but you do what you must do.");
                 wait2seconds();
                 System.out.println("An electromagnetic surge of waves surges from your armor, sucking in the current and electricity around you.");
-                System.out.println("You release it in a large blow, shocking everything around you, including the werewolf.");
-                int stunChance = (int) (Math.random() * 3) + 1;
-                if (stunChance == 4) {
+                System.out.println("You release it in a large blow, shocking everything around you, including the werewolf. You reduce it's health by 30.");
+                bossHealth -= 30;
+                int stunChance = (int) (Math.random() * 4) + 1;
+                if (stunChance == 1) { //new feature, note this for later!!
                     System.out.println(ConsoleUtility.RED + "NOW'S YOUR CHANCE! Attack the werewolf while it's stunned within 2 seconds!" + ConsoleUtility.CYAN);
                     wait2seconds();
                     System.out.println("PRESS Q!");
-                    int count = 0;
-                    while (count <= 2 && !(userInput.equals("q"))) { //ask emile or miller about this feature.
+                    long start = System.currentTimeMillis();
+                    while (!(userInput.equals("q"))) { //ask emile or miller about this feature.
                         userInput = scan.nextLine();
-                        for (int i = 0; i < 2; i++) {
-                            count++;
-                            System.out.println(count + "...");
-                            waitASecond();
-                        }
+                    }
+                    long end = System.currentTimeMillis();
+                    int diff = (int) (end - start) / 1000;
+                    if (diff == 1 || diff == 0) {
+                        System.out.println("You were able to strike the Werewolf with another strong blow, costing it another 20 health!");
+                        bossHealth-= 20;
+                    } else if (diff == 2) {
+                        System.out.println("You were able to strike the Werewolf with another strong blow, it them another 15 health!");
+                        bossHealth -= 15;
+                    } else {
+                        System.out.println("You weren't able to get it in time!");
+                        System.out.println("The werewolf woke up, growling in rage as it swiped it's claws at you, costing you 10 health.");
+                        player.loseH(10);
                     }
                 }
             } else { //user is clearly stupid and doesn't know how to follow directions nah jk
