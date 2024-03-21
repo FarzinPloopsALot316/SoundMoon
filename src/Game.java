@@ -774,13 +774,32 @@ public class Game {
                         System.out.println("You were able to strike the Werewolf with another strong blow, costing it another 20 health!");
                         bossHealth-= 20;
                     } else if (diff == 2) {
-                        System.out.println("You were able to strike the Werewolf with another strong blow, it them another 15 health!");
+                        System.out.println("You were able to strike the Werewolf with another strong blow, costing it another 15 health!");
                         bossHealth -= 15;
                     } else {
                         System.out.println("You weren't able to get it in time!");
-                        System.out.println("The werewolf woke up, growling in rage as it swiped it's claws at you, costing you 10 health.");
-                        player.loseH(10);
+                        System.out.println("The werewolf woke up, growling in rage as it swiped it's claws at you, costing you 15 health.");
+                        player.loseH(15);
                     }
+                }
+                System.out.println(ConsoleUtility.YELLOW + "Although you produced significant damage, the large surge recoiled on you as well.");
+                player.loseH(10);
+                if (checkIfDead(player.getH())) {
+                    System.out.println("Player Health: " + player.getH());
+                    wait2seconds();
+                    return false;
+                }
+                if (checkIfDead(bossHealth)) {
+                    System.out.println("The monster was slain!");
+                    return true;
+                }
+                System.out.println("Werewolves turn!");
+                waitASecond();
+                werewolfMoves(bossDmg);
+                if (checkIfDead(player.getH())) {
+                    wait2seconds();
+                    System.out.println("Player Health: " + player.getH());
+                    return false;
                 }
             } else { //user is clearly stupid and doesn't know how to follow directions nah jk
                 System.out.println("Bruh, invalid input. MAKE SURE YOU TYPE THE RIGHT OPTION, LOWERCASE.");

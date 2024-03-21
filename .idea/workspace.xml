@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Voltage Storm update.">
-      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Minor update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
@@ -117,21 +116,7 @@
       <option name="project" value="LOCAL" />
       <updated>1710808363946</updated>
     </task>
-    <task id="LOCAL-00009" summary="Minor update">
-      <created>1710852433770</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1710852433770</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Voltage Storm update.">
-      <created>1710938513891</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1710938513891</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -143,8 +128,7 @@
     <MESSAGE value="Created a second maze, intreacted with the Weapons and Swords classes in Inventory." />
     <MESSAGE value="Created a second maze, interacted with the Weapons and Swords classes in Inventory." />
     <MESSAGE value="Minor update" />
-    <MESSAGE value="Voltage Storm update." />
-    <option name="LAST_COMMIT_MESSAGE" value="Voltage Storm update." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
