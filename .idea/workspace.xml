@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Minor update">
+    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710808363946</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky.">
+      <option name="closed" value="true" />
+      <created>1710982712778</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710982712778</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -128,7 +135,8 @@
     <MESSAGE value="Created a second maze, intreacted with the Weapons and Swords classes in Inventory." />
     <MESSAGE value="Created a second maze, interacted with the Weapons and Swords classes in Inventory." />
     <MESSAGE value="Minor update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor update" />
+    <MESSAGE value="On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky." />
+    <option name="LAST_COMMIT_MESSAGE" value="On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
