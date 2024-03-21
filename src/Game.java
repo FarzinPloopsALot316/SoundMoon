@@ -232,6 +232,7 @@ public class Game {
             }
             cleared = bossFight(100, 20);
         }
+        player.setH(100);
     }
 
     private void printMaze1 () {
@@ -757,8 +758,9 @@ public class Game {
                 System.out.println("You heart feels as if it's searing alive, being cut in half, but you do what you must do.");
                 wait2seconds();
                 System.out.println("An electromagnetic surge of waves surges from your armor, sucking in the current and electricity around you.");
-                System.out.println("You release it in a large blow, shocking everything around you, including the werewolf. You reduce it's health by 30.");
-                bossHealth -= 30;
+                int damageRange = (int) (Math.random() * 16) + 15;
+                bossHealth -= damageRange;
+                System.out.println("You release it in a large blow, shocking everything around you, including the werewolf. You reduce it's health by " + damageRange + ".");
                 int stunChance = (int) (Math.random() * 4) + 1;
                 if (stunChance == 1) { //new feature, note this for later!!
                     System.out.println(ConsoleUtility.RED + "NOW'S YOUR CHANCE! Attack the werewolf while it's stunned within 2 seconds!" + ConsoleUtility.CYAN);
@@ -783,15 +785,16 @@ public class Game {
                     }
                 }
                 System.out.println(ConsoleUtility.YELLOW + "Although you produced significant damage, the large surge recoiled on you as well.");
-                player.loseH(10);
+                int recoilDmg = (int) (Math.random() * 21) + 15;
+                player.loseH(recoilDmg);
+                if (checkIfDead(bossHealth)) {
+                    System.out.println("The monster was slain!");
+                    return true;
+                }
                 if (checkIfDead(player.getH())) {
                     System.out.println("Player Health: " + player.getH());
                     wait2seconds();
                     return false;
-                }
-                if (checkIfDead(bossHealth)) {
-                    System.out.println("The monster was slain!");
-                    return true;
                 }
                 System.out.println("Werewolves turn!");
                 waitASecond();

@@ -38,4 +38,8 @@ public class Player {
         health = 100;
         System.out.println(ConsoleUtility.YELLOW + "Restored to maximum health (100 health).");
     }
+
+    public void setH (int newH) {
+        health = newH;
+    }
 }
