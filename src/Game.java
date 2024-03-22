@@ -210,7 +210,7 @@ public class Game {
         wait2seconds();
         System.out.println("""
         
-        It was a giant werewolf beast. It's fangs glowed a bright white, it's vicious yellow eyes looking at Milford in hungry intent.
+        It was a giant werewolf beast. It's fangs glowed a bright white, it's vicious yellow eyes looking at Milford with hungry intent.
         It readied it's claws, hungry to kill and devour it's newfound prey.
         Milford showed no fear. He held his Lancer up, preparing for battle.
         """);
@@ -233,6 +233,88 @@ public class Game {
             cleared = bossFight(100, 20);
         }
         player.setH(100);
+        System.out.println(ConsoleUtility.YELLOW + "You have completed the battle!");
+        wait2seconds();
+        System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*" + ConsoleUtility.YELLOW);
+        System.out.println("""
+                He wiped the blood trickling down his weapon.
+                Vapor bubbled in his throat, the heat scalding his esophagus.
+                He sighs, the steam evacuating from him in a faint hiss...
+                """);
+
+        wait2seconds();
+        System.out.println("""
+                
+                He de-equips his sword back into his sheath.
+                He receives a voice alert from his assistant. "Colonel, where are you??"
+                "I can't seem to pick up your location. Please answer."
+                """);
+        wait(3);
+        System.out.println("""
+                
+                Milford tried to respond through his communicator, but the screen was distorted.
+                There was a suspicious signal block in the area.
+                """);
+        waitASecond();
+        System.out.println("""
+                
+                This is odd, he wondered. The only people who should have access to the area's receptors was the agent organization itself.
+                There should be no reason for them to shut off communication to the area, especially during an investigation.
+                Is this what lead to the death of these agents here?
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                He felt a disturbance. His electromagnetic sensors sensed a movement in the area's magnetic field.
+                He stayed quiet, trying to sense what was around.
+                One person. No. Two.
+                """);
+        wait(4);
+        System.out.println("""
+                
+                No. A bunch of people. He counted through his senses.
+                15. 17.
+                He ducked behind a wall. Two people jump down just as he ducked and hid.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to listen." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                "Looks like the werewolf took out a few. I'll have my men carry the bodies back home," said one of the voices.
+                Milford peeked his head around the wall's corner carefully.
+                A tall, sleek figure, with a height of 6 feet, stood by, examining a soldier's body.
+                By his side was a shorter man, around the height of 5 foot 7.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to examine." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Milford noted the red in their eyes glowing ominously in the dark. There was no doubt that they were vampires.
+                The shorter one spoke. "Alright. Careful lifting them, Riyun. We don't want the bodies to lose too much blood."
+                The taller one, who seemed to be Riyun, nodded.
+                """);
+        wait(3);
+        System.out.println("""
+                
+                The shorter one had glasses under his large, feathered hat, his cape flowing in the cold, unwelcoming breeze of the night.
+                His eyes scanned the area, his blood-lusted red eyes threatening the moonlight's shade of blue over the area.
+                The clouds revealed the crescent moon, and a whole group of vampires could be seen standing on the perch of a building.
+                """);
+        wait(4);
+        System.out.println("""
+                
+                The shorter, feathered hat man smiled.
+                """);
     }
 
     private void printMaze1 () {
@@ -642,6 +724,7 @@ public class Game {
             inventory.printInv();
             System.out.println(ConsoleUtility.GREEN + "Options (USE LOWERCASE INPUT):");
             System.out.println("Press e to use Lancer (10 damage, infinite uses).");
+            System.out.println("Press g to release Voltage Storm." + ConsoleUtility.YELLOW);
             if (inventory.hasWeapon("Prowler")) {
                 Weapons wantedWeapon = inventory.requestedWeapon("Prowler");
                 System.out.println("Press r to use Prowler (50 damage, " + wantedWeapon.getUses() + " uses left).");
@@ -652,7 +735,6 @@ public class Game {
             if (inventory.hasFood()) {
                 System.out.println("Press c to heal using your food.");
             }
-            System.out.println("Press g to release Voltage Storm." + ConsoleUtility.YELLOW);
             userInput = scan.nextLine();
             if (userInput.equals("e")) { //if user chooses Lancer
                 int hitOrMiss = (int) (Math.random() * 3) + 1;
@@ -761,16 +843,32 @@ public class Game {
                 int damageRange = (int) (Math.random() * 16) + 15;
                 bossHealth -= damageRange;
                 System.out.println("You release it in a large blow, shocking everything around you, including the werewolf. You reduce it's health by " + damageRange + ".");
-                int stunChance = (int) (Math.random() * 4) + 1;
+                int stunChance = (int) (Math.random() * 3) + 1;
                 if (stunChance == 1) { //new feature, note this for later!!
                     System.out.println(ConsoleUtility.RED + "NOW'S YOUR CHANCE! Attack the werewolf while it's stunned within 2 seconds!" + ConsoleUtility.CYAN);
-                    wait2seconds();
-                    System.out.println("PRESS Q!");
-                    long start = System.currentTimeMillis();
-                    while (!(userInput.equals("q"))) { //ask emile or miller about this feature.
-                        userInput = scan.nextLine();
+                    waitASecond();
+                    System.out.println(ConsoleUtility.RED + "WHEN THE PROMPT COMES UP, PRESS THE RIGHT BUTTON! LOWERCASE!" + ConsoleUtility.CYAN);
+                    wait(4);
+                    int randomKey = (int) (Math.random() * 4) + 1;
+                    String key = "";
+                    if (randomKey == 1) {
+                        key = "q";
+                    } else if (randomKey == 2) {
+                        key = "z";
+                    } else if (randomKey == 3) {
+                        key = "m";
+                    } else if (randomKey == 4) {
+                        key = "p";
                     }
-                    long end = System.currentTimeMillis();
+                    System.out.println("PRESS " + key);
+                    long start = System.currentTimeMillis();
+                    while (!(userInput.equals(key))) {
+                        userInput = scan.nextLine();
+                        if (!userInput.equals(key)) {
+                            System.out.println(ConsoleUtility.RED + "WRONG INPUT!!" + ConsoleUtility.CYAN);
+                        }
+                    }
+                    long end = System.currentTimeMillis(); //thanks emile and mr miller!
                     int diff = (int) (end - start) / 1000;
                     if (diff == 1 || diff == 0) {
                         System.out.println("You were able to strike the Werewolf with another strong blow, costing it another 20 health!");
