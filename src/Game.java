@@ -269,7 +269,7 @@ public class Game {
         }
         System.out.println("""
                 
-                He felt a disturbance. His electromagnetic sensors sensed a movement in the area's magnetic field.
+                He felt a disturbance. His electromagnetic sensors picked up a movement in the area's magnetic field.
                 He stayed quiet, trying to sense what was around.
                 One person. No. Two.
                 """);
@@ -290,7 +290,7 @@ public class Game {
                 "Looks like the werewolf took out a few. I'll have my men carry the bodies back home," said one of the voices.
                 Milford peeked his head around the wall's corner carefully.
                 A tall, sleek figure, with a height of 6 feet, stood by, examining a soldier's body.
-                By his side was a shorter man, around the height of 5 foot 7.
+                By his side was a shorter man, around the height of 5 foot 9.
                 """);
         System.out.println(ConsoleUtility.PURPLE + "Press q to examine." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
@@ -307,13 +307,52 @@ public class Game {
         System.out.println("""
                 
                 The shorter one had glasses under his large, feathered hat, his cape flowing in the cold, unwelcoming breeze of the night.
-                His eyes scanned the area, his blood-lusted red eyes threatening the moonlight's shade of blue over the area.
+                He scanned the area, his blood-lusted red eyes threatening the moonlight's shade of blue in the sky.
                 The clouds revealed the crescent moon, and a whole group of vampires could be seen standing on the perch of a building.
                 """);
         wait(4);
         System.out.println("""
                 
-                The shorter, feathered hat man smiled.
+                The shorter, feathered hat man smiled. "I smell one that's fresh. I hear their heart beating."
+                Riyun nodded. "Live blood."
+                Milford gripped onto his weapon.
+                """);
+        wait(3);
+        System.out.println("""
+                
+                He peeks over the edge. His heart drops. The shorter man was no longer there.
+                A sharp nail scratches against his chin. He winces, jumping back and firing a charge at the threat.
+                "Feisty," he snickered. He eyed the blood on his hand.
+                "You must be that strong one."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Milford did not hesitate to attack, but suddenly, a knife pierced him from the back.
+                He yelled in pain, dagging the Lancer against the vampire behind him.
+                He releases a large voltage shock, the one behind him dropping dead.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to attack!" + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Suddenly, the shorter one launced foward, his long nails stabbing into his neck.
+                Milford grabbed his left eyeball, frying it off. The boy screamed.
+                Riyun grabbed his gun, firing at Milford.
+                Milford was stunned, his body dropping to the floor.
+                """);
+        wait2seconds();
+        System.out.println("""
+                
+                "Grab him! Hog tie him! We will feast tonight!" the shorter one yelled.
+                "Mother will be fed today." he muttered.
                 """);
     }
 
