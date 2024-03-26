@@ -353,7 +353,16 @@ public class Game {
                 
                 "Grab him! Hog tie him! We will feast tonight!" the shorter one yelled.
                 "Mother will be fed today." he muttered.
+                They violently take his weapons and artillery, knocking him unconscious.
+                Milford's vision begins to swirl as they tied him up, dragging him away.
                 """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        waitASecond();
+        System.out.println(ConsoleUtility.PURPLE + "Teleporting..." + ConsoleUtility.YELLOW);
     }
 
     private void printMaze1 () {
@@ -417,6 +426,30 @@ public class Game {
             }
             System.out.println();
         }
+    }
+
+    public void printMazeVampLair () {
+        /* this is how the maze should be printed!
+        There should b a risk of blowing up!
+        _______
+        ____|__
+        ____$__
+        ___|_|_
+        __|__|_
+        _|_____
+        X|__O$_
+        */
+        maze[6][0] = new Space("X");
+        maze[6][4] = new Space("O");
+        maze[6][1] = new Space("|");
+        maze[5][1] = new Space("|");
+        maze[4][2] = new Space("|");
+        maze[3][3] = new Space("|");
+        maze[1][4] = new Space("|");
+        maze[3][5] = new Space("|");
+        maze[4][5] = new Space("|");
+        maze[6][5] = new Space("$");
+        maze[2][4] = new Space("$");
     }
 
     private boolean navigate () {
