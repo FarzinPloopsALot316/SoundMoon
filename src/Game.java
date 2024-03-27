@@ -418,6 +418,7 @@ public class Game {
                 """);
     }
 
+
     private void printMaze1 () {
         /* this is how the maze should be printed!
         ______O
