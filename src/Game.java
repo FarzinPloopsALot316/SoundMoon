@@ -363,6 +363,59 @@ public class Game {
         }
         waitASecond();
         System.out.println(ConsoleUtility.PURPLE + "Teleporting..." + ConsoleUtility.YELLOW);
+        ConsoleUtility.clearScreen();
+        System.out.println("""
+                
+                The world was a haze. His head hurt. His heart pounded loudly, painfully.
+                """);
+        wait(3);
+        ConsoleUtility.clearScreen();
+        System.out.println("""
+                
+                Why was he still breathing?
+                Did he dare to breathe the same oxygen his companions could no longer have?
+                """);
+        wait(3);
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.RED + """
+                
+                "You were just a pawn. A strong card to play in a trivial game where the player knew he has already lost."
+                """);
+        wait2seconds();
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.RED + """
+                
+                I couldn't save those poor kids.
+                Shame on me.
+                I should have tried harder.
+                """);
+        wait(3);
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                It's not my fucking fault.
+                I was too weak, I couldn't do anything!
+                I was just a teacher. I really tried my best.
+                """);
+        wait(3);
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.RED + """
+                
+                "He'll be good enough. He still has a pulse."
+                "Take him, he'll be perfect to test our new weapon."
+                """);
+        wait(3);
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.PURPLE + """
+                PLAYER, WAKE UP!!
+                """);
+        waitASecond();
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.YELLOW + """
+                He jolts awake, his hair dripping sweat as he looked around.
+                His heart still pounded.
+                He let out a large exhale as he stands up.
+                """);
     }
 
     private void printMaze1 () {
