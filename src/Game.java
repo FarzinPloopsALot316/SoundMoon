@@ -5,10 +5,13 @@ public class Game {
     private Space[][] maze = new Space[7][7];
     Inventory inventory;
     Player player;
+    Player lostPlayer;
 
     public Game () {
         this.inventory = new Inventory();
         this.player = new Player();
+        this.lostPlayer = new Player();
+        lostPlayer.setH(30);
     }
 
     public void wait(int seconds) {
@@ -416,6 +419,48 @@ public class Game {
                 His heart still pounded.
                 He let out a large exhale as he stands up.
                 """);
+        wait2seconds();
+        System.out.println("""
+                
+                He reached for his weapons, but he had nothing.
+                He looked around. The room was surrounded in metal.
+                They took away his armor, but he still had his senses.
+                """);
+        wait(3);
+        System.out.println("""
+                
+                Milford places his hands against the wall of the room interior, trying to sense any openings.
+                He sent waves throughout the walls. Eventually, he found a gap where the waves didn't bounce back.
+                It must be an opening.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to take down the wall." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        waitASecond();
+        System.out.println("""
+                
+                He slams against the wall, putting dents into it. He sighs.
+                "Ow." he mutters. He punches against the metal wall repeatedly, eventually tearing a hole in it.
+                He groans, widening the hole with his bare arms, catching his breath.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to examine." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                A long labyrinth follows. He ties to navigate through it.
+                """);
+        printMazeVampLair();
+        boolean clearedRisky = navigateWithRisk();
+        while (!clearedRisky) {
+            printMazeVampLair();
+            lostPlayer.setH(30);
+            clearedRisky = navigateWithRisk();
+        }
     }
 
 
@@ -622,6 +667,181 @@ public class Game {
                         maze[row + 1][col] = new Space("X");
                         maze[row][col] = new Space("_");
                         row += 1;
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row + 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row += 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            }
+            if (!(userInput.equals("w") || userInput.equals("a") || userInput.equals("s") || userInput.equals("d"))) {
+                System.out.println("INVALID INPUT.");
+                System.out.println(ConsoleUtility.YELLOW + "Press wasd to navigate. USE LOWERCASE LETTERS.");
+                System.out.println(ConsoleUtility.YELLOW + "w for up, a for left, s for down, d for right.");
+            }
+        }
+        return false;
+    }
+
+    private boolean navigateWithRisk () {
+        Scanner choice = new Scanner(System.in);
+        String currentSymbol = "";
+        String userInput = "";
+        int row = 6;
+        int col = 0;
+        System.out.println(ConsoleUtility.YELLOW + "Press wasd to navigate. Use lowercase letters.");
+        System.out.println(ConsoleUtility.YELLOW + "w for up, a for left, s for down, d for right.");
+        while (!currentSymbol.equals("O")) {
+            userInput = choice.nextLine();
+            if (userInput.equals("w")) { //if user chooses to go UP by 1.
+                if (row - 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row - 1][col].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("$")) {
+                        int blowYourselfUp = (int) (Math.random() * 4) + 1;
+                        if (blowYourselfUp == 1) {
+                            lostPlayer.loseH(5);
+                            if (checkIfDead(lostPlayer.getH())) {
+                                System.out.println("YOU DIED.");
+                                return false;
+                            }
+                        } else {
+                            weaponFind();
+                            maze[row - 1][col] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            row -= 1;
+                        }
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row - 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row -= 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            } // end of UP decision code
+            if (userInput.equals("a")) { //if user chooses to go LEFT by 1.
+                if (col - 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row][col - 1].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("$")) {
+                        int blowYourselfUp = (int) (Math.random() * 4) + 1;
+                        if (blowYourselfUp == 1) {
+                            lostPlayer.loseH(5);
+                            if (checkIfDead(lostPlayer.getH())) {
+                                System.out.println("YOU DIED.");
+                                return false;
+                            }
+                        } else {
+                            weaponFind();
+                            maze[row - 1][col] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            row -= 1;
+                        }
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row][col - 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col -= 1;
+                    }
+                } //end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            } // end of LEFT decision code
+            if (userInput.equals("d")) { //if user chooses to go RIGHT by 1.
+                if (col + 1 > 6) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row][col + 1].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("$")) {
+                        int blowYourselfUp = (int) (Math.random() * 4) + 1;
+                        if (blowYourselfUp == 1) {
+                            lostPlayer.loseH(5);
+                            if (checkIfDead(lostPlayer.getH())) {
+                                System.out.println("YOU DIED.");
+                                return false;
+                            }
+                        } else {
+                            weaponFind();
+                            maze[row - 1][col] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            row -= 1;
+                        }
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row][col + 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col += 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            }
+            if (userInput.equals("s")) { //if user chooses to go DOWN by 1.
+                if (row + 1 > 6) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row + 1][col].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("$")) {
+                        int blowYourselfUp = (int) (Math.random() * 4) + 1;
+                        if (blowYourselfUp == 1) {
+                            lostPlayer.loseH(5);
+                            if (checkIfDead(lostPlayer.getH())) {
+                                System.out.println("YOU DIED.");
+                                return false;
+                            }
+                        } else {
+                            weaponFind();
+                            maze[row - 1][col] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            row -= 1;
+                        }
                     }
                     if (currentSymbol.equals("_")) {
                         maze[row + 1][col] = new Space("X");
