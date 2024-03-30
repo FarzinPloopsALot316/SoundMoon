@@ -1,0 +1,176 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_3_18_24,_5_00_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_3_18_24,_5_00_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_3_18_24,_5_00_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_3_18_24,_5_00_PM_[Changes]/shelved.patch	(revision 9cf290899952f5ab11820a3efb44fe72790476eb)
++++ /dev/null	(revision 9cf290899952f5ab11820a3efb44fe72790476eb)
+@@ -1,48 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"de4b91cd-86b8-48b8-827f-ccc37aa59fdf\" name=\"Changes\" comment=\"Updated game class with mazes, problems with Inventory and Food.\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Game.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Game.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 5\n}</component>\n  <component name=\"ProjectId\" id=\"2daWfXBBsSmI9Ni44fZ9kdVmfts\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\n    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/BT_1N3_07/IdeaProjects/SoundMoon/src/Main.java&quot;\n  }\n}</component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"de4b91cd-86b8-48b8-827f-ccc37aa59fdf\" name=\"Changes\" comment=\"\" />\n      <created>1710246773025</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1710246773025</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"ConsoleUtility, src classes added, Gun class removed.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710291546042</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710291546042</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Player updated.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710293672395</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710293672395</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Food, Inventory, Player, Sword, and Weapons class updated.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710296606107</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710296606107</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Food, Inventory, Player, Sword, and Weapons class updated.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710296645502</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710296645502</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Updated game class with mazes, problems with Inventory and Food.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710376322989</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710376322989</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"6\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"ConsoleUtility, src classes added, Gun class removed.\" />\n    <MESSAGE value=\"Player updated.\" />\n    <MESSAGE value=\"Food, Inventory, Player, Sword, and Weapons class updated.\" />\n    <MESSAGE value=\"Updated game class with mazes, problems with Inventory and Food.\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Updated game class with mazes, problems with Inventory and Food.\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <breakpoint enabled=\"true\" type=\"java-exception\">\n          <properties class=\"java.lang.StackOverflowError\" package=\"java.lang\" />\n          <option name=\"timeStamp\" value=\"2\" />\n        </breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 9c11823b5ebdd6890c3a497aa54e35fa9739d470)
+-+++ b/.idea/workspace.xml	(date 1710383254483)
+-@@ -4,9 +4,8 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Updated game class with mazes, problems with Inventory and Food.">
+-+    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Maze complete. Problems with inventory and Food.">
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -92,7 +91,15 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1710376322989</updated>
+-     </task>
+--    <option name="localTasksCounter" value="6" />
+-+    <task id="LOCAL-00006" summary="Maze complete. Problems with inventory and Food.">
+-+      <option name="closed" value="true" />
+-+      <created>1710379937880</created>
+-+      <option name="number" value="00006" />
+-+      <option name="presentableId" value="LOCAL-00006" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1710379937880</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="7" />
+-     <servers />
+-   </component>
+-   <component name="VcsManagerConfiguration">
+-@@ -101,7 +108,8 @@
+-     <MESSAGE value="Player updated." />
+-     <MESSAGE value="Food, Inventory, Player, Sword, and Weapons class updated." />
+-     <MESSAGE value="Updated game class with mazes, problems with Inventory and Food." />
+--    <option name="LAST_COMMIT_MESSAGE" value="Updated game class with mazes, problems with Inventory and Food." />
+-+    <MESSAGE value="Maze complete. Problems with inventory and Food." />
+-+    <option name="LAST_COMMIT_MESSAGE" value="Maze complete. Problems with inventory and Food." />
+-   </component>
+-   <component name="XDebuggerManager">
+-     <breakpoint-manager>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_3_20_24,_8_39_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_24,_8_39_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_24,_8_39_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_24,_8_39_PM_[Changes]/shelved.patch	(revision 9cf290899952f5ab11820a3efb44fe72790476eb)
++++ /dev/null	(revision 9cf290899952f5ab11820a3efb44fe72790476eb)
+@@ -1,52 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"de4b91cd-86b8-48b8-827f-ccc37aa59fdf\" name=\"Changes\" comment=\"Minor update\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Game.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Game.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Inventory.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Inventory.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Player.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Player.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Weapons.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Weapons.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 5\n}</component>\n  <component name=\"ProjectId\" id=\"2daWfXBBsSmI9Ni44fZ9kdVmfts\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\n    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/BT_1N3_07/IdeaProjects/SoundMoon/src/Main.java&quot;\n  }\n}</component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"de4b91cd-86b8-48b8-827f-ccc37aa59fdf\" name=\"Changes\" comment=\"\" />\n      <created>1710246773025</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1710246773025</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"ConsoleUtility, src classes added, Gun class removed.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710291546042</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710291546042</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Player updated.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710293672395</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710293672395</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Food, Inventory, Player, Sword, and Weapons class updated.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710296606107</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710296606107</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Food, Inventory, Player, Sword, and Weapons class updated.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710296645502</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710296645502</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Updated game class with mazes, problems with Inventory and Food.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710376322989</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710376322989</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Created a second maze, intreacted with the Weapons and Swords classes in Inventory.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710801764707</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710801764707</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Created a second maze, interacted with the Weapons and Swords classes in Inventory.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710801863627</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710801863628</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"Minor update\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710808363946</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710808363946</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"9\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"ConsoleUtility, src classes added, Gun class removed.\" />\n    <MESSAGE value=\"Player updated.\" />\n    <MESSAGE value=\"Food, Inventory, Player, Sword, and Weapons class updated.\" />\n    <MESSAGE value=\"Updated game class with mazes, problems with Inventory and Food.\" />\n    <MESSAGE value=\"Created a second maze, intreacted with the Weapons and Swords classes in Inventory.\" />\n    <MESSAGE value=\"Created a second maze, interacted with the Weapons and Swords classes in Inventory.\" />\n    <MESSAGE value=\"Minor update\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Minor update\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <breakpoint enabled=\"true\" type=\"java-exception\">\n          <properties class=\"java.lang.StackOverflowError\" package=\"java.lang\" />\n          <option name=\"timeStamp\" value=\"2\" />\n        </breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision bcb6f4566d72acd64813d755c0a6a3539bb953f7)
+-+++ b/.idea/workspace.xml	(date 1710818479909)
+-@@ -4,13 +4,7 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Minor update">
+--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inventory.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/Weapons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weapons.java" afterDir="false" />
+--    </list>
+-+    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Boss fight update complete. Add Lancer Random and Prowler Random. Maybe buff Lancer??" />
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-@@ -119,7 +113,15 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1710808363946</updated>
+-     </task>
+--    <option name="localTasksCounter" value="9" />
+-+    <task id="LOCAL-00009" summary="Boss fight update complete. Add Lancer Random and Prowler Random. Maybe buff Lancer??">
+-+      <option name="closed" value="true" />
+-+      <created>1710818467062</created>
+-+      <option name="number" value="00009" />
+-+      <option name="presentableId" value="LOCAL-00009" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1710818467062</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="10" />
+-     <servers />
+-   </component>
+-   <component name="VcsManagerConfiguration">
+-@@ -131,7 +133,8 @@
+-     <MESSAGE value="Created a second maze, intreacted with the Weapons and Swords classes in Inventory." />
+-     <MESSAGE value="Created a second maze, interacted with the Weapons and Swords classes in Inventory." />
+-     <MESSAGE value="Minor update" />
+--    <option name="LAST_COMMIT_MESSAGE" value="Minor update" />
+-+    <MESSAGE value="Boss fight update complete. Add Lancer Random and Prowler Random. Maybe buff Lancer??" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="Boss fight update complete. Add Lancer Random and Prowler Random. Maybe buff Lancer??" />
+-   </component>
+-   <component name="XDebuggerManager">
+-     <breakpoint-manager>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_3_20_24__8_39_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_24__8_39_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_24__8_39_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_24__8_39_PM__Changes_.xml	(revision 9cf290899952f5ab11820a3efb44fe72790476eb)
++++ /dev/null	(revision 9cf290899952f5ab11820a3efb44fe72790476eb)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_3_20_24,_8_39_PM_[Changes]" date="1710981550941" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_20_24,_8_39_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 3/20/24, 8:39 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_3_18_24__5_00_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_3_18_24__5_00_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_3_18_24__5_00_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_3_18_24__5_00_PM__Changes_.xml	(revision 9cf290899952f5ab11820a3efb44fe72790476eb)
++++ /dev/null	(revision 9cf290899952f5ab11820a3efb44fe72790476eb)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_3_18_24,_5_00_PM_[Changes]" date="1710795619977" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_18_24,_5_00_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 3/18/24, 5:00 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"de4b91cd-86b8-48b8-827f-ccc37aa59fdf\" name=\"Changes\" comment=\"On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky.\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 5\n}</component>\n  <component name=\"ProjectId\" id=\"2daWfXBBsSmI9Ni44fZ9kdVmfts\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\n    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/BT_1N3_07/IdeaProjects/SoundMoon/src/Main.java&quot;\n  }\n}</component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"de4b91cd-86b8-48b8-827f-ccc37aa59fdf\" name=\"Changes\" comment=\"\" />\n      <created>1710246773025</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1710246773025</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"ConsoleUtility, src classes added, Gun class removed.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710291546042</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710291546042</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Player updated.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710293672395</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710293672395</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Food, Inventory, Player, Sword, and Weapons class updated.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710296606107</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710296606107</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Food, Inventory, Player, Sword, and Weapons class updated.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710296645502</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710296645502</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Updated game class with mazes, problems with Inventory and Food.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710376322989</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710376322989</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Created a second maze, intreacted with the Weapons and Swords classes in Inventory.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710801764707</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710801764707</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Created a second maze, interacted with the Weapons and Swords classes in Inventory.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710801863627</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710801863628</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"Minor update\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710808363946</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710808363946</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1710982712778</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1710982712778</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"10\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"ConsoleUtility, src classes added, Gun class removed.\" />\n    <MESSAGE value=\"Player updated.\" />\n    <MESSAGE value=\"Food, Inventory, Player, Sword, and Weapons class updated.\" />\n    <MESSAGE value=\"Updated game class with mazes, problems with Inventory and Food.\" />\n    <MESSAGE value=\"Created a second maze, intreacted with the Weapons and Swords classes in Inventory.\" />\n    <MESSAGE value=\"Created a second maze, interacted with the Weapons and Swords classes in Inventory.\" />\n    <MESSAGE value=\"Minor update\" />\n    <MESSAGE value=\"On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky.\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky.\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <breakpoint enabled=\"true\" type=\"java-exception\">\n          <properties class=\"java.lang.StackOverflowError\" package=\"java.lang\" />\n          <option name=\"timeStamp\" value=\"2\" />\n        </breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9cf290899952f5ab11820a3efb44fe72790476eb)
++++ b/.idea/workspace.xml	(date 1710986527575)
+@@ -4,9 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky.">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-    </list>
++    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky." />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -123,7 +121,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1710982712778</updated>
+     </task>
+-    <option name="localTasksCounter" value="10" />
++    <task id="LOCAL-00010" summary="On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky.">
++      <option name="closed" value="true" />
++      <created>1710986509306</created>
++      <option name="number" value="00010" />
++      <option name="presentableId" value="LOCAL-00010" />
++      <option name="project" value="LOCAL" />
++      <updated>1710986509306</updated>
++    </task>
++    <option name="localTasksCounter" value="11" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
