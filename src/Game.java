@@ -227,7 +227,7 @@ public class Game {
         System.out.println(ConsoleUtility.PURPLE + "Beginning battle..." + ConsoleUtility.YELLOW);
         wait2seconds();
         ConsoleUtility.clearScreen();
-        boolean cleared = bossFight(100, 15);
+        boolean cleared = bossFight(100, 15); //100, 15
         while (!cleared) {
             player.addH(100);
             System.out.println(ConsoleUtility.PURPLE + "You died. Press q to restart." + ConsoleUtility.YELLOW);
@@ -720,6 +720,7 @@ public class Game {
         }
         long end = System.currentTimeMillis();
         int diff = (int) (end - start) / 1000;
+        boolean lose20 = false; // will reduce Markam's initial health by 20 if player shot in time.
         if (diff == 1 || diff == 0) {
             System.out.println("""
                     
@@ -727,6 +728,7 @@ public class Game {
                     Milford fires another bullet at Riyun, square in the heart, who drops dead.
                     "Riyun! No!" Markam looks at him, watching the young vampire drop dead.
                     """);
+            lose20 = true;
         } else {
             System.out.println("""
                     
@@ -735,6 +737,46 @@ public class Game {
                     "Riyun! No!" Markam looks at him, watching the young vampire drop dead.
                     """);
         }
+        wait2seconds();
+        System.out.println("""
+                    
+                    He charges at Milford. Milford jumps back, dodging.
+                    "You're a dead man." Markam yells. He flairs his larges claws, pointing at him.
+                    """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to begin battle." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.PURPLE + "Beginning battle..." + ConsoleUtility.YELLOW);
+        wait2seconds();
+        ConsoleUtility.clearScreen();
+        if (lose20) {
+            boolean clearedMarkam = vampBossFight(80, 12);
+            while (!clearedMarkam) {
+                player.setH(100);
+                System.out.println(ConsoleUtility.PURPLE + "You died. Press q to restart." + ConsoleUtility.YELLOW);
+                userInput = scan.nextLine();
+                while (!userInput.equals("q")) {
+                    userInput = scan.nextLine();
+                }
+                clearedMarkam = vampBossFight(80, 12);
+            }
+        } else {
+            boolean clearedMarkam = vampBossFight(100, 12);
+            while (!clearedMarkam) {
+                player.setH(100);
+                System.out.println(ConsoleUtility.PURPLE + "You died. Press q to restart." + ConsoleUtility.YELLOW);
+                userInput = scan.nextLine();
+                while (!userInput.equals("q")) {
+                    userInput = scan.nextLine();
+                }
+                clearedMarkam = vampBossFight(100, 12);
+            }
+        }
+        player.setH(100);
+        System.out.println(ConsoleUtility.YELLOW + "You have completed the battle!");
+        wait2seconds();
     }
 
 
@@ -1610,6 +1652,201 @@ public class Game {
         return false; // this shouldn't happen btw
     }
 
+    private boolean vampBossFight (int bossHealth, int bossDmg) { //for Vampires, specifically Markam. He's the only vampire you fight.
+        int roundCount = 1;
+        while (!(player.getH() <= 0) || !(bossHealth <= 0)) {
+            Scanner scan = new Scanner(System.in);
+            String userInput = "";
+            System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ ROUND " + roundCount + " *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+            System.out.println("PLAYER, IT'S YOUR TURN!");
+            System.out.println(ConsoleUtility.PURPLE + "Current Health: " + player.getH());
+            System.out.println("Vampire's Current Health: " + bossHealth);
+            inventory.printInv();
+            System.out.println(ConsoleUtility.GREEN + "Options (USE LOWERCASE INPUT):");
+            System.out.println("Press e to use Lancer (10 damage, infinite uses).");
+            System.out.println("Press g to release Voltage Storm." + ConsoleUtility.YELLOW);
+            if (inventory.hasWeapon("Prowler")) {
+                Weapons wantedWeapon = inventory.requestedWeapon("Prowler");
+                System.out.println("Press r to use Prowler (50 damage, " + wantedWeapon.getUses() + " uses left).");
+            }
+            if (inventory.hasWeapon("Bomb")) {
+                System.out.println("Press f to use a Bomb (25 damage, one use for each Bomb you have).");
+            }
+            if (inventory.hasFood()) {
+                System.out.println("Press c to heal using your food.");
+            }
+            userInput = scan.nextLine();
+            if (userInput.equals("e")) { //if user chooses Lancer
+                int hitOrMiss = (int) (Math.random() * 2) + 1;
+                if (hitOrMiss >= 2) {
+                    int powerfulBlow = (int) (Math.random() * 3) + 1;
+                    if (powerfulBlow == 1) {
+                        System.out.println("The Lancer charged a powerful wave, which cost the vampire 20 damage!");
+                        bossHealth -= 20;
+                        System.out.println("Vampire Health: " + bossHealth);
+                    } else {
+                        System.out.println("You sliced a vengeful attack with your Lancer, costing the vampire 15 health.");
+                        bossHealth -= 15;
+                        System.out.println("Vampire Health: " + bossHealth);
+                    }
+                } else {
+                    System.out.println("You missed!");
+                }
+                if (checkIfDead(bossHealth)) {
+                    System.out.println("Markam has fallen!");
+                    return true;
+                }
+                wait(3);
+                System.out.println("Markam's turn!");
+                waitASecond();
+                MarkamMoves(bossDmg);
+                if (checkIfDead(player.getH())) {
+                    System.out.println("Player Health: " + player.getH());
+                    wait2seconds();
+                    return false;
+                }
+            } else if (userInput.equals("r")) { //Prowler
+                Weapons wantedWeapon = inventory.requestedWeapon("Prowler");
+                int hitOrMiss = (int) (Math.random() * 2) + 1; //On the Prowler, there's more of a chance of missing.
+                if (hitOrMiss == 1) {
+                    int powerfulBlow = (int) (Math.random() * 6) + 1;
+                    if (powerfulBlow == 1) {
+                        System.out.println("A faint hum grew in vibration from the rim of the blade...");
+                        wait2seconds();
+                        System.out.println("A great beam of light fired from the Prowler, searing through Markam's flesh.");
+                        System.out.println("He yells in great pain, losing 75 health.");
+                        bossHealth -= wantedWeapon.getDamage() + 25;
+                        System.out.println("Vampire Health: " + bossHealth);
+                    } else {
+                        System.out.println("The Prowler charged it's purple radiance at him as you struck a powerful blow!");
+                        System.out.println("Markam lost 50 health!");
+                        bossHealth -= wantedWeapon.getDamage();
+                        System.out.println("Vampire Health: " + bossHealth);
+                    }
+                    wantedWeapon.useOnce();
+                    wantedWeapon.setBrokeIfSo(); //only happens if uses is 0.
+                    if (wantedWeapon.getBroke()) {
+                        inventory.removeBrokenWeapon("Prowler");
+                    }
+                } else {
+                    System.out.println("Yikes! By bad luck, you missed!");
+                    wantedWeapon.useOnce();
+                }
+                if (checkIfDead(bossHealth)) {
+                    System.out.println("Markam has fallen!");
+                    return true;
+                }
+                wait(3);
+                System.out.println("Markam's turn!");
+                waitASecond();
+                MarkamMoves(bossDmg);
+                if (checkIfDead(player.getH())) {
+                    wait2seconds();
+                    System.out.println("Player Health: " + player.getH());
+                    return false;
+                }
+            } else if (userInput.equals("f")) { //BOMB KABOOM
+                Weapons wantedBomb = inventory.requestedWeapon("Bomb");
+                System.out.println("Your bomb cost the vampire 25 damage!");
+                bossHealth -= wantedBomb.getDamage();
+                System.out.println("Vampire Health: " + bossHealth);
+                wantedBomb.useOnce();
+                wantedBomb.setBrokeIfSo(); //only happens if uses is 0.
+                if (wantedBomb.getBroke()) {
+                    inventory.removeBomb();
+                }
+                wait(3);
+                System.out.println("Markam's turn!");
+                waitASecond();
+                werewolfMoves(bossDmg);
+                if (checkIfDead(player.getH())) {
+                    wait2seconds();
+                    System.out.println("Player Health: " + player.getH());
+                    return false;
+                }
+            } else if (userInput.equals("c")) { //healing with food
+                Food wantedFood = inventory.requestedFood();
+                System.out.println("You ate the " + wantedFood.getName() + ".");
+                player.addH(wantedFood.getHealthBuff());
+                inventory.removeFood(wantedFood.getName());
+                waitASecond();
+            } else if (userInput.equals("g")){ //voltage storm, remember to deduce health from the player as well
+                waitASecond();
+                ConsoleUtility.clearScreen();
+                System.out.println(ConsoleUtility.CYAN + "You feel electricity sparkling around you, the current flowing rapidly through your body.");
+                System.out.println("You heart feels as if it's searing alive, being cut in half, but you do what you must do.");
+                wait2seconds();
+                System.out.println("An electromagnetic surge of waves surges from your armor, sucking in the current and electricity around you.");
+                int damageRange = (int) (Math.random() * 16) + 15;
+                bossHealth -= damageRange;
+                System.out.println("You release it in a large blow, shocking everything around you, including Markam. You reduce his health by " + damageRange + ".");
+                int stunChance = (int) (Math.random() * 3) + 1;
+                if (stunChance == 1) { //new feature, note this for later!!
+                    System.out.println(ConsoleUtility.RED + "NOW'S YOUR CHANCE! Attack the vampire while he's stunned within 2 seconds!" + ConsoleUtility.CYAN);
+                    waitASecond();
+                    System.out.println(ConsoleUtility.RED + "WHEN THE PROMPT COMES UP, PRESS THE RIGHT BUTTON! LOWERCASE!" + ConsoleUtility.CYAN);
+                    wait(4);
+                    int randomKey = (int) (Math.random() * 4) + 1;
+                    String key = "";
+                    if (randomKey == 1) {
+                        key = "q";
+                    } else if (randomKey == 2) {
+                        key = "z";
+                    } else if (randomKey == 3) {
+                        key = "m";
+                    } else if (randomKey == 4) {
+                        key = "p";
+                    }
+                    System.out.println("PRESS " + key);
+                    long start = System.currentTimeMillis();
+                    while (!(userInput.equals(key))) {
+                        userInput = scan.nextLine();
+                        if (!userInput.equals(key)) {
+                            System.out.println(ConsoleUtility.RED + "WRONG INPUT!!" + ConsoleUtility.CYAN);
+                        }
+                    }
+                    long end = System.currentTimeMillis(); //thanks emile and mr miller!
+                    int diff = (int) (end - start) / 1000;
+                    if (diff == 1 || diff == 0) {
+                        System.out.println("You were able to strike Markam with another strong blow, costing it another 20 health!");
+                        bossHealth-= 20;
+                    } else if (diff == 2) {
+                        System.out.println("You were able to strike the Markam with another strong blow, costing it another 15 health!");
+                        bossHealth -= 15;
+                    } else {
+                        System.out.println("You weren't able to get him time!");
+                        System.out.println("Markam quickly dodged your approach, stabbing you and costing you 15 health.");
+                        player.loseH(15);
+                    }
+                }
+                System.out.println(ConsoleUtility.YELLOW + "Although you produced significant damage, the large surge recoiled on you as well.");
+                int recoilDmg = (int) (Math.random() * 21) + 15;
+                player.loseH(recoilDmg);
+                if (checkIfDead(bossHealth)) {
+                    System.out.println("Markam has fallen!");
+                    return true;
+                }
+                if (checkIfDead(player.getH())) {
+                    System.out.println("Player Health: " + player.getH());
+                    wait2seconds();
+                    return false;
+                }
+                int wolfConfused = (int) (Math.random() * 2) + 1;
+                if (wolfConfused == 1) {
+                    System.out.println("Markam was paralyzed for a while from the shock, unable to return a move.");
+                } else {
+                    System.out.println("Markam's turn!");
+                    waitASecond();
+                    MarkamMoves(bossDmg);
+                }
+            } else { //user is clearly stupid and doesn't know how to follow directions nah jk
+                System.out.println("Bruh, invalid input. MAKE SURE YOU TYPE THE RIGHT OPTION, LOWERCASE.");
+            }
+            roundCount++;
+        } //while code ends
+        return false; // this shouldn't happen btw
+    }
+
     private void werewolfMoves (int dmg) {
         int hitOrMiss = (int) (Math.random() * 4) + 1;
         if (hitOrMiss == 3) {
@@ -1623,6 +1860,22 @@ public class Game {
             System.out.println("The werewolf struck a huge attack, causing you a lot of pain!");
             player.loseH(dmg + 10);
             waitASecond();
+        }
+    }
+
+    private void MarkamMoves (int dmg) {
+        int hitOrMiss = (int) (Math.random() * 4) + 1;
+        if (hitOrMiss == 1 || hitOrMiss == 2) {
+            System.out.println("Markam dashes, swping his claws at you.");
+            player.loseH(dmg);
+            waitASecond();
+        } else if (hitOrMiss == 3) {
+            System.out.println("The area fogs up, impairing your vision, as Markam moves at a great pace.");
+            System.out.println("He stabs you from the back, causing a great deal of damage.");
+            player.loseH(dmg + 15);
+            waitASecond();
+        } else {
+            System.out.println("You dodged his attack.");
         }
     }
 

@@ -47,7 +47,7 @@ public class Inventory {
     }
 
     public String addToWeaponsInv (Weapons kaboomy) { //if it's the same weapon AND not a bomb disregard, but if it's a bomb it's okay cause users can have multiple bombs
-        System.out.println(ConsoleUtility.YELLOW + "A " + kaboomy.getName() + "has been added to your inventory.");
+        System.out.println(ConsoleUtility.YELLOW + "A " + kaboomy.getName() + " has been added to your inventory.");
         for (Weapons currentWeapon : weaponsInv) {
             if (kaboomy.getName().equals(currentWeapon.getName()) && !kaboomy.getName().equals("Bomb")) {
                 return ConsoleUtility.YELLOW + "However, you already have this weapon, and so you disregard it and drop it aside.";
