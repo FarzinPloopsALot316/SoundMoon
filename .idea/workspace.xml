@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky.">
+    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="Please fix navigateWithRisk method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Weapons.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weapons.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710982712778</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Please fix navigateWithRisk method">
+      <option name="closed" value="true" />
+      <created>1711824142510</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711824142510</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -136,7 +151,8 @@
     <MESSAGE value="Created a second maze, interacted with the Weapons and Swords classes in Inventory." />
     <MESSAGE value="Minor update" />
     <MESSAGE value="On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky." />
-    <option name="LAST_COMMIT_MESSAGE" value="On Voltage Storm, randomize the recoil damage towards the player, making the g move a bit more risky." />
+    <MESSAGE value="Please fix navigateWithRisk method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Please fix navigateWithRisk method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

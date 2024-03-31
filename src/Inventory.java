@@ -47,7 +47,7 @@ public class Inventory {
     }
 
     public String addToWeaponsInv (Weapons kaboomy) { //if it's the same weapon AND not a bomb disregard, but if it's a bomb it's okay cause users can have multiple bombs
-        System.out.println(ConsoleUtility.YELLOW + "You found " + kaboomy.getName() + ".");
+        System.out.println(ConsoleUtility.YELLOW + "A " + kaboomy.getName() + "has been added to your inventory.");
         for (Weapons currentWeapon : weaponsInv) {
             if (kaboomy.getName().equals(currentWeapon.getName()) && !kaboomy.getName().equals("Bomb")) {
                 return ConsoleUtility.YELLOW + "However, you already have this weapon, and so you disregard it and drop it aside.";
@@ -140,12 +140,32 @@ public class Inventory {
         return false;
     }
 
+    public void clearWeaponsInv () { //use only when lostPlayer dies. Lost Player can only have bombs.
+        int idx = 0;
+        if (!weaponsInv.isEmpty()) {
+            for (int i = weaponsInv.size() - 1; i >= 0; i--) {
+                if (weaponsInv.get(i).getName().equals("Bomb")) {
+                    idx = i;
+                    weaponsInv.remove(idx);
+                }
+            }
+        }
+    }
+
     public void printInv() {
         System.out.println("Food Inventory: | " + foodInv[0].getName() + " | " + foodInv[1].getName() + " |");
         String weaponsStr = "";
-        for (int i = 0; i < weaponsInv.size(); i++) {
-            weaponsStr += "| " + weaponsInv.get(i).getName() + " | ";
+        if (!weaponsInv.isEmpty()) {
+            for (int i = 0; i < weaponsInv.size(); i++) {
+                weaponsStr += "| " + weaponsInv.get(i).getName() + " | ";
+            }
+            System.out.println("Weapons Inventory: " + weaponsStr);
+        } else {
+            System.out.println("Weapons Inventory: | empty |");
         }
-        System.out.println("Weapons Inventory: " + weaponsStr);
+    }
+
+    public int getWeaponsSize() {
+        return weaponsInv.size();
     }
 }

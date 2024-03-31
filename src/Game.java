@@ -6,11 +6,13 @@ public class Game {
     Inventory inventory;
     Player player;
     Player lostPlayer;
+    Inventory lostInv;
 
     public Game () {
         this.inventory = new Inventory();
         this.player = new Player();
         this.lostPlayer = new Player();
+        this.lostInv = new Inventory();
         lostPlayer.setH(30);
     }
 
@@ -233,7 +235,7 @@ public class Game {
             while (!userInput.equals("q")) {
                 userInput = scan.nextLine();
             }
-            cleared = bossFight(100, 20);
+            cleared = bossFight(100, 15);
         }
         player.setH(100);
         System.out.println(ConsoleUtility.YELLOW + "You have completed the battle!");
@@ -454,12 +456,284 @@ public class Game {
                 
                 A long labyrinth follows. He ties to navigate through it.
                 """);
+        lostInv.removeBrokenWeapon("Lancer");
+        lostInv.printInv();
+        System.out.println(ConsoleUtility.PURPLE + "Current Health: " + lostPlayer.getH() + ConsoleUtility.YELLOW);
+        lostPlayer.setH(10);
         printMazeVampLair();
         boolean clearedRisky = navigateWithRisk();
         while (!clearedRisky) {
             printMazeVampLair();
-            lostPlayer.setH(30);
+            System.out.println("Whatever bombs you found were lost.");
+            lostInv.clearWeaponsInv();
+            lostPlayer.setH(10);
             clearedRisky = navigateWithRisk();
+        }
+        System.out.println("D.J. Khalid. Another one.");
+        lostInv.printInv();
+        System.out.println(ConsoleUtility.PURPLE + "Current Health: " + lostPlayer.getH() + ConsoleUtility.YELLOW);
+        printMazeVampLair2();
+        boolean clearedRiskyAgain = navigateWithRisk();
+        while (!clearedRiskyAgain) {
+            printMazeVampLair2();
+            System.out.println("Whatever bombs you found were lost.");
+            lostInv.clearWeaponsInv();
+            lostPlayer.setH(10);
+            clearedRiskyAgain = navigateWithRisk();
+        }
+        wait2seconds();
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                He finally finds a vent, hearing the overlapping echoes of 2 voices.
+                He peeks through the folds, eavesdropping as he tries to quietly open the vent.
+                """);
+        wait(3);
+        System.out.println("""
+                
+                Two of them were heavily caped and hooded, so he couldn't discern their faces.
+                One was fooling around, waving Milford's Lancer playfully.
+                "Yeesh! Look at this thing!" He chuckles. "These Voltage Agents don't screw around!"
+                """);
+        wait2seconds();
+        System.out.println("""
+                
+                He puts the Lancer aside. "Markam's gonna be proud. Been a while since he was able to feed his own family."
+                The other one leans against a table, nodding. "What's with the guy we captured anyway? He seems like a sour one."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                "Well, Markam said he used to be a kind fella. Said he used to be a teacher or something."
+                Milford tampered with the screws on the vent.
+                "Don't know what his backstory really is, but it's said that his school got attacked by a horde of vampires once."
+                "He tried his best to save whoever he could during their school lockdown."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                "Markam said he was a brave one, killing one of the vampires with his remaining strength."
+                "He ain't even got his powers yet. He was just a normal human being at the time."
+                The one leaning on the table nodded. "Guess that's where the Vengeance Agents' leader came in."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Milford managed to unscrew the last bolt, carefully taking off the vent cover.
+                The first one spoke. "Yeah. She said he was perfect, and took him away for eh.. the werewolf surgery or whatnot."
+                "Must suck, to have your life be welded by a whole other lunatic who wanted to test her scientific experiment."
+                Milford paused for a second. But he shook his head and quietly dropped down, out of their sight.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        waitASecond();
+        System.out.println("""
+                
+                He eyed the Lancer on the table behind the first hooded man, inching closer and closer to it.
+                With great stealth, in the immediate moment the second one looked away, Milford grabbed the Lancer.
+                """);
+        wait2seconds();
+        System.out.println("""
+                
+                "Whatever, I'm hungry." said the second one, turning back to face the first man.
+                The man's body was sliced vertically in half. Milford was gone. The armor and the weapons kit were missing.
+                "WHAT?!" He reached for his walkie talkie, but his hand was sliced clean off.
+                """);
+        wait2seconds();
+        System.out.println("""
+                
+                Milford was behind him. The man nearly hollered in pain, but Milford placed the Lancer to his neck, threatening him.
+                "You're going to tell me which way takes me to your leader." Milford spoke dangerously quiet.
+                The Lancer poked against the vampire's windpipe.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to threaten." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Milford had a strong grip on the man, one arm bounding his torso and arms in one, the other hold the Lancer to his throat.
+                The man stuttered, whimpering. "T-Take a right.. and..uh..."
+                "If you don't tell me within 3 seconds, I'll slice your windpipe and watch you choke on your own blood, slowly." Milford grumbled.
+                The man nodded hesitantly, telling Milford all the directions. Milford nods.
+                "Thanks for your cooperation." He slits his throat, the man falling to the ground, gagging and coughing, before going silent.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                He put on his armor again. He put his weapon back in his sheath, climbing back out the same vent.
+                """);
+        for (int i = 0; i < lostInv.getWeaponsSize(); i++) {
+            Weapons bomb = new Weapons("Bomb", 1, 25);
+            inventory.addToWeaponsInv(bomb);
+        }
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        player.setH(100);
+        System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+        wait(4);
+        System.out.println(ConsoleUtility.PURPLE + "PART 2 COMPLETED.");
+        System.out.println("Current Health: " + player.getH());
+        inventory.printInv();
+        System.out.println("Press q to begin Part 3.");
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("Starting...");
+        waitASecond();
+        System.out.print("Tip: ");
+        randomTip();
+        wait(5);
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                He saw a notification on his reciever. He listened to it. It was a message from Dee, his commander.
+                "If you get this message, do know there is a killer vampire on the loose. He's a child, relatively around 17."
+                "He's been baiting our agents and killing them one by one, then harvesting their bodies for the blood."
+                "Kill him on sight. Report back when you've done so."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                He turns off the receiver as he kept walking. Seems he's finally gotten out of the long vent system.
+                He lands in a large study. The room was brisk and freezing. He must have been in a large refrigerator.
+                """);
+        wait2seconds();
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                Bodies of soldiers and agents hung on hooks from the roof like Christmas decorations, not far above him.
+                His heart felt a pang as he saw one of them was his young assistant.
+                He took a sharp breath, his memories fading in. He lost another one. He blames himself.
+                """);
+        wait(3);
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                He shook his head, trying to ignore it. He ducks behind a pillar, as 2 vampires walk past.
+                As they passed, he slithered through the hanging meat and jars of blood.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                He soon entered a large, labratory like room.
+                He stayed quiet, seeing the two vampires from before.
+                Markam and Riyun. He held his breath, kneeling down behind an object.
+                He spotted a gun on the table he was behind.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to listen." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                "Ever since the last Sound Moon..." Markam muttered. "Those bastard werewolves have gone insane."
+                "This god forsaken astronomical occurance that occurs every 10 years, driving those beasts insane.."
+                Markam looked at Riyun. "My people suffered as a result. Our kind- we're simple, calm, accepting."
+                "Food's getting scarce. People are starving. And you ask that we BACK OFF?"
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to listen." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                Riyun sighed. "Look... we captured a highly important asset to the Vengeance organization."
+                "That man we have locked up in that room is no joke, Markam! The organization has us on their radar now."
+                Markam banged the wall, gripping his forehead. "YOU DON'T UNDERSTAND THE SACRIFICES THAT HAVE TO BE MADE."
+                "I DON'T CARE ABOUT ANYBODY'S GOD DAMN RADAR! I CARE ABOUT HELPING MY PEOPLE. HELPING MY COMMUNITY."
+                """);
+        wait(4);
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                Another man, wearing a large hood, enetered the room. "Sir, the hostage escaped-"
+                Markam's eyes widened. The room went silent.
+                "Where is he." Markam asked.
+                "We don't know.."
+                "WELL THEN FIND HIM." He pointed his long, red, pointy nails at the door, gesturing him out.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to reach for the gun." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                "DAMN IT!" He heard a shuffle behind the table, seeing Milford lunge for the gun.
+                Milford has little time to react.
+                """);
+        wait2seconds();
+        System.out.println(ConsoleUtility.RED + "YOU HAVE ONE SECOND TO FIRE BEFORE HE DODGES." + ConsoleUtility.YELLOW);
+        waitASecond();
+        System.out.println(ConsoleUtility.RED + "WHEN THE PROMPT COMES UP, PRESS THE RIGHT BUTTON! LOWERCASE!" + ConsoleUtility.YELLOW);
+        wait(4);
+        int randomKey = (int) (Math.random() * 4) + 1;
+        String key = "";
+        if (randomKey == 1) {
+            key = "q";
+        } else if (randomKey == 2) {
+            key = "z";
+        } else if (randomKey == 3) {
+            key = "m";
+        } else if (randomKey == 4) {
+            key = "p";
+        }
+        System.out.println("PRESS " + key);
+        long start = System.currentTimeMillis();
+        while (!(userInput.equals(key))) {
+            userInput = scan.nextLine();
+            if (!userInput.equals(key)) {
+                System.out.println(ConsoleUtility.RED + "WRONG INPUT!!" + ConsoleUtility.CYAN);
+            }
+        }
+        long end = System.currentTimeMillis();
+        int diff = (int) (end - start) / 1000;
+        if (diff == 1 || diff == 0) {
+            System.out.println("""
+                    
+                    Markam winces from the bullet piercing just above his heart.
+                    Milford fires another bullet at Riyun, square in the heart, who drops dead.
+                    "Riyun! No!" Markam looks at him, watching the young vampire drop dead.
+                    """);
+        } else {
+            System.out.println("""
+                    
+                    Markam deflects the bullet with his cape, pouncing back, ready to fight.
+                    Milford fires another bullet at Riyun, square in the heart, who drops dead.
+                    "Riyun! No!" Markam looks at him, watching the young vampire drop dead.
+                    """);
         }
     }
 
@@ -538,6 +812,11 @@ public class Game {
         _|_____
         X|__O$_
         */
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                maze[i][j] = new Space("_");
+            }
+        }
         maze[6][0] = new Space("X");
         maze[6][4] = new Space("O");
         maze[6][1] = new Space("|");
@@ -549,6 +828,54 @@ public class Game {
         maze[4][5] = new Space("|");
         maze[6][5] = new Space("$");
         maze[2][4] = new Space("$");
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                System.out.print(maze[i][j].getSymbol());
+            }
+            System.out.println();
+        }
+    }
+
+    public void printMazeVampLair2 () {
+        /* this is how the maze should be printed!
+        There should be a risk of blowing up!
+        _______
+        __|_|__
+        __|_|__
+        __|$O|_
+        __|__|_
+        ||||||_
+        X__$___
+        */
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                maze[i][j] = new Space("_");
+            }
+        }
+        maze[6][0] = new Space("X");
+        maze[3][4] = new Space("O");
+        maze[6][3] = new Space("$");
+        maze[3][3] = new Space("$");
+        maze[5][5] = new Space("|");
+        maze[5][4] = new Space("|");
+        maze[5][3] = new Space("|");
+        maze[5][2] = new Space("|");
+        maze[5][1] = new Space("|");
+        maze[5][0] = new Space("|");
+        maze[4][5] = new Space("|");
+        maze[4][2] = new Space("|");
+        maze[3][5] = new Space("|");
+        maze[3][2] = new Space("|");
+        maze[2][2] = new Space("|");
+        maze[2][4] = new Space("|");
+        maze[1][2] = new Space("|");
+        maze[1][4] = new Space("|");
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                System.out.print(maze[i][j].getSymbol());
+            }
+            System.out.println();
+        }
     }
 
     private boolean navigate () {
@@ -712,12 +1039,16 @@ public class Game {
                         int blowYourselfUp = (int) (Math.random() * 4) + 1;
                         if (blowYourselfUp == 1) {
                             lostPlayer.loseH(5);
+                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 5 health.");
+                            maze[row - 1][col] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            row -= 1;
                             if (checkIfDead(lostPlayer.getH())) {
                                 System.out.println("YOU DIED.");
                                 return false;
                             }
                         } else {
-                            weaponFind();
+                            bombFind();
                             maze[row - 1][col] = new Space("X");
                             maze[row][col] = new Space("_");
                             row -= 1;
@@ -751,15 +1082,19 @@ public class Game {
                         int blowYourselfUp = (int) (Math.random() * 4) + 1;
                         if (blowYourselfUp == 1) {
                             lostPlayer.loseH(5);
+                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 5 health.");
+                            maze[row][col - 1] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            col -= 1;
                             if (checkIfDead(lostPlayer.getH())) {
                                 System.out.println("YOU DIED.");
                                 return false;
                             }
                         } else {
-                            weaponFind();
-                            maze[row - 1][col] = new Space("X");
+                            bombFind();
+                            maze[row][col - 1] = new Space("X");
                             maze[row][col] = new Space("_");
-                            row -= 1;
+                            col -= 1;
                         }
                     }
                     if (currentSymbol.equals("|")) {
@@ -793,15 +1128,19 @@ public class Game {
                         int blowYourselfUp = (int) (Math.random() * 4) + 1;
                         if (blowYourselfUp == 1) {
                             lostPlayer.loseH(5);
+                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 5 health.");
+                            maze[row][col + 1] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            col += 1;
                             if (checkIfDead(lostPlayer.getH())) {
                                 System.out.println("YOU DIED.");
                                 return false;
                             }
                         } else {
-                            weaponFind();
-                            maze[row - 1][col] = new Space("X");
+                            bombFind();
+                            maze[row][col + 1] = new Space("X");
                             maze[row][col] = new Space("_");
-                            row -= 1;
+                            col += 1;
                         }
                     }
                     if (currentSymbol.equals("_")) {
@@ -832,15 +1171,19 @@ public class Game {
                         int blowYourselfUp = (int) (Math.random() * 4) + 1;
                         if (blowYourselfUp == 1) {
                             lostPlayer.loseH(5);
+                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 5 health.");
+                            maze[row + 1][col] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            row += 1;
                             if (checkIfDead(lostPlayer.getH())) {
                                 System.out.println("YOU DIED.");
                                 return false;
                             }
                         } else {
-                            weaponFind();
-                            maze[row - 1][col] = new Space("X");
+                            bombFind();
+                            maze[row + 1][col] = new Space("X");
                             maze[row][col] = new Space("_");
-                            row -= 1;
+                            row += 1;
                         }
                     }
                     if (currentSymbol.equals("_")) {
@@ -1043,6 +1386,20 @@ public class Game {
         }
     }
 
+    public void bombFind () {
+        int chance = (int) (Math.random() * 4) + 1;
+        if (chance <= 2) {
+            System.out.println("You quicken your gaze towards the ground to see a round explosive on the floor by luck.");
+            wait2seconds();
+            Weapons bigBoomThingy = new Weapons("Bomb", 1, 25);
+            System.out.println(inventory.addToWeaponsInv(bigBoomThingy));
+        } else {
+            System.out.println("You thought your eyes were deceiving you, but you take a second look and see that...");
+            wait(2);
+            System.out.println("Nope sorry. You thought you saw something, but it was just a shiny piece of dust.");
+        }
+    }
+
     private void randomTip () {
         int chance = (int) (Math.random() * 10) + 1;
         if (chance <= 2) {
@@ -1083,7 +1440,7 @@ public class Game {
             }
             userInput = scan.nextLine();
             if (userInput.equals("e")) { //if user chooses Lancer
-                int hitOrMiss = (int) (Math.random() * 3) + 1;
+                int hitOrMiss = (int) (Math.random() * 2) + 1;
                 if (hitOrMiss >= 2) {
                     int powerfulBlow = (int) (Math.random() * 3) + 1;
                     if (powerfulBlow == 1) {
@@ -1091,8 +1448,8 @@ public class Game {
                         bossHealth -= 20;
                         System.out.println("Werewolf Health: " + bossHealth);
                     } else {
-                        System.out.println("You sliced a vengeful attack with your Lancer, costing the werewolf 10 health.");
-                        bossHealth -= 10;
+                        System.out.println("You sliced a vengeful attack with your Lancer, costing the werewolf 15 health.");
+                        bossHealth -= 15;
                         System.out.println("Werewolf Health: " + bossHealth);
                     }
                 } else {
@@ -1175,10 +1532,7 @@ public class Game {
                 System.out.println("You ate the " + wantedFood.getName() + ".");
                 player.addH(wantedFood.getHealthBuff());
                 inventory.removeFood(wantedFood.getName());
-                wait2seconds();
-                System.out.println("Werewolves turn!");
                 waitASecond();
-                werewolfMoves(bossDmg);
             } else if (userInput.equals("g")){ //voltage storm, remember to deduce health from the player as well
                 waitASecond();
                 ConsoleUtility.clearScreen();
@@ -1240,13 +1594,13 @@ public class Game {
                     wait2seconds();
                     return false;
                 }
-                System.out.println("Werewolves turn!");
-                waitASecond();
-                werewolfMoves(bossDmg);
-                if (checkIfDead(player.getH())) {
-                    wait2seconds();
-                    System.out.println("Player Health: " + player.getH());
-                    return false;
+                int wolfConfused = (int) (Math.random() * 2) + 1;
+                if (wolfConfused == 1) {
+                    System.out.println("The werewolf was too stunned to attack back.");
+                } else {
+                    System.out.println("Werewolves turn!");
+                    waitASecond();
+                    werewolfMoves(bossDmg);
                 }
             } else { //user is clearly stupid and doesn't know how to follow directions nah jk
                 System.out.println("Bruh, invalid input. MAKE SURE YOU TYPE THE RIGHT OPTION, LOWERCASE.");
@@ -1258,11 +1612,11 @@ public class Game {
 
     private void werewolfMoves (int dmg) {
         int hitOrMiss = (int) (Math.random() * 4) + 1;
-        if (hitOrMiss > 1 && hitOrMiss < 4) {
+        if (hitOrMiss == 3) {
             System.out.println("The werewolf made his move, swiping his large claws at you.");
             player.loseH(dmg);
             waitASecond();
-        } else if (hitOrMiss == 1) {
+        } else if (hitOrMiss == 1 || hitOrMiss == 2) {
             System.out.println("The werewolf missed.");
             waitASecond();
         } else {
