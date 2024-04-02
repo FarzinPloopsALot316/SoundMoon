@@ -743,9 +743,9 @@ public class Game {
                     He charges at Milford. Milford jumps back, dodging.
                     "You're a dead man." Markam yells. He flairs his larges claws, pointing at him.
                     """);
-        System.out.println(ConsoleUtility.PURPLE + "Press q to begin battle." + ConsoleUtility.YELLOW);
+        System.out.println(ConsoleUtility.PURPLE + "Press t to begin battle." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
-        while (!userInput.equals("q")) {
+        while (!userInput.equals("t")) {
             userInput = scan.nextLine();
         }
         System.out.println(ConsoleUtility.PURPLE + "Beginning battle..." + ConsoleUtility.YELLOW);
@@ -776,8 +776,188 @@ public class Game {
         }
         player.setH(100);
         System.out.println(ConsoleUtility.YELLOW + "You have completed the battle!");
+        wait(2);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*" + ConsoleUtility.YELLOW);
+        System.out.println("""
+                
+                Milford watches the young boy fall to the ground, blood trickling down his head.
+                The boy looks up, anger and vengeance in his eyes, but a slight twinge of fear.
+                The will to live still flared in his eyes.
+                """);
         wait2seconds();
-    }
+        System.out.println("""
+                
+                Milford walks up to the boy, holding the Lancer in his right hand.
+                "It's over, huh?" Markam chuckled. He coughed up some blood.
+                "My people want to live, Milford. We want to breathe, just as you do."
+                "You humans act like you're the holy salvation this planet needs but..."
+                """);
+        wait(3);
+        System.out.println("""
+                
+                "...you know that's not true. You, of all people... should know that, Milford."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                "Humanity.." Markam spoke in hoarse breaths, "... is no more evil than us."
+                Milford raised his Lancer, ready to stab him.
+                "Humanity kills, humanity does what it needs to survive..."
+                "We're only the monsters because we do it with freaky fangs, nails, and claws."
+                """);
+        wait2seconds();
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Milford looks the boy in his eyes. He sighs.
+                The boy looked at the Lancer. "You wished you were a better teacher."
+                "I know those kids' screams echo in your head everyday."
+                "And how you wished.. oh so wished... you could save them."
+                """);
+        wait(4);
+        System.out.println("""
+                
+                The Lancer fell to his side. He stood there, not knowing what to say.
+                Markam chuckled. "Ironic. You want to take revenge on all the monsters, but you're turning yourself into one."
+                "That's not really the nice guy I remember."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Milford releases the hot steam of vapor in his throat.
+                He took his glasses off, the moonlight seeping in through the cracks of the roof.
+                Though the yellow color of anger had been there, a slight shade of blue was present.
+                "I know who I am." He coughs. "I know what I've become. And this is.. my choice."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                He stabs Markam in the heart, staking the vampire. The boy turns to ash, crumbling to dust.
+                He sighs. He realized how much his body was starting to ache from the armor.
+                But he needs it to live, to thrive. He walks away, wiping blood off his Lancer.
+                Wiping the blood off his hands.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+        wait2seconds();
+        System.out.println(ConsoleUtility.PURPLE + "PART 3 COMPLETED.");
+        System.out.println("Current Health: " + player.getH());
+        inventory.printInv();
+        System.out.println("Press q to begin Part 4.");
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("Starting...");
+        waitASecond();
+        System.out.print("Tip: ");
+        randomTip();
+        wait(5);
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*" + ConsoleUtility.YELLOW);
+        System.out.println("""
+                
+                He exits the building, walking past the small town.
+                It was not a pleasant sight. Houses were in shambles, people living in rags.
+                Some slept on the ground on nothing but mere cloth.
+                Mothers held there children close, afraid of Milford's bright, electrical armor.
+                """);
+        wait(3);
+        System.out.println("""
+                
+                He exits the building, walking past the small town.
+                It was not a pleasant sight. Houses were in shambles, people living in rags.
+                Some slept on the ground on nothing but mere cloth.
+                Mothers held there children close, afraid of Milford's bright, electrical armor.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to keep walking." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                The people watched. They knew.
+                They feared.
+                He saw a cat on the ground.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to pet cat." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Milford kneels down, examining the cat as he pet it.
+                The cat has long, black fur, it's yellow eyes looking up, purring.
+                Milford gave it a treat. It meowed in acceptance.
+                """);
+        wait(3);
+        System.out.println("""
+                
+                He stood back up, hearing the clacking of high heeled boots behind him.
+                "So there you are. I saw your battle. You've lost some reaction time, I see."
+                Milford turned around, facing Dee.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.GREEN + """
+                
+                a. Hello, commander.
+                b. Screw you. (most preferable)
+                c. (Remain silent)
+                """ + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        if (userInput.equals("a")) {
+            System.out.println("""
+                
+                Dee nods. "I expect a solute.
+                Milford sighed, and reluctantly saluted.
+                "That's better." Dee responded.
+                "I needed assistance, and you didn't send any the entire time." Milford puts his glasses back on.
+                "Wanna explain where you were while I was being kidnapped by lunatic vampires?"
+                """);
+        } else if (userInput.equals("b")) {
+            System.out.println("""
+                
+                Dee scoffs. "Watch it, lab expiriment."
+                "Watch the receeding hairline, you balding old b*tch." Milford coughs.
+                "Excuse me? You are to show some more respect, lowly plaything."
+                "Then show me a reason as to why you didn't bother sending help this whole time." Milford puts his glasses back on.
+                "Wanna explain where you were while I was being kidnapped by lunatic vampires?"
+                """);
+        } else {
+
+        }
+    } //end of start
 
 
     private void printMaze1 () {
