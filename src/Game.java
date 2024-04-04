@@ -948,14 +948,20 @@ public class Game {
         } else if (userInput.equals("b")) {
             System.out.println("""
                 
-                Dee scoffs. "Watch it, lab expiriment."
+                Dee scoffs. "Watch it, lab experiment."
                 "Watch the receeding hairline, you balding old b*tch." Milford coughs.
                 "Excuse me? You are to show some more respect, lowly plaything."
                 "Then show me a reason as to why you didn't bother sending help this whole time." Milford puts his glasses back on.
                 "Wanna explain where you were while I was being kidnapped by lunatic vampires?"
                 """);
         } else {
-
+            System.out.println("""
+                
+                Milford remains silent.
+                Dee rolls her eyes. "Am I not deserving of at least a simple hi?"
+                He turns to face her reluctantly."Hi."
+                "Wanna explain where you were while I was being kidnapped by lunatic vampires?"
+                """);
         }
     } //end of start
 
