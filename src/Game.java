@@ -95,90 +95,89 @@ public class Game {
         }
         ConsoleUtility.clearScreen();
         System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
-        if (demo) {
-            System.out.println(ConsoleUtility.YELLOW + """
-                    
-                    After a while, he finds the door to the lobby.
-                    His eyes follow the dim lights upon the ceiling of the hallways, as he opens the door.
-                    "Mornin'." Somebody's voice could be heard in the large room.
-                    The man grips his forehead, the lights vibrating through his skull, the screams reminiscent. "Who.."
-                    """);
-            wait2seconds();
-            System.out.println("a. What happened?");
-            System.out.println("b. Who are you?");
-            userInput = scan.nextLine().toLowerCase(Locale.ROOT);
-            if (userInput.equals("a")) {
-                System.out.println("""
-                        
-                        "What... what happened?.." he mumbles, his chest wrapping him in pain and discomfort.
-                        "Why, you'se was in a huge tangle, fightin' ties with the devil!" the boy responded in a loud, Southern accent.
-                        "When you'se was out there fightin' hell and beyond tryna protect that woman, you done end up fried like chicken in oil!
-                        """);
-                wait(4);
-                System.out.println("""
-                        
-                        He gestured with his hands, expanding them to visualize the scene. "You realeased this huge of a voltage shock, enough to deprive the whole area of it's current!"
-                        "Yours' companions on the battlefield said you done went into cardiac arrest and died for 20 seconds... but by miracle, you'se is a back alive!-"
-                        """);
-                System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
-                userInput = scan.nextLine();
-                while (!userInput.equals("q")) {
-                    userInput = scan.nextLine();
-                }
-                System.out.println("""
-                        
-                        Ash looked at the man, seeing how his blue eyes showed no passion nor emotion.
-                        His glasses shined with an ominous glow under the dim lights, faintly hiding his piercing stare.
-                        The man knew he was no longer who he was 10 years ago.
-                        """);
-                wait(4);
-            } else { // if b
-                System.out.println("""
-                        
-                        "Who are you?" he groaned.
-                        "Name's Ash! I work in the 7th Division, Tech and Coordination headquarters!" said the young boy.
-                        """);
-                wait(2);
-                System.out.println("""
-                        
-                        Ash looked at the man, seeing how his blue eyes showed no passion nor emotion.
-                        His glasses shined with an ominous glow under the dim lights, faintly hiding his piercing stare.
-                        The man knew he was no longer who he was 10 years ago.
-                        """);
-                System.out.println(ConsoleUtility.PURPLE + "Press q to leave." + ConsoleUtility.YELLOW);
-                userInput = scan.nextLine();
-                while (!userInput.equals("q")) {
-                    userInput = scan.nextLine();
-                }
-                System.out.println("""
-                        
-                        "Yeesh! You ain't lookin' so jolly!" Ash exclaimed. 
-                        "Musta been the huge electric attack you did last night on the battlefield. Shocked you into cardiac arrest!..."
-                        """);
-                wait2seconds();
-            } //end of choice selection
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                After a while, he finds the door to the lobby.
+                His eyes follow the dim lights upon the ceiling of the hallways, as he opens the door.
+                "Mornin'." Somebody's voice could be heard in the large room.
+                The man grips his forehead, the lights vibrating through his skull, the screams reminiscent. "Who.."
+                """);
+        wait2seconds();
+        System.out.println("a. What happened?");
+        System.out.println("b. Who are you?");
+        userInput = scan.nextLine().toLowerCase(Locale.ROOT);
+        if (userInput.equals("a")) {
             System.out.println("""
-                        
-                        He realized the man was serious, his blue eyes were cunningly threatening under the glow of the dim lights.
-                        "I- well... you lived is all. Just a minor heart attack in battle." Ash cleared his throat.
-                        """);
+                    
+                    "What... what happened?.." he mumbles, his chest wrapping him in pain and discomfort.
+                    "Why, you'se was in a huge tangle, fightin' ties with the devil!" the boy responded in a loud, Southern accent.
+                    "When you'se was out there fightin' hell and beyond tryna protect that woman, you done end up fried like chicken in oil!
+                    """);
+            wait(4);
+            System.out.println("""
+                    
+                    He gestured with his hands, expanding them to visualize the scene. "You realeased this huge of a voltage shock, enough to deprive the whole area of it's current!"
+                    "Yours' companions on the battlefield said you done went into cardiac arrest and died for 20 seconds... but by miracle, you'se is a back alive!-"
+                    """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                    
+                    Ash looked at the man, seeing how his blue eyes showed no passion nor emotion.
+                    His glasses shined with an ominous glow under the dim lights, faintly hiding his piercing stare.
+                    The man knew he was no longer who he was 10 years ago.
+                    """);
+            wait(4);
+        } else { // if b
+            System.out.println("""
+                    
+                    "Who are you?" he groaned.
+                    "Name's Ash! I work in the 7th Division, Tech and Coordination headquarters!" said the young boy.
+                    """);
+            wait(2);
+            System.out.println("""
+                    
+                    Ash looked at the man, seeing how his blue eyes showed no passion nor emotion.
+                    His glasses shined with an ominous glow under the dim lights, faintly hiding his piercing stare.
+                    The man knew he was no longer who he was 10 years ago.
+                    """);
             System.out.println(ConsoleUtility.PURPLE + "Press q to leave." + ConsoleUtility.YELLOW);
             userInput = scan.nextLine();
             while (!userInput.equals("q")) {
                 userInput = scan.nextLine();
             }
             System.out.println("""
-                        
-                        The man with glasses shook his head, grabbing his Lancer and his armor from the armory stand.
-                        "I'm leaving. I have duties to attend to... Ash."
-                        "WAIT!- But you'se ain't even recovered yet!!-"
-                        """);
-            wait(3);
-            System.out.println("""
-                        
-                        Ash watched the man storm out the door, leaving him in the quietness of the room.
-                        """);
-        } // if demo code, delete later.
+                    
+                    "Yeesh! You ain't lookin' so jolly!" Ash exclaimed. 
+                    "Musta been the huge electric attack you did last night on the battlefield. Shocked you into cardiac arrest!..."
+                    """);
+            wait2seconds();
+        } //end of choice selection
+        System.out.println("""
+                    
+                    He realized the man was serious, his blue eyes were cunningly threatening under the glow of the dim lights.
+                    "I- well... you lived is all. Just a minor heart attack in battle." Ash cleared his throat.
+                    """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to leave." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                    
+                    The man with glasses shook his head, grabbing his Lancer and his armor from the armory stand.
+                    "I'm leaving. I have duties to attend to... Ash."
+                    "WAIT!- But you'se ain't even recovered yet!!-"
+                    """);
+        wait(3);
+        System.out.println("""
+                    
+                    Ash watched the man storm out the door, leaving him in the quietness of the room.
+                    """);
+
         System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         wait(4);
         System.out.println(ConsoleUtility.PURPLE + "PART 1 COMPLETED.");
@@ -196,62 +195,140 @@ public class Game {
         wait(5);
         ConsoleUtility.clearScreen();
         System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
-        System.out.println(ConsoleUtility.YELLOW + "He equipped his vibrantly bright armor, it's electric hue sparking with anticipation, with rage and grandeur.");
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                He equipped his vibrantly bright armor, it's electric hue sparking with anticipation, with rage and grandeur.
+                """);
         waitASecond();
-        System.out.println("The technology expanded itself into one over the mass of his torn body, the metal clinking together.");
-        System.out.println("The Lancer charged with potential, it's sharp edges shimmering.");
+        System.out.println("""
+                The technology expanded itself into one over the mass of his torn body, the metal clinking together.
+                """);
+        System.out.println("""
+                
+                The Lancer charged with potential, it's sharp edges shimmering.
+                """);
         wait(3);
-        System.out.println("The man sighed, tilting his glasses back onto the rim of his nose. He felt current seep through his veins; the charge was a feeling he couldn't erase.");
+        System.out.println("""
+                
+                The man sighed, tilting his glasses back onto the rim of his nose. 
+                He felt current seep through his veins; the charge was a feeling he couldn't erase.
+                """);
         wait(3);
-        System.out.println("His receiver notified him of an incoming call. He groans, tapping the receiver to pick up the call.");
-        wait2seconds();
-        System.out.println("\"What, Dee?\" he responded in a deep, raspy breath.");
-        System.out.println("\"Where have you been?! I have been calling you for the past 4 days! You have work to do!\" She yelled with a great annoyance in her tone.");
-        wait(3);
-        System.out.println("\"I was knocked out from a heavy battle. Shocked myself into cardiac arrest. I'm fine, thanks for asking.\" he mocked.");
-        System.out.println("\"First of all, you are to treat your higher ups with a little more respect, Milford.\" she scoffed.");
-        wait2seconds();
-        System.out.println("Dee tried to keep her composure, holding her breath. \"And second, you are needed in the 31st division for an ongoing investigation.\"");
-        System.out.println("\"I've sent you the location's coordinates already.\"");
-        waitASecond();
-        System.out.println(ConsoleUtility.PURPLE + "Press q to respond." + ConsoleUtility.YELLOW);
-        userInput = scan.nextLine();
-        while (!userInput.equals("q")) {
+        System.out.println("""
+                
+                His receiver notified him of an incoming call. He groans, tapping the receiver to pick up the call.
+                """);
+        if (!demo) {
+            wait2seconds();
+            System.out.println("""
+                    
+                    "What, Dee?" he responded in a deep, raspy breath.
+                    "Where have you been?! I have been calling you for the past 4 days! You have work to do," she yelled with a great annoyance in her tone.
+                    """);
+            wait(3);
+            System.out.println("""
+                    
+                    "I was knocked out from a heavy battle.
+                    Shocked myself into cardiac arrest. I'm fine, thanks for asking." he mocked.
+                    """);
+            waitASecond();
+            System.out.println("""
+                    
+                    "First of all, you are to treat your higher ups with a little more respect, Milford." she scoffed.
+                    Dee tried to keep her composure, holding her breath. "And second, you are needed in the 31st division for an ongoing investigation."
+                    "I've sent you the location's coordinates already."
+                    """);
+            waitASecond();
+            System.out.println(ConsoleUtility.PURPLE + "Press q to respond." + ConsoleUtility.YELLOW);
             userInput = scan.nextLine();
-        }
-        waitASecond();
-        System.out.println("\"I'll be there. Call my assistant.\" He coughed, steam coming out of him in a faint hisss... The current in his body sparked a bit.");
-        System.out.println("\"Don't be late.\" She cuts the call off.");
-        System.out.println("He sighs, coughing again. The receiver taps out.");
-        wait(3);
-        System.out.println(ConsoleUtility.PURPLE + "Press q to start your bike." + ConsoleUtility.YELLOW);
-        userInput = scan.nextLine();
-        while (!userInput.equals("q")) {
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            waitASecond();
+            System.out.println("""
+                    
+                    "I'll be there. Call my assistant." 
+                    He coughed, steam coming out of him in a faint hisss... 
+                    The current in his body sparked a bit.
+                    """);
+            wait(4);
+            System.out.println("""
+                    
+                    "Don't be late." She cuts the call off.
+                    """);
+            System.out.println("""
+                    
+                    He sighs, coughing again. The receiver taps out.""");
+            wait(3);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to start your bike." + ConsoleUtility.YELLOW);
             userInput = scan.nextLine();
-        }
-        System.out.println("He hops onto his bike, which connected to his armor by bluetooth. It hummed to life, the engines roaring.");
-        System.out.println("He revved the bike and drove off into the foggy night, beginning his duties yet again.");
-        wait(6);
-        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
-        userInput = scan.nextLine();
-        while (!userInput.equals("q")) {
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                    
+                    He hops onto his bike, which connected to his armor by bluetooth. It hummed to life, the engines roaring.
+                    He revved the bike and drove off into the foggy night, beginning his duties yet again.""");
+            wait(3);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
             userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println(ConsoleUtility.PURPLE + "Teleporting....");
+            wait2seconds();
+            ConsoleUtility.clearScreen();
+        } else { //much shorter for the presentation
+            wait2seconds();
+            System.out.println("""
+                    
+                    His commander informed him that an invasion was ongoing, and that his presencece was expected.
+                    He nodded. "I'l be right there." He coughed, his voice raspy and jagged.
+                    """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to start your bike." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                    
+                    He hops onto his bike, which connected to his armor by bluetooth.
+                    It hummed to life, the engines roaring.
+                    """);
+            wait2seconds();
+            System.out.println("""
+                    
+                    He revved the bike and drove off into the foggy night, beginning his duties yet again.
+                    """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println(ConsoleUtility.PURPLE + "Teleporting....");
+            wait2seconds();
+            ConsoleUtility.clearScreen();
         }
-        System.out.println(ConsoleUtility.PURPLE + "Teleporting....");
-        wait2seconds();
-        ConsoleUtility.clearScreen();
         System.out.println("~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
-        System.out.println(ConsoleUtility.YELLOW + "He hit the brakes, slowing to a halt in front of a dark alleyway.");
-        System.out.println("With great suspicion, he equipped his Lancer from his back, armed and ready.");
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                He hit the brakes, slowing to a halt in front of a dark alleyway.
+                """);
+        System.out.println("""
+                
+                With great suspicion, he equipped his Lancer from his back, armed and ready.""");
         System.out.println(ConsoleUtility.PURPLE + "Press q to call an agent." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
         while (!userInput.equals("q")) {
             userInput = scan.nextLine();
         }
         System.out.println("He taps on his receiver, trying to reach the other agents by signal.");
-        wait2seconds();
-        System.out.println("No response. He squinted his eyes behind his glasses, trying to find the end of the dark labyrinths.");
-        System.out.println("It was obvious that nothing was visible. He sighed, deciding he had no choice but to enter the mass darkness.");
+        wait(4);
+        System.out.println("""
+                
+                No response. He squinted his eyes behind his glasses, trying to find the end of the dark labyrinths.
+                It was obvious that nothing was visible. He sighed, deciding he had no choice but to enter the mass darkness.
+                """);
         System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
         while (!userInput.equals("q")) {
@@ -260,23 +337,22 @@ public class Game {
         ohThatsCompletelyNormal();
         printMaze31stDivision();
         if (navigateWithWeapons()) {
-            System.out.println(ConsoleUtility.YELLOW + "He came to the end of the alleyway's path, finding a space between a bunch of heavily graffitied buildings.");
+            System.out.println(ConsoleUtility.YELLOW + """
+                    
+                    He came to the end of the alleyway's path, finding a space between a bunch of heavily graffitied buildings.
+                    """);
         }
-        System.out.println("He looked around, gagging from the stench. Flies buzzed around. \"What the hell...\"");
-        waitASecond();
-
-        //trying out Emile's print line tactic
-
+        wait2seconds();
         System.out.println("""
-        He made the last turn, finding a dead body on the floor. A young man, around 19, in uniform, stained in blood.
-        Milford looked away, trying not to pay them mind as he passed them.
-        """);
+                He looked around, gagging from the stench. Flies buzzed around. "What the hell..."
+                He made the last turn, finding a dead body on the floor. A young man, around 19, in uniform, stained in blood.
+                Milford looked away, trying not to pay them mind as he passed them.
+                """);
         wait(3);
         System.out.println("""
-        
-        He wasn't watching where he was going. He accidentally kicks a beheaded head on the ground.
-        It rolled across, leaving a trail of blood, into the remaining darkness. A low growl could be heard not so far away.
-        """);
+                He wasn't watching where he was going. He accidentally kicks a beheaded head on the ground.
+                It rolled across, leaving a trail of blood, into the remaining darkness. A low growl could be heard not so far away.
+                """);
         System.out.println(ConsoleUtility.PURPLE + "Press q to examine." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
         while (!userInput.equals("q")) {
