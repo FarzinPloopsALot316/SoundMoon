@@ -7,6 +7,7 @@ public class Game {
     Player player;
     Player lostPlayer;
     Inventory lostInv;
+    boolean demo;
 
     public Game () {
         this.inventory = new Inventory();
@@ -14,6 +15,7 @@ public class Game {
         this.lostPlayer = new Player();
         this.lostInv = new Inventory();
         lostPlayer.setH(30);
+        demo = false;
     }
 
     public void wait(int seconds) {
@@ -40,12 +42,32 @@ public class Game {
             System.out.println("error");
         }
     }
-    public void start () {
+
+    public void askForDemo () {
+        Scanner scan = new Scanner(System.in);
+        int userInput = 0;
+        System.out.println(ConsoleUtility.CYAN + "First off, would you like to play the demo or the full game?");
+        System.out.println(ConsoleUtility.CYAN + "1 for demo, 2 for full game.");
+        userInput = scan.nextInt();
+        if (userInput == 1) {
+            demo = true;
+        } else {
+            demo = false;
+        }
+        waitASecond();
+        ConsoleUtility.clearScreen();
+        start();
+    }
+
+    public boolean start () {
         waitASecond();
         ConsoleUtility.clearScreen();
         Scanner scan = new Scanner(System.in);
         String userInput = "";
         System.out.println(ConsoleUtility.PURPLE + "Welcome to Sound Moon!");
+        if (demo) {
+            System.out.println(ConsoleUtility.CYAN + "THIS IS THE DEMO VERSION, NOT THE FULL GAME.");
+        }
         System.out.println(ConsoleUtility.RED + "WARNING: DISTURBING CONTENT IS PRESENT, PLAY WITH CAUTION.");
         System.out.println(ConsoleUtility.RED + "PLEASE PLAY THE GAME IN THE TERMINAL FOR THE BEST EXPERIENCE.");
         wait(5);
@@ -367,6 +389,19 @@ public class Game {
             userInput = scan.nextLine();
         }
         waitASecond();
+        if (demo) {
+            System.out.println(ConsoleUtility.PURPLE + """
+                
+                And so, Milford is kidnapped and taken away, unconcious and unable to fight back.
+                Who knows what happened to him? Does he escape? Does he get killed and eaten?
+                """);
+            wait(7);
+            System.out.println("""
+                
+                Find out in the full game...
+                """ + ConsoleUtility.YELLOW);
+            return true;
+        }
         System.out.println(ConsoleUtility.PURPLE + "Teleporting..." + ConsoleUtility.YELLOW);
         ConsoleUtility.clearScreen();
         System.out.println("""
@@ -963,6 +998,7 @@ public class Game {
                 "Wanna explain where you were while I was being kidnapped by lunatic vampires?"
                 """);
         }
+        return true;
     } //end of start
 
 
