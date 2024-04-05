@@ -533,6 +533,7 @@ public class Game {
             wait(3);
             System.out.println("""
                 
+                Reception is off.
                 This is odd, he wondered. The only people who should have access to the area's receptors was the agent organization itself.
                 
                 There should be no reason for them to shut off communication to the area, especially during an investigation.
@@ -595,6 +596,11 @@ public class Game {
                 They violently take his weapons and artillery, stabbing him with a painful, sedative syringe.
                 Milford hollers in pain. His vision begins to swirl as they tied him up, dragging him away.
                 """);
+                System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+                userInput = scan.nextLine();
+                while (!userInput.equals("q")) {
+                    userInput = scan.nextLine();
+                }
             } else {
                 System.out.println(ConsoleUtility.RED + "TOO LATE! THEY GOT TO YOU!");
                 wait2seconds();
