@@ -46,6 +46,8 @@ public class Game {
     public void askForDemo () {
         Scanner scan = new Scanner(System.in);
         int userInput = 0;
+        waitASecond();
+        ConsoleUtility.clearScreen();
         System.out.println(ConsoleUtility.CYAN + "First off, would you like to play the demo or the full game?");
         System.out.println(ConsoleUtility.CYAN + "1 for demo, 2 for full game.");
         userInput = scan.nextInt();
@@ -344,14 +346,13 @@ public class Game {
         }
         wait2seconds();
         System.out.println("""
-                He looked around, gagging from the stench. Flies buzzed around. "What the hell..."
+                He looked around, gagging from the stench. Flies buzzed around.
                 He made the last turn, finding a dead body on the floor. A young man, around 19, in uniform, stained in blood.
                 Milford looked away, trying not to pay them mind as he passed them.
                 """);
         wait(3);
         System.out.println("""
-                He wasn't watching where he was going. He accidentally kicks a beheaded head on the ground.
-                It rolled across, leaving a trail of blood, into the remaining darkness. A low growl could be heard not so far away.
+                A low growl could be heard not so far away.
                 """);
         System.out.println(ConsoleUtility.PURPLE + "Press q to examine." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
@@ -574,7 +575,7 @@ public class Game {
             long end = System.currentTimeMillis();
             int diff = (int) (end - start) / 1000;
             if (diff == 1 || diff == 0) {
-                System.out.println(ConsoleUtility.GREEN + "YOU REACTED IN TIME.");
+                System.out.println(ConsoleUtility.GREEN + "YOU REACTED IN TIME." + ConsoleUtility.YELLOW);
                 wait2seconds();
                 System.out.println("""
                 
@@ -609,6 +610,11 @@ public class Game {
                 They violently take his weapons and artillery, stabbing him with a painful, sedative syringe.
                 Milford hollers in pain. His vision begins to swirl as they tied him up, dragging him away.
                 """);
+                System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+                userInput = scan.nextLine();
+                while (!userInput.equals("q")) {
+                    userInput = scan.nextLine();
+                }
             }
         }
         if (demo) {
@@ -2060,6 +2066,11 @@ public class Game {
                         System.out.println("You weren't able to get it in time!");
                         System.out.println("The werewolf woke up, growling in rage as it swiped it's claws at you, costing you 15 health.");
                         player.loseH(15);
+                        if (checkIfDead(player.getH())) {
+                            System.out.println("Player Health: " + player.getH());
+                            wait2seconds();
+                            return false;
+                        }
                     }
                 }
                 System.out.println(ConsoleUtility.YELLOW + "Although you produced significant damage, the large surge recoiled on you as well.");
@@ -2081,6 +2092,11 @@ public class Game {
                     System.out.println("Werewolves turn!");
                     waitASecond();
                     werewolfMoves(bossDmg);
+                }
+                if (checkIfDead(player.getH())) {
+                    System.out.println("Player Health: " + player.getH());
+                    wait2seconds();
+                    return false;
                 }
             } else { //user is clearly stupid and doesn't know how to follow directions nah jk
                 System.out.println("Bruh, invalid input. MAKE SURE YOU TYPE THE RIGHT OPTION, LOWERCASE.");
@@ -2196,7 +2212,7 @@ public class Game {
                 wait(3);
                 System.out.println("Markam's turn!");
                 waitASecond();
-                werewolfMoves(bossDmg);
+                MarkamMoves(bossDmg);
                 if (checkIfDead(player.getH())) {
                     wait2seconds();
                     System.out.println("Player Health: " + player.getH());
@@ -2255,6 +2271,11 @@ public class Game {
                         System.out.println("You weren't able to get him time!");
                         System.out.println("Markam quickly dodged your approach, stabbing you and costing you 15 health.");
                         player.loseH(15);
+                        if (checkIfDead(player.getH())) {
+                            System.out.println("Player Health: " + player.getH());
+                            wait2seconds();
+                            return false;
+                        }
                     }
                 }
                 System.out.println(ConsoleUtility.YELLOW + "Although you produced significant damage, the large surge recoiled on you as well.");
@@ -2276,6 +2297,11 @@ public class Game {
                     System.out.println("Markam's turn!");
                     waitASecond();
                     MarkamMoves(bossDmg);
+                }
+                if (checkIfDead(player.getH())) {
+                    System.out.println("Player Health: " + player.getH());
+                    wait2seconds();
+                    return false;
                 }
             } else { //user is clearly stupid and doesn't know how to follow directions nah jk
                 System.out.println("Bruh, invalid input. MAKE SURE YOU TYPE THE RIGHT OPTION, LOWERCASE.");
