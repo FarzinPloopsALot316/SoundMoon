@@ -627,6 +627,8 @@ public class Game {
             System.out.println("""
                 
                 Find out in the full game...
+                
+                THANKS FOR WATCHING. Any questions?
                 """ + ConsoleUtility.YELLOW);
             return true;
         }
