@@ -247,8 +247,8 @@ public class Game {
             waitASecond();
             System.out.println("""
                     
-                    "I'll be there. Call my assistant." 
-                    He coughed, steam coming out of him in a faint hisss... 
+                    "I'll be there. Call my assistant."
+                    He coughed, steam coming out of him in a faint hisss...
                     The current in his body sparked a bit.
                     """);
             wait(4);
@@ -392,132 +392,225 @@ public class Game {
         System.out.println(ConsoleUtility.YELLOW + "You have completed the battle!");
         wait2seconds();
         System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*" + ConsoleUtility.YELLOW);
-        System.out.println("""
+        if (!demo) {
+            System.out.println("""
                 He wiped the blood trickling down his weapon.
                 Vapor bubbled in his throat, the heat scalding his esophagus.
                 He sighs, the steam evacuating from him in a faint hiss...
                 """);
 
-        wait2seconds();
-        System.out.println("""
+            wait2seconds();
+            System.out.println("""
                 
                 He de-equips his sword back into his sheath.
                 He receives a voice alert from his assistant. "Colonel, where are you??"
                 "I can't seem to pick up your location. Please answer."
                 """);
-        wait(3);
-        System.out.println("""
+            wait(3);
+            System.out.println("""
                 
                 Milford tried to respond through his communicator, but the screen was distorted.
                 There was a suspicious signal block in the area.
                 """);
-        waitASecond();
-        System.out.println("""
+            waitASecond();
+            System.out.println("""
                 
                 This is odd, he wondered. The only people who should have access to the area's receptors was the agent organization itself.
                 There should be no reason for them to shut off communication to the area, especially during an investigation.
                 Is this what lead to the death of these agents here?
                 """);
-        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
-        userInput = scan.nextLine();
-        while (!userInput.equals("q")) {
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
             userInput = scan.nextLine();
-        }
-        System.out.println("""
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
                 
                 He felt a disturbance. His electromagnetic sensors picked up a movement in the area's magnetic field.
                 He stayed quiet, trying to sense what was around.
                 One person. No. Two.
                 """);
-        wait(4);
-        System.out.println("""
+            wait(4);
+            System.out.println("""
                 
                 No. A bunch of people. He counted through his senses.
                 15. 17.
                 He ducked behind a wall. Two people jump down just as he ducked and hid.
                 """);
-        System.out.println(ConsoleUtility.PURPLE + "Press q to listen." + ConsoleUtility.YELLOW);
-        userInput = scan.nextLine();
-        while (!userInput.equals("q")) {
+            System.out.println(ConsoleUtility.PURPLE + "Press q to listen." + ConsoleUtility.YELLOW);
             userInput = scan.nextLine();
-        }
-        System.out.println("""
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
                 
                 "Looks like the werewolf took out a few. I'll have my men carry the bodies back home," said one of the voices.
                 Milford peeked his head around the wall's corner carefully.
                 A tall, sleek figure, with a height of 6 feet, stood by, examining a soldier's body.
                 By his side was a shorter man, around the height of 5 foot 9.
                 """);
-        System.out.println(ConsoleUtility.PURPLE + "Press q to examine." + ConsoleUtility.YELLOW);
-        userInput = scan.nextLine();
-        while (!userInput.equals("q")) {
+            System.out.println(ConsoleUtility.PURPLE + "Press q to examine." + ConsoleUtility.YELLOW);
             userInput = scan.nextLine();
-        }
-        System.out.println("""
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
                 
                 Milford noted the red in their eyes glowing ominously in the dark. There was no doubt that they were vampires.
                 The shorter one spoke. "Alright. Careful lifting them, Riyun. We don't want the bodies to lose too much blood."
                 The taller one, who seemed to be Riyun, nodded.
                 """);
-        wait(3);
-        System.out.println("""
+            wait(3);
+            System.out.println("""
                 
                 The shorter one had glasses under his large, feathered hat, his cape flowing in the cold, unwelcoming breeze of the night.
                 He scanned the area, his blood-lusted red eyes threatening the moonlight's shade of blue in the sky.
                 The clouds revealed the crescent moon, and a whole group of vampires could be seen standing on the perch of a building.
                 """);
-        wait(4);
-        System.out.println("""
+            wait(4);
+            System.out.println("""
                 
                 The shorter, feathered hat man smiled. "I smell one that's fresh. I hear their heart beating."
                 Riyun nodded. "Live blood."
                 Milford gripped onto his weapon.
                 """);
-        wait(3);
-        System.out.println("""
+            wait(3);
+            System.out.println("""
                 
                 He peeks over the edge. His heart drops. The shorter man was no longer there.
                 A sharp nail scratches against his chin. He winces, jumping back and firing a charge at the threat.
                 "Feisty," he snickered. He eyed the blood on his hand.
                 "You must be that strong one."
                 """);
-        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
-        userInput = scan.nextLine();
-        while (!userInput.equals("q")) {
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
             userInput = scan.nextLine();
-        }
-        System.out.println("""
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
                 
                 Milford did not hesitate to attack, but suddenly, a knife pierced him from the back.
                 He yelled in pain, dagging the Lancer against the vampire behind him.
                 He releases a large voltage shock, the one behind him dropping dead.
                 """);
-        System.out.println(ConsoleUtility.PURPLE + "Press q to attack!" + ConsoleUtility.YELLOW);
-        userInput = scan.nextLine();
-        while (!userInput.equals("q")) {
+            System.out.println(ConsoleUtility.PURPLE + "Press q to attack!" + ConsoleUtility.YELLOW);
             userInput = scan.nextLine();
-        }
-        System.out.println("""
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
                 
-                Suddenly, the shorter one launced foward, his long nails stabbing into his neck.
+                Suddenly, the shorter one launched foward, his long nails stabbing into his neck.
                 Milford grabbed his left eyeball, frying it off. The boy screamed.
                 Riyun grabbed his gun, firing at Milford.
                 Milford was stunned, his body dropping to the floor.
                 """);
-        wait2seconds();
-        System.out.println("""
+            wait2seconds();
+            System.out.println("""
                 
                 "Grab him! Hog tie him! We will feast tonight!" the shorter one yelled.
-                "Mother will be fed today." he muttered.
-                They violently take his weapons and artillery, knocking him unconscious.
-                Milford's vision begins to swirl as they tied him up, dragging him away.
+                They violently take his weapons and artillery, stabbing him with a painful, sedative syringe.
+                Milford hollers in pain. His vision begins to swirl as they tied him up, dragging him away.
                 """);
-        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
-        userInput = scan.nextLine();
-        while (!userInput.equals("q")) {
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
             userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            waitASecond();
+        } else {
+            System.out.println("""
+                He wiped the blood trickling down his weapon.
+                Vapor bubbled in his throat, the heat scalding his esophagus.
+                He sighs, the steam evacuating from him in a faint hiss...
+                """);
+            wait2seconds();
+            System.out.println("""
+                
+                He de-equips his sword back into his sheath.
+                """);
+            wait(3);
+            System.out.println("""
+                
+                This is odd, he wondered. The only people who should have access to the area's receptors was the agent organization itself.
+                
+                There should be no reason for them to shut off communication to the area, especially during an investigation.
+                Is this what lead to the death of these agents here?
+                """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                
+                He felt a disturbance. Suddenly, he saw several vampires crowd on top of a building.
+                Milford equips his Lancer. A vampire dashed at him from behind!
+                """);
+            wait(4);
+            System.out.println(ConsoleUtility.RED + "YOU HAVE ONE SECOND TO FIRE BEFORE HE GETS YOU." + ConsoleUtility.YELLOW);
+            wait2seconds();
+            System.out.println(ConsoleUtility.RED + "WHEN THE PROMPT COMES UP, PRESS THE RIGHT BUTTON! LOWERCASE!" + ConsoleUtility.YELLOW);
+            wait(4);
+            int randomKey = (int) (Math.random() * 4) + 1;
+            String key = "";
+            if (randomKey == 1) {
+                key = "q";
+            } else if (randomKey == 2) {
+                key = "z";
+            } else if (randomKey == 3) {
+                key = "m";
+            } else if (randomKey == 4) {
+                key = "p";
+            }
+            System.out.println("PRESS " + key);
+            long start = System.currentTimeMillis();
+            while (!(userInput.equals(key))) {
+                userInput = scan.nextLine();
+                if (!userInput.equals(key)) {
+                    System.out.println(ConsoleUtility.RED + "WRONG INPUT!!" + ConsoleUtility.CYAN);
+                }
+            }
+            long end = System.currentTimeMillis();
+            int diff = (int) (end - start) / 1000;
+            if (diff == 1 || diff == 0) {
+                System.out.println(ConsoleUtility.GREEN + "YOU REACTED IN TIME.");
+                wait2seconds();
+                System.out.println("""
+                
+                Milford slices the vampire in half, frying his body.
+                He manages to pry off and kill the few others that jumped him.
+                """);
+                wait(3);
+                System.out.println("""
+                
+                Suddenly, one stabs him in the back, and another fires a gun at him.
+                They pin him down, about 5 to 9 of them knocking him unconcious.
+                """);
+                wait(3);
+                System.out.println("""
+                
+                "Grab him! Hog tie him! We will feast tonight!" one of them yelled.
+                They violently take his weapons and artillery, stabbing him with a painful, sedative syringe.
+                Milford hollers in pain. His vision begins to swirl as they tied him up, dragging him away.
+                """);
+            } else {
+                System.out.println(ConsoleUtility.RED + "TOO LATE! THEY GOT TO YOU!");
+                wait2seconds();
+                System.out.println("""
+                
+                He stabs him in the back, and another fires a gun at him.
+                They pin him down, about 5 to 9 of them knocking him unconcious.
+                """);
+                wait(3);
+                System.out.println("""
+                
+                "Grab him! Hog tie him! We will feast tonight!" one of them yelled.
+                They violently take his weapons and artillery, stabbing him with a painful, sedative syringe.
+                Milford hollers in pain. His vision begins to swirl as they tied him up, dragging him away.
+                """);
+            }
         }
-        waitASecond();
         if (demo) {
             System.out.println(ConsoleUtility.PURPLE + """
                 
@@ -531,6 +624,7 @@ public class Game {
                 """ + ConsoleUtility.YELLOW);
             return true;
         }
+        //no more demo code after this
         System.out.println(ConsoleUtility.PURPLE + "Teleporting..." + ConsoleUtility.YELLOW);
         ConsoleUtility.clearScreen();
         System.out.println("""
@@ -889,7 +983,7 @@ public class Game {
             System.out.println("""
                     
                     Markam winces from the bullet piercing just above his heart.
-                    Milford fires another bullet at Riyun, square in the heart, who drops dead.
+                    Milford fires another bullet at Riyun, square in the head, blasting his brains off.
                     "Riyun! No!" Markam looks at him, watching the young vampire drop dead.
                     """);
             lose20 = true;
@@ -897,7 +991,7 @@ public class Game {
             System.out.println("""
                     
                     Markam deflects the bullet with his cape, pouncing back, ready to fight.
-                    Milford fires another bullet at Riyun, square in the heart, who drops dead.
+                    Milford fires another bullet at Riyun, square in the heart, blasting his brains off.
                     "Riyun! No!" Markam looks at him, watching the young vampire drop dead.
                     """);
         }
@@ -973,7 +1067,7 @@ public class Game {
             userInput = scan.nextLine();
         }
         System.out.println("""
-                "Humanity.." Markam spoke in hoarse breaths, "... is no more evil than us."
+                "Humans.." Markam spoke in hoarse breaths, "... are no more evil than us."
                 Milford raised his Lancer, ready to stab him.
                 "Humanity kills, humanity does what it needs to survive..."
                 "We're only the monsters because we do it with freaky fangs, nails, and claws."
@@ -995,7 +1089,7 @@ public class Game {
         System.out.println("""
                 
                 The Lancer fell to his side. He stood there, not knowing what to say.
-                Markam chuckled. "Ironic. You want to take revenge on all the monsters, but you're turning yourself into one."
+                Markam chuckled. "Ironic. You want to take revenge on all the monsters, but you're turning into one yourself."
                 "That's not really the nice guy I remember."
                 """);
         System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
@@ -1019,7 +1113,7 @@ public class Game {
                 
                 He stabs Markam in the heart, staking the vampire. The boy turns to ash, crumbling to dust.
                 He sighs. He realized how much his body was starting to ache from the armor.
-                But he needs it to live, to thrive. He walks away, wiping blood off his Lancer.
+                But he needs it to live, to thrive. He walks away, wiping the blood off his Lancer.
                 Wiping the blood off his hands.
                 """);
         System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
@@ -1052,13 +1146,6 @@ public class Game {
                 Mothers held there children close, afraid of Milford's bright, electrical armor.
                 """);
         wait(3);
-        System.out.println("""
-                
-                He exits the building, walking past the small town.
-                It was not a pleasant sight. Houses were in shambles, people living in rags.
-                Some slept on the ground on nothing but mere cloth.
-                Mothers held there children close, afraid of Milford's bright, electrical armor.
-                """);
         System.out.println(ConsoleUtility.PURPLE + "Press q to keep walking." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
         while (!userInput.equals("q")) {
@@ -1127,8 +1214,8 @@ public class Game {
                 "Wanna explain where you were while I was being kidnapped by lunatic vampires?"
                 """);
         }
-        return true;
-    } //end of start
+        return true; // stops start
+    } //end of start code
 
 
     private void printMaze1 () {
