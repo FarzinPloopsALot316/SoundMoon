@@ -918,16 +918,132 @@ public class Game {
         }
         printSuspiciousMaze1();
         susNavigate(6, 0);
+        waitASecond();
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.RED + """
+                
+                "I'm scared. I'm scared."
+                "It's so dark."
+                "I hear one on my left. No, my right??"
+                """);
+        wait(4);
+        System.out.println(ConsoleUtility.RED + """
+                
+                "I've been stuck in here for 30 days."
+                "Everytime they strike, they hurt."
+                He huddles into a corner, alone, closing his eyes, trying not to freeze from the cold.
+                Monsterous screeches echoed through the large cavern.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.RED + """
+                
+                "My body hurts. Everything hurts."
+                "How do I use my powers! I don't know how!"
+                "It's too dark. Too cold. My ears decieve me."
+                He felt a vibration. His eyes shot open.
+                """);
+        wait(5);
+        System.out.println(ConsoleUtility.RED + """
+                
+                "Why me? Why did they take me?"
+                "Why was I chosen for this?"
+                A creature growled, stepping closer.
+                He couldn't see it. Dee put him through quite a training exercise.
+                It came closer, it's fangs bearing sharp.
+                He could only hear it. He couldn't do anything to defend himself.
+                """ + ConsoleUtility.YELLOW);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("Milford snapped out of his trance, the maze returning to vision.");
+        wait2seconds();
+        ConsoleUtility.clearScreen();
         printSuspiciousMaze2();
         susNavigate(6, 1);
+        waitASecond();
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.RED + """
+                
+                Blood and scars were on his body as he kneeled there, catching his breath.
+                He was in a large observatory room.
+                A giant, muscular man held a large axe in his hand.
+                "GET UP! GET UP LIKE A MAN AND FIGHT TO THE DEATH!"
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.RED + """
+                
+                Milford yelled, getting up and dashing at the man, trying to land a hit.
+                The muscular man scoffed, dodging.
+                He punched Milford in the stomach, throwing him across the room.
+                Dee watched from the opposite side of the viewing mirror. She chuckled.
+                "PATHETIC!" yelled the man. "WEAK! GET UP! USE YOUR POWERS! ACCEPT YOUR CHANGE!
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.RED + """
+                
+                Milford coughed up a deal of blood, struggling to breathe.
+                He stood up, not saying a word.
+                He stood silently. The lights began to flicker.
+                Dee looked around, raising an eyebrow.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.RED + """
+                
+                Suddenly, light bulbs and bars began to burst around them.
+                Milford absorbed the current from them.
+                The huge muscular man should dazed and confused. "W-what?!.."
+                Suddenly, a huge surge of energy blasted in all directions as the area went dark.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.RED + """
+                
+                After a whole minute, the lights finally came back on.
+                Dee had a suprised look on her face. She gasped, looking through the viewing mirror.
+                Milford was standing over the dead body of the man, his heart in his hands.
+                He kicked the dead body, crushing the heart organ in his hands.
+                """ + ConsoleUtility.YELLOW);
+
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("Milford snapped out of his trance, the maze returning to vision.");
+        wait2seconds();
+        ConsoleUtility.clearScreen();
         printSuspiciousMaze3();
         susNavigate(4, 3);
+        System.out.println("He finally finds a switch, which opens a security door, clearing some obstacles out of the way.");
         printSuspiciousMaze4();
         if (susNavigate(2, 0)) {
             System.out.println(ConsoleUtility.YELLOW + """
                     He eventually reaches the end of the rooms.
                     """);
+            wait2seconds();
         }
+        ConsoleUtility.clearScreen();
         System.out.println(ConsoleUtility.YELLOW + """
                 
                 He soon entered a large, labratory like area.
