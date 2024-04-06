@@ -917,13 +917,13 @@ public class Game {
             userInput = scan.nextLine();
         }
         printSuspiciousMaze1();
-        susNavigate();
+        susNavigate(6, 0);
         printSuspiciousMaze2();
-        susNavigate();
+        susNavigate(6, 1);
         printSuspiciousMaze3();
-        susNavigate();
+        susNavigate(4, 3);
         printSuspiciousMaze4();
-        if (susNavigate()) {
+        if (susNavigate(2, 0)) {
             System.out.println(ConsoleUtility.YELLOW + """
                     He eventually reaches the end of the rooms.
                     """);
@@ -1455,7 +1455,7 @@ public class Game {
                     maze[i][j] = new Space("|");
                 }
             }
-            maze[6][1] = new Space("X");
+            maze[4][3] = new Space("X");
             maze[1][5] = new Space("O");
             maze[6][0] = new Space("_");
             maze[6][2] = new Space("_");
@@ -1640,12 +1640,10 @@ public class Game {
     }
 
 
-    private boolean susNavigate () {
+    private boolean susNavigate (int row, int col) {
         Scanner choice = new Scanner(System.in);
         String currentSymbol = "";
         String userInput = "";
-        int row = 6;
-        int col = 0;
         while (!currentSymbol.equals("O")) {
             userInput = choice.nextLine();
             if (userInput.equals("w")) { //if user chooses to go UP by 1.
@@ -2223,7 +2221,7 @@ public class Game {
             }
             userInput = scan.nextLine();
             if (userInput.equals("e")) { //if user chooses Lancer
-                int hitOrMiss = (int) (Math.random() * 2) + 1;
+                int hitOrMiss = (int) (Math.random() * 4) + 1;
                 if (hitOrMiss >= 2) {
                     int powerfulBlow = (int) (Math.random() * 3) + 1;
                     if (powerfulBlow == 1) {
