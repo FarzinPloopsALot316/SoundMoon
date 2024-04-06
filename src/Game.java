@@ -1639,6 +1639,7 @@ public class Game {
         return false;
     }
 
+
     private boolean susNavigate () {
         Scanner choice = new Scanner(System.in);
         String currentSymbol = "";
