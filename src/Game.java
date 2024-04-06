@@ -916,9 +916,21 @@ public class Game {
         while (!userInput.equals("q")) {
             userInput = scan.nextLine();
         }
+        printSuspiciousMaze1();
+        susNavigate();
+        printSuspiciousMaze2();
+        susNavigate();
+        printSuspiciousMaze3();
+        susNavigate();
+        printSuspiciousMaze4();
+        if (susNavigate()) {
+            System.out.println(ConsoleUtility.YELLOW + """
+                    He eventually reaches the end of the rooms.
+                    """);
+        }
         System.out.println(ConsoleUtility.YELLOW + """
                 
-                He soon entered a large, labratory like room.
+                He soon entered a large, labratory like area.
                 He stayed quiet, seeing the two vampires from before.
                 Markam and Riyun. He held his breath, kneeling down behind an object.
                 He spotted a gun on the table he was behind.
@@ -1214,7 +1226,7 @@ public class Game {
             System.out.println("""
                 
                 Dee scoffs. "Watch it, lab experiment."
-                "Watch the receeding hairline, you balding old b*tch." Milford coughs.
+                "Watch the receeding hairline, you balding old woman." Milford coughs.
                 "Excuse me? You are to show some more respect, lowly plaything."
                 "Then show me a reason as to why you didn't bother sending help this whole time." Milford puts his glasses back on.
                 "Wanna explain where you were while I was being kidnapped by lunatic vampires?"
@@ -1372,6 +1384,122 @@ public class Game {
         }
     }
 
+    public void printSuspiciousMaze1 () {
+        /* this is how the maze should be printed!
+        |||||||
+        |||||O|
+        |||||||
+        |||||||
+        |||||||
+        |||||||
+        X$|||||
+        */
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                maze[i][j] = new Space("|");
+            }
+        }
+        maze[6][0] = new Space("X");
+        maze[1][5] = new Space("O");
+        maze[6][1] = new Space("$");
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                System.out.print(maze[i][j].getSymbol());
+            }
+            System.out.println();
+        }
+    }
+
+    public void printSuspiciousMaze2 () {
+        /* this is how the maze should be printed!
+        |||||||
+        |||||O|
+        |||||||
+        |||||||
+        |||$|||
+        |||_|||
+        _X__|||
+        */
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                maze[i][j] = new Space("|");
+            }
+        }
+        maze[6][1] = new Space("X");
+        maze[1][5] = new Space("O");
+        maze[6][0] = new Space("_");
+        maze[6][2] = new Space("_");
+        maze[6][3] = new Space("_");
+        maze[5][3] = new Space("_");
+        maze[4][3] = new Space("$");
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                System.out.print(maze[i][j].getSymbol());
+            }
+            System.out.println();
+        }
+    }
+
+        public void printSuspiciousMaze3 () {
+            /* this is how the maze should be printed!
+            |||||||
+            |||||O|
+            $___|||
+            |||_|||
+            |||X|||
+            |||_|||
+            ____|||
+            */
+            for (int i = 0; i < maze.length; i++) {
+                for (int j = 0; j < maze.length; j++) {
+                    maze[i][j] = new Space("|");
+                }
+            }
+            maze[6][1] = new Space("X");
+            maze[1][5] = new Space("O");
+            maze[6][0] = new Space("_");
+            maze[6][2] = new Space("_");
+            maze[6][3] = new Space("_");
+            maze[5][3] = new Space("_");
+            maze[3][3] = new Space("_");
+            maze[2][3] = new Space("_");
+            maze[2][2] = new Space("_");
+            maze[2][1] = new Space("_");
+            maze[2][0] = new Space("$");
+            for (int i = 0; i < maze.length; i++) {
+                for (int j = 0; j < maze.length; j++) {
+                    System.out.print(maze[i][j].getSymbol());
+                }
+                System.out.println();
+            }
+        }
+
+    public void printSuspiciousMaze4 () {
+        /* this is how the maze should be printed!
+        _______
+        _____O_
+        X______
+        _______
+        _______
+        _______
+        ___?___
+        */
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                maze[i][j] = new Space("_");
+            }
+        }
+        maze[2][0] = new Space("X");
+        maze[1][5] = new Space("O");
+        maze[6][3] = new Space("?");
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                System.out.print(maze[i][j].getSymbol());
+            }
+            System.out.println();
+        }
+    }
+
     private boolean navigate () {
         Scanner choice = new Scanner(System.in);
         String currentSymbol = "";
@@ -1510,6 +1638,166 @@ public class Game {
         }
         return false;
     }
+
+    private boolean susNavigate () {
+        Scanner choice = new Scanner(System.in);
+        String currentSymbol = "";
+        String userInput = "";
+        int row = 6;
+        int col = 0;
+        while (!currentSymbol.equals("O")) {
+            userInput = choice.nextLine();
+            if (userInput.equals("w")) { //if user chooses to go UP by 1.
+                if (row - 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row - 1][col].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("$")) {
+                        foodFind();
+                        return true;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row - 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row -= 1;
+                    }
+                    if (currentSymbol.equals("?")) {
+                        ConsoleUtility.clearScreen();
+                        wait2seconds();
+                        unknownDiologue();
+                        maze[row - 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row -= 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            } // end of UP decision code
+            if (userInput.equals("a")) { //if user chooses to go LEFT by 1.
+                if (col - 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row][col - 1].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("$")) {
+                        foodFind();
+                        return true;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row][col - 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col -= 1;
+                    }
+                    if (currentSymbol.equals("?")) {
+                        ConsoleUtility.clearScreen();
+                        wait2seconds();
+                        unknownDiologue();
+                        maze[row][col - 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col -= 1;
+                    }
+                } //end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            } // end of LEFT decision code
+            if (userInput.equals("d")) { //if user chooses to go RIGHT by 1.
+                if (col + 1 > 6) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row][col + 1].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("$")) {
+                        foodFind();
+                        return true;
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row][col + 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col += 1;
+                    }
+                    if (currentSymbol.equals("?")) {
+                        ConsoleUtility.clearScreen();
+                        wait2seconds();
+                        unknownDiologue();
+                        maze[row][col + 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col += 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            }
+            if (userInput.equals("s")) { //if user chooses to go DOWN by 1.
+                if (row + 1 > 6) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row + 1][col].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("$")) {
+                        foodFind();
+                        return true;
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row + 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row += 1;
+                    }
+                    if (currentSymbol.equals("?")) {
+                        ConsoleUtility.clearScreen();
+                        unknownDiologue();
+                        maze[row + 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row += 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            }
+            if (!(userInput.equals("w") || userInput.equals("a") || userInput.equals("s") || userInput.equals("d"))) {
+                System.out.println("INVALID INPUT.");
+                System.out.println(ConsoleUtility.YELLOW + "Press wasd to navigate. USE LOWERCASE LETTERS.");
+                System.out.println(ConsoleUtility.YELLOW + "w for up, a for left, s for down, d for right.");
+            }
+        }
+        return false;
+    } //end of susNavigate
 
     private boolean navigateWithRisk () {
         Scanner choice = new Scanner(System.in);
@@ -2356,6 +2644,121 @@ public class Game {
             return true;
         }
         return false;
+    }
+
+    private void unknownDiologue () {
+        Scanner scan = new Scanner(System.in);
+        String userInput = "";
+        waitASecond();
+        System.out.println(ConsoleUtility.BLUE + """
+                Milford? Milford, is that you?
+                """);
+        wait(2);
+        System.out.println(ConsoleUtility.PURPLE + """
+                
+                A soft, gentle voice spoke to him.
+                Milford looked at the person. "Why are you here?"
+                """);
+        wait(3);
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                "It seems time hasn't done a good number on you."
+                "That armor must be slowly killing you."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.PURPLE + """
+                
+                "I haven't... seen you in so long."
+                Milford watches the strange, ghostly figure.
+                "I don't know what I've become, friend. I'm not myself anymore."
+                """);
+        wait(3);
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                "Stop giving your life to this useless cause."
+                "They aren't worth saving. They aren't worth your time."
+                "You're a nice guy, Milford, but you need to stop helping everybody."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                "Dee doesn't consider you as a loyal assistant. She sees you as a pet."
+                "She sees you as her little card up her sleeve, but she won't ever see you for what you are.
+                """);
+        wait(3);
+        System.out.println(ConsoleUtility.PURPLE + """
+                
+                Milford shakes his head. "You don't understand. I've put myself in an endless burden."
+                "It's my fault I couldn't save those kids."
+                "It's rightful that I was pulled away for a science experiment."
+                He sighs. "They made me stronger, more capable than I ever could have been."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                The ghostly figure held in tears, a twinge in rage and confusion in their emotions.
+                "Look at what they did to you!"
+                "You still have the chance to turn the tides, to show them you are more than capable!"
+                "You don't have to be their little chess move, Milford!"
+                "I saw what they did to you! They tore you apart, toying with your body!"
+                "They put POISON in you, disguised as strength!"
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.PURPLE + """
+                
+                Milford's voice quivered as he spoke in raspy breaths. "Priscilla, leave me alone-"
+                """);
+        waitASecond();
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                "I know what that power does to you, Milford!"
+                "It fries you, inside out!"
+                "Your organs start to malfunction and eventually, some will fail from the repeated shocks!"
+                "The human body isn't meant to handle such levels of voltage!"
+                "That's why your heart STOPPED for so long the last time you got wiped out!"
+                They took a deep breath.
+                "You're going to die like this, dear."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.PURPLE + """
+                
+                He stood silent for a bit. Then, he spoke up.
+                "Let me die the way I want to, then."
+                He walked away.
+                """);
+        wait2seconds();
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                "Come back..." their voice echoed.
+                "Come back please.. don't go that way.."
+                The ghost watched his walk away, fading away into the air.
+                """ + ConsoleUtility.YELLOW);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        ConsoleUtility.clearScreen();
     }
 
     private void ohThatsCompletelyNormal () {
