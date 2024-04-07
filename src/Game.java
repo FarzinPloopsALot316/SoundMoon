@@ -1634,6 +1634,13 @@ public class Game {
         susNavigate(4,0);
         printCastleMaze4();
         susNavigate(4,6);
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.RED + """
+                
+                Looks like you got a warranty on your head, isn't that right, Milford?
+                """ + ConsoleUtility.YELLOW);
+        wait(3);
+        ConsoleUtility.clearScreen();
         printCastleMaze5();
         navigateWithRisk(1, 3);
         return true; // stops start
