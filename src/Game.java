@@ -1598,7 +1598,25 @@ public class Game {
                 The large castle came into view. The moon rose behind it, casting an ominous shadow upon the large, ghastly structure.
                 The castle had beautifully carved and decorated dome tops, oscilating in yellow and black.
                 """);
-
+        wait(4);
+        System.out.println("""
+                
+                He entered the gigantic castle, the crystallized door sliding open by a crack.
+                As he walked inside, he noted how dark it was, except for occasional streams of moonlight which casted in.
+                Statues of angels and demons with wings and horns coveted the ceiling and walls.
+                In the center stood a statue of Lucifer with wings on his back, holding up a sword.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to shrug it off like a cool guy." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Milford walked up to the statue, eying it's detailed. The sword reflected moonlight, sparkling.
+                He looked at his Lancer and sighed, shaking his head. 
+                He heads up the staircase cautiously.
+                """);
         return true; // stops start
     } //end of start code
 
