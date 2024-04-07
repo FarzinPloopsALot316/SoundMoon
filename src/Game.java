@@ -1613,10 +1613,29 @@ public class Game {
         }
         System.out.println("""
                 
-                Milford walked up to the statue, eying it's detailed. The sword reflected moonlight, sparkling.
+                Milford walked up to the statue, eying it's detail. The sword reflected moonlight, sparkling.
                 He looked at his Lancer and sighed, shaking his head.
                 He heads up the staircase cautiously.
                 """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to shrug it off like a cool guy." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Navigate through the castle and find the target.
+                """);
+        printCastleMaze1();
+        susNavigate(6,3);
+        printCastleMaze2();
+        susNavigate(5,3);
+        printCastleMaze3();
+        susNavigate(4,0);
+        printCastleMaze4();
+        susNavigate(4,6);
+        printCastleMaze5();
+        navigateWithRisk(1, 3);
         return true; // stops start
     } //end of start code
 
