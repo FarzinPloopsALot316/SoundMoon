@@ -1614,7 +1614,7 @@ public class Game {
         System.out.println("""
                 
                 Milford walked up to the statue, eying it's detailed. The sword reflected moonlight, sparkling.
-                He looked at his Lancer and sighed, shaking his head. 
+                He looked at his Lancer and sighed, shaking his head.
                 He heads up the staircase cautiously.
                 """);
         return true; // stops start
@@ -1969,6 +1969,18 @@ public class Game {
         }
     }
 
+    public void printCastleMaze1() {
+        /* this is how it should be printed!
+        |||O|||
+        |||||||
+        |||||||
+        |||||||
+        |||||||
+        |||$|||
+        |||X|||
+        */
+    }
+
     private boolean navigate (int row, int col) {
         Scanner choice = new Scanner(System.in);
         String currentSymbol = "";
@@ -2122,7 +2134,12 @@ public class Game {
                         return true;
                     }
                     if (currentSymbol.equals("$")) {
-                        foodFind();
+                        int chance = (int) (Math.random() * 2) + 1;
+                        if (chance == 1) {
+                            foodFind();
+                        } else {
+                            weaponFind();
+                        }
                         return true;
                     }
                     if (currentSymbol.equals("|")) {
@@ -2158,7 +2175,12 @@ public class Game {
                         return true;
                     }
                     if (currentSymbol.equals("$")) {
-                        foodFind();
+                        int chance = (int) (Math.random() * 2) + 1;
+                        if (chance == 1) {
+                            foodFind();
+                        } else {
+                            weaponFind();
+                        }
                         return true;
                     }
                     if (currentSymbol.equals("|")) {
@@ -2197,7 +2219,12 @@ public class Game {
                         System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
                     }
                     if (currentSymbol.equals("$")) {
-                        foodFind();
+                        int chance = (int) (Math.random() * 2) + 1;
+                        if (chance == 1) {
+                            foodFind();
+                        } else {
+                            weaponFind();
+                        }
                         return true;
                     }
                     if (currentSymbol.equals("_")) {
@@ -2233,7 +2260,12 @@ public class Game {
                         System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
                     }
                     if (currentSymbol.equals("$")) {
-                        foodFind();
+                        int chance = (int) (Math.random() * 2) + 1;
+                        if (chance == 1) {
+                            foodFind();
+                        } else {
+                            weaponFind();
+                        }
                         return true;
                     }
                     if (currentSymbol.equals("_")) {
