@@ -2094,6 +2094,35 @@ public class Game {
         }
     }
 
+    public void printCastleMaze5() {
+        /* this is how it should be printed! RISK OF BLOWING UP!
+        $__O__$
+        ___X___
+        _______
+        _______
+        _______
+        _______
+        $_____$
+        */
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                maze[i][j] = new Space("_");
+            }
+        }
+        maze[1][3] = new Space("X");
+        maze[0][3] = new Space("O");
+        maze[0][0] = new Space("$");
+        maze[0][6] = new Space("$");
+        maze[6][0] = new Space("$");
+        maze[6][6] = new Space("$");
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                System.out.print(maze[i][j].getSymbol());
+            }
+            System.out.println();
+        }
+    }
+
     private boolean navigate (int row, int col) {
         Scanner choice = new Scanner(System.in);
         String currentSymbol = "";
