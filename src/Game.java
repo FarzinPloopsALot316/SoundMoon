@@ -1979,7 +1979,17 @@ public class Game {
         |||$|||
         |||X|||
         */
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                maze[i][j] = new Space("|");
+            }
+        }
+        maze[6][3] = new Space("X");
+        maze[5][3] = new Space("$");
+        maze[0][3] = new Space("O");
     }
+
+
 
     private boolean navigate (int row, int col) {
         Scanner choice = new Scanner(System.in);
