@@ -1657,7 +1657,30 @@ public class Game {
             inventory.clearWeaponsInv();
             player.setH(70);
         }
-
+        System.out.println("""
+                
+                He found his way through.
+                He heard the painful groans and growls of somebody. It most likely was who he was looking for.
+                "Show yourself," Milford called out. The sounds didn't stop.
+                The moonlight that seeped in through the cathedral windows of the castle started turning yellow.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue" + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                The light became a darker shade of yellow, and an eerie sound echoed through the walls of the castle.
+                "Oh god no.." Milford whispered to himself.
+                """);
+        wait(3);
+        System.out.println("""
+                
+                A howl echoed through shortly after, and Milford looked up to see a strong, muscular figure in the shadows.
+                He was tall and bulky, with long claws pertruding from his knuckles.
+                His yellow yellow glowed with an ominous aura which contrasted the shadows.
+                """);
         return true; // stops start
     } //end of start code
 
