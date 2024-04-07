@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="new mazes done" />
+    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="omg intellij is crashing HELPP">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_30_24,_2_41_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_30_24__2_41_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -233,7 +240,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712421831259</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="new mazes done">
+      <option name="closed" value="true" />
+      <created>1712423370985</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1712423370985</updated>
+    </task>
+    <task id="LOCAL-00025" summary="new mazes done">
+      <option name="closed" value="true" />
+      <created>1712426293630</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1712426293630</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -254,7 +277,8 @@
     <MESSAGE value="demo done" />
     <MESSAGE value="demo edited and complete" />
     <MESSAGE value="new mazes done" />
-    <option name="LAST_COMMIT_MESSAGE" value="new mazes done" />
+    <MESSAGE value="omg intellij is crashing" />
+    <option name="LAST_COMMIT_MESSAGE" value="omg intellij is crashing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

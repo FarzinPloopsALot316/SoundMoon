@@ -92,7 +92,7 @@ public class Game {
         System.out.println("He tries to find himself within the labrinyth of hallways.");
         System.out.println(ConsoleUtility.YELLOW + "Navigate through the labratory hallways. Your destination is O.");
         printMaze1();
-        if (navigate()) {
+        if (navigate(6, 0)) {
             System.out.println(ConsoleUtility.YELLOW + "After a while, he finds the door to the lobby.");
         }
         ConsoleUtility.clearScreen();
@@ -338,7 +338,7 @@ public class Game {
         }
         ohThatsCompletelyNormal();
         printMaze31stDivision();
-        if (navigateWithWeapons()) {
+        if (navigateWithWeapons(6, 0)) {
             System.out.println(ConsoleUtility.YELLOW + """
                     
                     He came to the end of the alleyway's path, finding a space between a bunch of heavily graffitied buildings.
@@ -670,7 +670,7 @@ public class Game {
         ConsoleUtility.clearScreen();
         System.out.println(ConsoleUtility.YELLOW + """
                 
-                It's not my fucking fault.
+                It's not my fault.
                 I was too weak, I couldn't do anything!
                 I was just a teacher. I really tried my best.
                 """);
@@ -730,28 +730,28 @@ public class Game {
                 """);
         lostInv.removeBrokenWeapon("Lancer");
         lostInv.printInv();
-        System.out.println(ConsoleUtility.PURPLE + "Current Health: " + lostPlayer.getH() + ConsoleUtility.YELLOW);
         lostPlayer.setH(10);
+        System.out.println(ConsoleUtility.PURPLE + "Current Health: " + lostPlayer.getH() + ConsoleUtility.YELLOW);
         printMazeVampLair();
-        boolean clearedRisky = navigateWithRisk();
+        boolean clearedRisky = navigateWithRisk(6, 0);
         while (!clearedRisky) {
             printMazeVampLair();
             System.out.println("Whatever bombs you found were lost.");
             lostInv.clearWeaponsInv();
             lostPlayer.setH(10);
-            clearedRisky = navigateWithRisk();
+            clearedRisky = navigateWithRisk(6, 0);
         }
         System.out.println("D.J. Khalid. Another one.");
         lostInv.printInv();
         System.out.println(ConsoleUtility.PURPLE + "Current Health: " + lostPlayer.getH() + ConsoleUtility.YELLOW);
         printMazeVampLair2();
-        boolean clearedRiskyAgain = navigateWithRisk();
+        boolean clearedRiskyAgain = navigateWithRisk(6, 0);
         while (!clearedRiskyAgain) {
             printMazeVampLair2();
             System.out.println("Whatever bombs you found were lost.");
             lostInv.clearWeaponsInv();
             lostPlayer.setH(10);
-            clearedRiskyAgain = navigateWithRisk();
+            clearedRiskyAgain = navigateWithRisk(6, 0);
         }
         wait2seconds();
         System.out.println(ConsoleUtility.YELLOW + """
@@ -1356,6 +1356,249 @@ public class Game {
                 "Wanna explain where you were while I was being kidnapped by lunatic vampires?"
                 """);
         }
+        wait(3);
+        System.out.println("""
+                
+                Dee chuckles. "I was just in town. My men were searching for you, and so was I."
+                "I found a suspicious building, entered it, and soon caught a glimpse of your battle with the boy."
+                "Good job for completing your task." She smiled.
+                "You always do what I ask of you."
+                """);
+        wait(3);
+        System.out.println("""
+                
+                The black cat meowed curiously, placing a paw on Dee's leg.
+                She scrunched her nose, disgusted. "Get off me, you filthy animal!"
+                She kicked the cat, who landed on the floor with a thud. It hissed, running away.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Milford remains silent.
+                She clears her throat, continuing. "Anyways, you're needed for an execution."
+                "Our target subject has been spotted at Meadow's Castle.
+                "You know of the great structure known to be home to the princess of werewolves, do you not?
+                """);
+        System.out.println(ConsoleUtility.GREEN + """
+                
+                a. I know of it.
+                b. What is it? (most preferable)
+                """ + ConsoleUtility.YELLOW);
+        userInput = "";
+        userInput = scan.nextLine();
+        if (userInput.equals("a")) {
+            System.out.println("""
+                
+                "I know of it."
+                "Dee nods. "Well then you should know where it is too."
+                """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue" + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+        } else {
+            System.out.println("""
+                
+                "What and where is that?" he asked.
+                Dee walked alongside Milford as she explained.
+                "Years ago, a royal family had a daughter, but they wanted a son and wasn't proud of her.
+                "The little princess was always hated by her father and mother.
+                "It was certain that she would never be a successful heir to the werewolf kingdom."
+                """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                
+                "When she grew up, she swore she would build an army and a castle of her own, to prove she was worth something."
+                "They doubted her, because she was alone, and was still exploring her powers as a feral werewolf."
+                "But soon, she was able to convert humans that stood in her way into her little militants."
+                "She built a castle upon a hilltop, which her slaves guarded."
+                "Her army grew day by day."
+                """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                
+                "Then, came the first Sound Moon ever recorded in the history of the world.
+                The moon turned a dark yellow. It emitted a sound that only werewolves could hear, that made only werewolves go berserk.
+                Her army became strong beasts upon that night. She waged war upon her own family.
+                It didn't take long to slaughter everybody in the royalty, detroying every structure under their name.
+                She became the new ruler of the land upon that night, and nobody ever dared to doubt, nor challenge, her strength again."
+                """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                
+                Dee's eyes darkned. "I aspire to hve power like her. Her story... inspires me, Milford."
+                She then chuckles, looking at Milford. "But enough of that."
+                "She died long ago, along with her army, so they're not the target I speak of."
+                """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+        }
+        System.out.println("""
+                
+                "Speaking of the Sound Moon..."
+                She looks up at the sky. "It has been 10 years."
+                "You know that it is expected to be this year again, do you not?"
+                Milford nodded.
+                """);
+        wait(3);
+        System.out.println("""
+                
+                The clouds swirled in the sky. The sun was beginning to set.
+                The sky was already getting darker.
+                She looked past the horizon. "Our target is of the werewolf species."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                "The man we are targeting isn't a joke. He's incredibly strong."
+                Dee continued. "Hes middle aged, around 51 I believe.
+                "He lost his son to the Sound Moon that happened 10 years ago."
+                Milford nodded. "I remember that night. I was quite busy taking out your orders."
+                "The Sound Moon drives werewolves insane by releasing a high pitched sound when it rises."
+                "It turns them into creatures that are three times their normal werewolf strength."
+                Dee nodded. "If that happens tonight, you're opponent will be very difficult to fight."
+                "He's dangerously strong, and needs to be put down."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                "The man we speak of used to be an English teacher.
+                On the night of the Sound Moon, everything was hectic, and the first thing he did was run home to protect his son.
+                But when he came home, he found the 8 year old's dead body being chewed out by a werewolf. He was too late.
+                He lost his mind after that night, and bloodshed was all he knew.
+                Towns were being ripped apart. People being swallowed whole by rabid beasts of hunger and destruction. The man was one of the rabid ones.
+                So many bodies torn and deceased, so much blood everywhere.
+                He disappeared after that dark yellow night, and my agents never found him after.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                "However, we recently traced down a strong source, coming all the way from that lonely castle up on the hill." Dee pointed at the hill.
+                "You need to go there and investigate. Kill whoever you see on sight."
+                Milford sighed. "Are you certain he's up there?"
+                Dee nodded.
+                "Fine. I'll go."
+                """);
+        wait2seconds();
+        System.out.println("""
+                
+                "Well you're most certainly not going up there without a vehicle."
+                Dee pointed at Milford's bike, which her men had dragged up here.
+                He nodded. "Thanks." He hopped on the bike. He didn't look at Dee.
+                She walked up to him. "Wait one second. Can I ask you something?"
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Milford nodded, looking at the bike's handle bars.
+                "Do you still have my back?" Dee questioned.
+                He nodded, but didn't face her when he did.
+                "I didn't have to kill that kid, Commander." He revved up his bike, driving off.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.PURPLE + "Teleporting..." + ConsoleUtility.YELLOW);
+        wait2seconds();
+        ConsoleUtility.clearScreen();
+        System.out.println("""
+                
+                The purple hue of the bike brightened the snow around him as he drove up the large hill.
+                Trees surrounded him, passing him by as he drove. The road was very bumpy and jagged.
+                """);
+        wait(3);
+        System.out.println("""
+                
+                After about 20 minutes of driving, the bike hits a pothole in the ground.
+                "CRAP-" The bike catapaults Milford forward like a cannonball.
+                He lands into the snow with a hard thud, rolling over.
+                He lies there, catching his breath.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to shrug it off like a cool guy." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                He gets on his knees, brushing the snow off of him.
+                The bike starts falling down the hill. It crashes into a tree, breaking apart.
+                He kneeled there, stunned.
+                A round squirrel, holding an acorn, stood there just as astounded as he.
+                """);
+        wait(4);
+        System.out.println("""
+                
+                He eyed the squirrel. "What do you want?"
+                It sat there dumbfoundedly, chewing on its acorn.
+                Milford groaned. "Guess I'm going on foot." The squirrel followed him.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to shrug it off like a cool guy." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Navigate through the woods to the castle.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Current Health: " + player.getH() + ConsoleUtility.YELLOW);
+        inventory.printInv();
+        printWoodsMaze1();
+        if (!navigateWithRisk(6, 3)) {
+            System.out.println("Whatever bombs you had were lost.");
+            inventory.clearWeaponsInv();
+            player.setH(100);
+        }
+        System.out.println(ConsoleUtility.PURPLE + "Current Health: " + player.getH() + ConsoleUtility.YELLOW);
+        inventory.printInv();
+        printWoodsMaze2();
+        navigate(6, 3);
+        System.out.println("""
+                
+                A large fog covered the top of the hill, but as Milford came closer, the fog slowly cleared.
+                The large castle came into view. The moon rose behind it, casting an ominous shadow upon the large, ghastly structure.
+                The castle had beautifully carved and decorated dome tops, oscilating in yellow and black.
+                """);
+
         return true; // stops start
     } //end of start code
 
@@ -1616,12 +1859,102 @@ public class Game {
         }
     }
 
-    private boolean navigate () {
+    public void printWoodsMaze1 () {
+        /* this is how the maze should be printed!
+        ___O___
+        _|_$_|$
+        _|||||_
+        _||||$_
+        ____|||
+        |||_|||
+        ||_X_||
+        */
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                maze[i][j] = new Space("|");
+            }
+        }
+        maze[6][3] = new Space("X");
+        maze[0][3] = new Space("O");
+        maze[6][2] = new Space("_");
+        maze[6][4] = new Space("_");
+        maze[5][3] = new Space("_");
+        maze[4][3] = new Space("_");
+        maze[4][2] = new Space("_");
+        maze[4][1] = new Space("_");
+        maze[4][0] = new Space("_");
+        maze[3][0] = new Space("_");
+        maze[2][0] = new Space("_");
+        maze[1][0] = new Space("_");
+        maze[0][0] = new Space("_");
+        maze[0][1] = new Space("_");
+        maze[0][2] = new Space("_");
+        maze[1][2] = new Space("_");
+        maze[1][3] = new Space("$");
+        maze[1][4] = new Space("_");
+        maze[0][4] = new Space("_");
+        maze[0][5] = new Space("_");
+        maze[0][6] = new Space("_");
+        maze[1][6] = new Space("$");
+        maze[2][6] = new Space("_");
+        maze[3][6] = new Space("_");
+        maze[3][5] = new Space("$");
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                System.out.print(maze[i][j].getSymbol());
+            }
+            System.out.println();
+        }
+    }
+
+    public void printWoodsMaze2 () {
+        /* this is how the maze should be printed!
+        ||_O_||
+        |||_|||
+        ||___||
+        $__|__$
+        ||___||
+        |||_|||
+        ||_X_||
+        */
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                maze[i][j] = new Space("|");
+            }
+        }
+        maze[6][3] = new Space("X");
+        maze[0][3] = new Space("O");
+        maze[6][2] = new Space("_");
+        maze[6][4] = new Space("_");
+        maze[6][2] = new Space("_");
+        maze[5][3] = new Space("_");
+        maze[4][2] = new Space("_");
+        maze[4][4] = new Space("_");
+        maze[4][3] = new Space("_");
+        maze[3][0] = new Space("$");
+        maze[3][6] = new Space("$");
+        maze[3][1] = new Space("_");
+        maze[3][2] = new Space("_");
+        maze[3][4] = new Space("_");
+        maze[3][5] = new Space("_");
+        maze[2][2] = new Space("_");
+        maze[2][4] = new Space("_");
+        maze[2][3] = new Space("_");
+        maze[1][3] = new Space("_");
+        maze[0][2] = new Space("_");
+        maze[0][4] = new Space("_");
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                System.out.print(maze[i][j].getSymbol());
+            }
+            System.out.println();
+        }
+    }
+
+    private boolean navigate (int row, int col) {
         Scanner choice = new Scanner(System.in);
         String currentSymbol = "";
         String userInput = "";
-        int row = 6;
-        int col = 0;
         System.out.println(ConsoleUtility.YELLOW + "Press wasd to navigate. Use lowercase letters.");
         System.out.println(ConsoleUtility.YELLOW + "w for up, a for left, s for down, d for right.");
         while (!currentSymbol.equals("O")) {
@@ -1914,12 +2247,10 @@ public class Game {
         return false;
     } //end of susNavigate
 
-    private boolean navigateWithRisk () {
+    private boolean navigateWithRisk (int row, int col) {
         Scanner choice = new Scanner(System.in);
         String currentSymbol = "";
         String userInput = "";
-        int row = 6;
-        int col = 0;
         System.out.println(ConsoleUtility.YELLOW + "Press wasd to navigate. Use lowercase letters.");
         System.out.println(ConsoleUtility.YELLOW + "w for up, a for left, s for down, d for right.");
         while (!currentSymbol.equals("O")) {
@@ -1935,8 +2266,8 @@ public class Game {
                     if (currentSymbol.equals("$")) {
                         int blowYourselfUp = (int) (Math.random() * 4) + 1;
                         if (blowYourselfUp == 1) {
-                            lostPlayer.loseH(5);
-                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 5 health.");
+                            lostPlayer.loseH(10);
+                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 10 health.");
                             maze[row - 1][col] = new Space("X");
                             maze[row][col] = new Space("_");
                             row -= 1;
@@ -2105,12 +2436,10 @@ public class Game {
         return false;
     }
 
-    private boolean navigateWithWeapons () {
+    private boolean navigateWithWeapons (int row, int col) {
         Scanner choice = new Scanner(System.in);
         String currentSymbol = "";
         String userInput = "";
-        int row = 6;
-        int col = 0;
         System.out.println(ConsoleUtility.YELLOW + "Press wasd to navigate. Use lowercase letters.");
         System.out.println(ConsoleUtility.YELLOW + "w for up, a for left, s for down, d for right.");
         while (!currentSymbol.equals("O")) {
