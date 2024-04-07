@@ -2058,6 +2058,42 @@ public class Game {
         }
     }
 
+    public void printCastleMaze4() {
+        /* this is how it should be printed!
+        |||O|||
+        |||$|||
+        |||_|||
+        |||_|||
+        ______X
+        |||_|||
+        |||_|||
+        */
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                maze[i][j] = new Space("|");
+            }
+        }
+        maze[4][6] = new Space("X");
+        maze[0][3] = new Space("O");
+        maze[1][3] = new Space("$");
+        maze[6][3] = new Space("_");
+        maze[5][3] = new Space("_");
+        maze[4][3] = new Space("_");
+        maze[4][2] = new Space("_");
+        maze[4][1] = new Space("_");
+        maze[4][0] = new Space("_");
+        maze[4][4] = new Space("_");
+        maze[4][5] = new Space("_");
+        maze[3][3] = new Space("_");
+        maze[2][3] = new Space("_");
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                System.out.print(maze[i][j].getSymbol());
+            }
+            System.out.println();
+        }
+    }
+
     private boolean navigate (int row, int col) {
         Scanner choice = new Scanner(System.in);
         String currentSymbol = "";
