@@ -858,6 +858,7 @@ public class Game {
             Weapons bomb = new Weapons("Bomb", 1, 25);
             inventory.addToWeaponsInv(bomb);
         }
+        lostInv.clearWeaponsInv();
         System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
         while (!userInput.equals("q")) {
@@ -1098,6 +1099,7 @@ public class Game {
         System.out.println(ConsoleUtility.RED + "YOU HAVE ONE SECOND TO FIRE BEFORE HE DODGES." + ConsoleUtility.YELLOW);
         waitASecond();
         System.out.println(ConsoleUtility.RED + "WHEN THE PROMPT COMES UP, PRESS THE RIGHT BUTTON! LOWERCASE!" + ConsoleUtility.YELLOW);
+        userInput = "";
         wait(4);
         int randomKey = (int) (Math.random() * 4) + 1;
         String key = "";
@@ -1433,7 +1435,7 @@ public class Game {
                 "Then, came the first Sound Moon ever recorded in the history of the world.
                 The moon turned a dark yellow. It emitted a sound that only werewolves could hear, that made only werewolves go berserk.
                 Her army became strong beasts upon that night. She waged war upon her own family.
-                It didn't take long to slaughter everybody in the royalty, detroying every structure under their name.
+                It didn't take long to slaughter everybody in the royalty, destroying every structure under their name.
                 She became the new ruler of the land upon that night, and nobody ever dared to doubt, nor challenge, her strength again."
                 """);
             System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
@@ -1443,7 +1445,7 @@ public class Game {
             }
             System.out.println("""
                 
-                Dee's eyes darkned. "I aspire to hve power like her. Her story... inspires me, Milford."
+                Dee's eyes darkned. "I aspire to have power like her. Her story... inspires me, Milford."
                 She then chuckles, looking at Milford. "But enough of that."
                 "She died long ago, along with her army, so they're not the target I speak of."
                 """);
@@ -1571,7 +1573,7 @@ public class Game {
                 It sat there dumbfoundedly, chewing on its acorn.
                 Milford groaned. "Guess I'm going on foot." The squirrel followed him.
                 """);
-        System.out.println(ConsoleUtility.PURPLE + "Press q to shrug it off like a cool guy." + ConsoleUtility.YELLOW);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
         while (!userInput.equals("q")) {
             userInput = scan.nextLine();
@@ -1583,7 +1585,7 @@ public class Game {
         System.out.println(ConsoleUtility.PURPLE + "Current Health: " + player.getH() + ConsoleUtility.YELLOW);
         inventory.printInv();
         printWoodsMaze1();
-        if (!navigateWithRisk(6, 3)) {
+        if (!navigateWithRiskPlayer(6, 3)) {
             System.out.println("Whatever bombs you had were lost.");
             inventory.clearWeaponsInv();
             player.setH(100);
@@ -1642,6 +1644,7 @@ public class Game {
         inventory.printInv();
         printCastleMaze4();
         susNavigate(4,6);
+        wait2seconds();
         ConsoleUtility.clearScreen();
         System.out.println(ConsoleUtility.RED + """
                 
@@ -1652,7 +1655,7 @@ public class Game {
         System.out.println(ConsoleUtility.PURPLE + "Current Health: " + player.getH() + ConsoleUtility.YELLOW);
         inventory.printInv();
         printCastleMaze5();
-        if (!navigateWithRisk(1, 3)) {
+        if (!navigateWithRiskPlayer(1, 3)) {
             System.out.println("Whatever bombs you had were lost.");
             inventory.clearWeaponsInv();
             player.setH(70);
@@ -1679,7 +1682,7 @@ public class Game {
                 
                 A howl echoed through shortly after, and Milford looked up to see a strong, muscular figure in the shadows.
                 He was tall and bulky, with long claws pertruding from his knuckles.
-                His yellow yellow glowed with an ominous aura which contrasted the shadows.
+                His yellow eyes glowed with an ominous aura which contrasted the shadows.
                 """);
         return true; // stops start
     } //end of start code
@@ -2520,7 +2523,7 @@ public class Game {
                         return true;
                     }
                     if (currentSymbol.equals("$")) {
-                        int blowYourselfUp = (int) (Math.random() * 4) + 1;
+                        int blowYourselfUp = (int) (Math.random() * 3) + 1;
                         if (blowYourselfUp == 1) {
                             lostPlayer.loseH(10);
                             System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 10 health.");
@@ -2563,10 +2566,10 @@ public class Game {
                         return true;
                     }
                     if (currentSymbol.equals("$")) {
-                        int blowYourselfUp = (int) (Math.random() * 4) + 1;
+                        int blowYourselfUp = (int) (Math.random() * 3) + 1;
                         if (blowYourselfUp == 1) {
-                            lostPlayer.loseH(5);
-                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 5 health.");
+                            lostPlayer.loseH(10);
+                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 10 health.");
                             maze[row][col - 1] = new Space("X");
                             maze[row][col] = new Space("_");
                             col -= 1;
@@ -2609,10 +2612,10 @@ public class Game {
                         System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
                     }
                     if (currentSymbol.equals("$")) {
-                        int blowYourselfUp = (int) (Math.random() * 4) + 1;
+                        int blowYourselfUp = (int) (Math.random() * 3) + 1;
                         if (blowYourselfUp == 1) {
-                            lostPlayer.loseH(5);
-                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 5 health.");
+                            lostPlayer.loseH(10);
+                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 10 health.");
                             maze[row][col + 1] = new Space("X");
                             maze[row][col] = new Space("_");
                             col += 1;
@@ -2652,10 +2655,10 @@ public class Game {
                         System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
                     }
                     if (currentSymbol.equals("$")) {
-                        int blowYourselfUp = (int) (Math.random() * 4) + 1;
+                        int blowYourselfUp = (int) (Math.random() * 3) + 1;
                         if (blowYourselfUp == 1) {
-                            lostPlayer.loseH(5);
-                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 5 health.");
+                            lostPlayer.loseH(10);
+                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 10 health.");
                             maze[row + 1][col] = new Space("X");
                             maze[row][col] = new Space("_");
                             row += 1;
@@ -2691,6 +2694,196 @@ public class Game {
         }
         return false;
     }
+
+    private boolean navigateWithRiskPlayer (int row, int col) {
+        Scanner choice = new Scanner(System.in);
+        String currentSymbol = "";
+        String userInput = "";
+        System.out.println(ConsoleUtility.YELLOW + "Press wasd to navigate. Use lowercase letters.");
+        System.out.println(ConsoleUtility.YELLOW + "w for up, a for left, s for down, d for right.");
+        while (!currentSymbol.equals("O")) {
+            userInput = choice.nextLine();
+            if (userInput.equals("w")) { //if user chooses to go UP by 1.
+                if (row - 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row - 1][col].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("$")) {
+                        int blowYourselfUp = (int) (Math.random() * 3) + 1;
+                        if (blowYourselfUp == 1) {
+                            player.loseH(10);
+                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 10 health.");
+                            maze[row - 1][col] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            row -= 1;
+                            if (checkIfDead(player.getH())) {
+                                System.out.println("YOU DIED.");
+                                return false;
+                            }
+                        } else {
+                            bombFindPLayer();
+                            maze[row - 1][col] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            row -= 1;
+                        }
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row - 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row -= 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            } // end of UP decision code
+            if (userInput.equals("a")) { //if user chooses to go LEFT by 1.
+                if (col - 1 < 0) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row][col - 1].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("$")) {
+                        int blowYourselfUp = (int) (Math.random() * 3) + 1;
+                        if (blowYourselfUp == 1) {
+                            player.loseH(10);
+                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 10 health.");
+                            maze[row][col - 1] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            col -= 1;
+                            if (checkIfDead(player.getH())) {
+                                System.out.println("YOU DIED.");
+                                return false;
+                            }
+                        } else {
+                            bombFindPLayer();
+                            maze[row][col - 1] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            col -= 1;
+                        }
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row][col - 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col -= 1;
+                    }
+                } //end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            } // end of LEFT decision code
+            if (userInput.equals("d")) { //if user chooses to go RIGHT by 1.
+                if (col + 1 > 6) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row][col + 1].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("$")) {
+                        int blowYourselfUp = (int) (Math.random() * 3) + 1;
+                        if (blowYourselfUp == 1) {
+                            player.loseH(10);
+                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 10 health.");
+                            maze[row][col + 1] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            col += 1;
+                            if (checkIfDead(player.getH())) {
+                                System.out.println("YOU DIED.");
+                                return false;
+                            }
+                        } else {
+                            bombFindPLayer();
+                            maze[row][col + 1] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            col += 1;
+                        }
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row][col + 1] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        col += 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            }
+            if (userInput.equals("s")) { //if user chooses to go DOWN by 1.
+                if (row + 1 > 6) { // if user is along the edge of the maze and surpasses it.
+                    System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border!");
+                } else {
+                    currentSymbol = maze[row + 1][col].getSymbol();
+                    if (currentSymbol.equals("O")) {
+                        return true;
+                    }
+                    if (currentSymbol.equals("|")) {
+                        System.out.println(ConsoleUtility.YELLOW + "You cannot cross this border! (|)");
+                    }
+                    if (currentSymbol.equals("$")) {
+                        int blowYourselfUp = (int) (Math.random() * 3) + 1;
+                        if (blowYourselfUp == 1) {
+                            player.loseH(10);
+                            System.out.println(ConsoleUtility.YELLOW + "You stepped on a landmine and lost 10 health.");
+                            maze[row + 1][col] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            row += 1;
+                            if (checkIfDead(player.getH())) {
+                                System.out.println("YOU DIED.");
+                                return false;
+                            }
+                        } else {
+                            bombFindPLayer();
+                            maze[row + 1][col] = new Space("X");
+                            maze[row][col] = new Space("_");
+                            row += 1;
+                        }
+                    }
+                    if (currentSymbol.equals("_")) {
+                        maze[row + 1][col] = new Space("X");
+                        maze[row][col] = new Space("_");
+                        row += 1;
+                    }
+                } // end of else code
+                for (int i = 0; i < maze.length; i++) { //print out result maze
+                    for (int j = 0; j < maze.length; j++) {
+                        System.out.print(maze[i][j].getSymbol());
+                    }
+                    System.out.println();
+                }
+            }
+            if (!(userInput.equals("w") || userInput.equals("a") || userInput.equals("s") || userInput.equals("d"))) {
+                System.out.println("INVALID INPUT.");
+                System.out.println(ConsoleUtility.YELLOW + "Press wasd to navigate. USE LOWERCASE LETTERS.");
+                System.out.println(ConsoleUtility.YELLOW + "w for up, a for left, s for down, d for right.");
+            }
+        }
+        return false;
+    }
+
 
     private boolean navigateWithWeapons (int row, int col) {
         Scanner choice = new Scanner(System.in);
@@ -2869,6 +3062,20 @@ public class Game {
     }
 
     public void bombFind () {
+        int chance = (int) (Math.random() * 4) + 1;
+        if (chance <= 2) {
+            System.out.println("You quicken your gaze towards the ground to see a round explosive on the floor by luck.");
+            wait2seconds();
+            Weapons bigBoomThingy = new Weapons("Bomb", 1, 25);
+            System.out.println(lostInv.addToWeaponsInv(bigBoomThingy));
+        } else {
+            System.out.println("You thought your eyes were deceiving you, but you take a second look and see that...");
+            wait(2);
+            System.out.println("Nope sorry. You thought you saw something, but it was just a shiny piece of dust.");
+        }
+    }
+
+    public void bombFindPLayer () {
         int chance = (int) (Math.random() * 4) + 1;
         if (chance <= 2) {
             System.out.println("You quicken your gaze towards the ground to see a round explosive on the floor by luck.");

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="updated Game">
+    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="minor story update, approaching the end.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -291,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712514722630</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="minor story update, approaching the end.">
+      <option name="closed" value="true" />
+      <created>1712515468289</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1712515468289</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -317,7 +327,8 @@
     <MESSAGE value="susNavigate updated for castle mazes." />
     <MESSAGE value="printCastleMaze1" />
     <MESSAGE value="updated Game" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated Game" />
+    <MESSAGE value="minor story update, approaching the end." />
+    <option name="LAST_COMMIT_MESSAGE" value="minor story update, approaching the end." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
