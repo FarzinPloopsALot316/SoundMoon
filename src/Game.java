@@ -1124,6 +1124,8 @@ public class Game {
         int diff = (int) (end - start) / 1000;
         boolean lose20 = false; // will reduce Markam's initial health by 20 if player shot in time.
         if (diff == 1 || diff == 0) {
+            System.out.println(ConsoleUtility.GREEN + "YOU ATTACKED IN TIME." + ConsoleUtility.YELLOW);
+            waitASecond();
             System.out.println("""
                     
                     Markam winces from the bullet piercing just above his heart.
@@ -1132,6 +1134,8 @@ public class Game {
                     """);
             lose20 = true;
         } else {
+            System.out.println(ConsoleUtility.GREEN + "YOU WERE TOO LATE!" + ConsoleUtility.YELLOW);
+            waitASecond();
             System.out.println("""
                     
                     Markam deflects the bullet with his cape, pouncing back, ready to fight.
@@ -1684,6 +1688,171 @@ public class Game {
                 He was tall and bulky, with long claws pertruding from his knuckles.
                 His yellow eyes glowed with an ominous aura which contrasted the shadows.
                 """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue" + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                "What brings you to me?.."
+                Milford stands guard, his armor clicking with current.
+                "Oh... her henchmen.." His eyes softened. "She lies to you, young one."
+                "Silence." Milford barked. "Hold your hands up and surrender."
+                """);
+        wait(4);
+        System.out.println("""
+                
+                "Please... I am not what you should be targetting."
+                "The Sound Moon is a scheme created by the government."
+                The man pointed at the dark, yellow moon through the window.
+                "That is a ploy to kill your kind! To control the human population!"
+                Milford shook his head. "Shut up. Enough with this. I'm finishing you."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue" + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                "You have to listen to me! Tell others," the man yelled.
+                The eerie tune grew louder. The full yellow moon now rose completely through the window.
+                The man groaned, grabbing his head. "Get away!"
+                "I have no intention to fight you! Leave me be, alone in this abandoned castle!"
+                "I don't want to kill anybody!!"
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue" + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Milford grabbed his Lancer, dashing towards him with incredible speed.
+                """);
+        boolean dodgeCleared = false;
+        boolean lose50 = false;
+        while (!dodgeCleared) {
+            System.out.println(ConsoleUtility.RED + "YOU HAVE ONE SECOND TO STAB HIM BEFORE HE HARMS YOU." + ConsoleUtility.YELLOW);
+            waitASecond();
+            System.out.println(ConsoleUtility.RED + "WHEN THE PROMPT COMES UP, PRESS THE RIGHT BUTTON! LOWERCASE!" + ConsoleUtility.YELLOW);
+            userInput = "";
+            wait(4);
+            randomKey = (int) (Math.random() * 4) + 1;
+            key = "";
+            if (randomKey == 1) {
+                key = "q";
+            } else if (randomKey == 2) {
+                key = "z";
+            } else if (randomKey == 3) {
+                key = "m";
+            } else if (randomKey == 4) {
+                key = "p";
+            }
+            System.out.println("PRESS " + key);
+            start = System.currentTimeMillis();
+            while (!(userInput.equals(key))) {
+                userInput = scan.nextLine();
+                if (!userInput.equals(key)) {
+                    System.out.println(ConsoleUtility.RED + "WRONG INPUT!!" + ConsoleUtility.CYAN);
+                }
+            }
+            end = System.currentTimeMillis();
+            diff = (int) (end - start) / 1000;
+            if (diff < 1) {
+                System.out.println(ConsoleUtility.GREEN + "YOU ATTACKED IN TIME." + ConsoleUtility.YELLOW);
+                waitASecond();
+                System.out.println("""
+                        
+                        The werewolf hollers in pain.
+                        He dropped to the ground as he clutched the sword Milford stabbed into his stomach.
+                        Milford pulls it out abruptly, blood flowing down. The werewolf kneeled there, groaning.
+                        "Please! I don't want to fight you!.."
+                        """);
+                lose50 = true;
+                dodgeCleared = true;
+            } else {
+                System.out.println(ConsoleUtility.RED + "YOU WERE TOO LATE!" + ConsoleUtility.YELLOW);
+                waitASecond();
+                System.out.println("""
+                        
+                        The werewolf grabs him, piercing his claws into his stomach.
+                        Milford yells in grief and pain as he pulls his claws back out, dropping him onto the floor.
+                        He was on his fours, coughing as blood poured from his wound.
+                        "I don't want to fight you!" The man hollered.
+                        """);
+                wait2seconds();
+                dodgeCleared = true;
+                player.loseH(20);
+                if (checkIfDead(player.getH())) {
+                    System.out.println(ConsoleUtility.PURPLE + "YOU DIED. TRY AGAIN." + ConsoleUtility.YELLOW);
+                    dodgeCleared = false;
+                    player.setH(20);
+                    System.out.println(ConsoleUtility.PURPLE + "Press q to continue" + ConsoleUtility.YELLOW);
+                    userInput = scan.nextLine();
+                    while (!userInput.equals("q")) {
+                        userInput = scan.nextLine();
+                    }
+                }
+            }
+        }
+        if (lose50) {
+            System.out.println("""
+                    
+                    The man roared, his head twitching. He grabbed his head.
+                    "No! No! Stop the music! The sound! It won't stop!"
+                    The man twitched one last time, his arms falling to his side.
+                    A low growl eminated from him. He looked at Milford, his yellow eyes hungry.
+                    Milford got the Lancer ready.
+                    """);
+        } else {
+            System.out.println("""
+                    
+                    Milford sat there, grabbing his wound, kneeling over.
+                    "Agh!! Hngh!..." He groaned in pain.
+                    The werewolf raised his claws, roaring, gripping onto his head.
+                    "No! No! Stop the music! The sound! It won't stop!" the man yelled.
+                    He twitched one last time, his arms falling to his side.
+                    A low growl eminated from him. He looked at Milford, his yellow eyes hungry.
+                    Standing up, Milford got the Lancer ready.
+                    """);
+        }
+        System.out.println(ConsoleUtility.PURPLE + "Press q to begin battle." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.PURPLE + "Beginning battle..." + ConsoleUtility.YELLOW);
+        wait2seconds();
+        ConsoleUtility.clearScreen();
+        if (lose50) {
+            boolean clearedWolf = bossFight(200, 18); //250, 18
+            while (!clearedWolf) {
+                player.addH(100);
+                System.out.println(ConsoleUtility.PURPLE + "You died. Press q to restart." + ConsoleUtility.YELLOW);
+                userInput = scan.nextLine();
+                while (!userInput.equals("q")) {
+                    userInput = scan.nextLine();
+                }
+                clearedWolf = bossFight(200, 18);
+            }
+            player.setH(100);
+        } else {
+            boolean clearedWolf = bossFight(250, 20); //300, 20
+            while (!clearedWolf) {
+                player.addH(100);
+                System.out.println(ConsoleUtility.PURPLE + "You died. Press q to restart." + ConsoleUtility.YELLOW);
+                userInput = scan.nextLine();
+                while (!userInput.equals("q")) {
+                    userInput = scan.nextLine();
+                }
+                clearedWolf = bossFight(250, 20);
+            }
+            player.setH(100);
+        }
+        System.out.println(ConsoleUtility.YELLOW + "You have completed the battle!");
+        wait2seconds();
         return true; // stops start
     } //end of start code
 
@@ -3159,9 +3328,9 @@ public class Game {
                 }
             } else if (userInput.equals("r")) { //Prowler
                 Weapons wantedWeapon = inventory.requestedWeapon("Prowler");
-                int hitOrMiss = (int) (Math.random() * 2) + 1; //On the Prowler, there's more of a chance of missing.
-                if (hitOrMiss == 1) {
-                    int powerfulBlow = (int) (Math.random() * 6) + 1;
+                int hitOrMiss = (int) (Math.random() * 3) + 1;
+                if (hitOrMiss == 1 || hitOrMiss == 2) {
+                    int powerfulBlow = (int) (Math.random() * 5) + 1;
                     if (powerfulBlow == 1) {
                         System.out.println("A faint hum grew in vibration from the rim of the blade...");
                         wait2seconds();
