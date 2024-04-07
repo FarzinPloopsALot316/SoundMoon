@@ -1606,7 +1606,7 @@ public class Game {
                 Statues of angels and demons with wings and horns coveted the ceiling and walls.
                 In the center stood a statue of Lucifer with wings on his back, holding up a sword.
                 """);
-        System.out.println(ConsoleUtility.PURPLE + "Press q to shrug it off like a cool guy." + ConsoleUtility.YELLOW);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue" + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
         while (!userInput.equals("q")) {
             userInput = scan.nextLine();
@@ -1617,7 +1617,7 @@ public class Game {
                 He looked at his Lancer and sighed, shaking his head.
                 He heads up the staircase cautiously.
                 """);
-        System.out.println(ConsoleUtility.PURPLE + "Press q to shrug it off like a cool guy." + ConsoleUtility.YELLOW);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue" + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
         while (!userInput.equals("q")) {
             userInput = scan.nextLine();
@@ -1626,12 +1626,20 @@ public class Game {
                 
                 Navigate through the castle and find the target.
                 """);
+        System.out.println(ConsoleUtility.PURPLE + "Current Health: " + player.getH() + ConsoleUtility.YELLOW);
+        inventory.printInv();
         printCastleMaze1();
         susNavigate(6,3);
+        System.out.println(ConsoleUtility.PURPLE + "Current Health: " + player.getH() + ConsoleUtility.YELLOW);
+        inventory.printInv();
         printCastleMaze2();
         susNavigate(5,3);
+        System.out.println(ConsoleUtility.PURPLE + "Current Health: " + player.getH() + ConsoleUtility.YELLOW);
+        inventory.printInv();
         printCastleMaze3();
         susNavigate(4,0);
+        System.out.println(ConsoleUtility.PURPLE + "Current Health: " + player.getH() + ConsoleUtility.YELLOW);
+        inventory.printInv();
         printCastleMaze4();
         susNavigate(4,6);
         ConsoleUtility.clearScreen();
@@ -1641,8 +1649,15 @@ public class Game {
                 """ + ConsoleUtility.YELLOW);
         wait(3);
         ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.PURPLE + "Current Health: " + player.getH() + ConsoleUtility.YELLOW);
+        inventory.printInv();
         printCastleMaze5();
-        navigateWithRisk(1, 3);
+        if (!navigateWithRisk(1, 3)) {
+            System.out.println("Whatever bombs you had were lost.");
+            inventory.clearWeaponsInv();
+            player.setH(70);
+        }
+
         return true; // stops start
     } //end of start code
 
