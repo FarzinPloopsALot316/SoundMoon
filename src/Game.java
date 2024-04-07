@@ -1987,6 +1987,12 @@ public class Game {
         maze[6][3] = new Space("X");
         maze[5][3] = new Space("$");
         maze[0][3] = new Space("O");
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                System.out.print(maze[i][j].getSymbol());
+            }
+            System.out.println();
+        }
     }
 
 
