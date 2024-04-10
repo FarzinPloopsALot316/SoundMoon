@@ -1,5 +1,6 @@
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.logging.ConsoleHandler;
 
 public class Game {
     private Space[][] maze = new Space[7][7];
@@ -1826,11 +1827,13 @@ public class Game {
         System.out.println(ConsoleUtility.PURPLE + "Beginning battle..." + ConsoleUtility.YELLOW);
         wait2seconds();
         ConsoleUtility.clearScreen();
+        int deaths = 0;
         if (lose50) {
             boolean clearedWolf = bossFight(200, 18); //250, 18
             while (!clearedWolf) {
                 player.addH(100);
                 System.out.println(ConsoleUtility.PURPLE + "You died. Press q to restart." + ConsoleUtility.YELLOW);
+                deaths++;
                 userInput = scan.nextLine();
                 while (!userInput.equals("q")) {
                     userInput = scan.nextLine();
@@ -1843,6 +1846,7 @@ public class Game {
             while (!clearedWolf) {
                 player.addH(100);
                 System.out.println(ConsoleUtility.PURPLE + "You died. Press q to restart." + ConsoleUtility.YELLOW);
+                deaths++;
                 userInput = scan.nextLine();
                 while (!userInput.equals("q")) {
                     userInput = scan.nextLine();
@@ -1851,8 +1855,253 @@ public class Game {
             }
             player.setH(100);
         }
-        System.out.println(ConsoleUtility.YELLOW + "You have completed the battle!");
+        waitASecond();
+        System.out.println(ConsoleUtility.YELLOW + "The werewolf had fallen!");
+        System.out.println(ConsoleUtility.YELLOW + "You have completed this battle with " + ConsoleUtility.RED + deaths + ConsoleUtility.YELLOW +" deaths!");
         wait2seconds();
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        waitASecond();
+        ConsoleUtility.clearScreen();
+        System.out.println("""
+                
+                He roared as Milford punctured him with his sword.
+                The werewolf stumbled backwards, his steps haphazardly uneven.
+                """);
+        wait2seconds();
+        System.out.println("""
+                
+                He collapsed onto the ground, burns and wounds on his body.
+                As he caught his breath, he was slowly returning to a more human-like form, due to a loss in his energy.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                "I miss my son." He coughed. "I wished I could have helped him."
+                Milford stood there, listening.
+                """);
+        wait2seconds();
+        System.out.println("""
+                
+                "He was an innocent boy. He loved dogs and loved space," said the man in hoarse chuckles.
+                "I just wanted to be a good father, but I knew I could never be one."
+                "I could never be the father he wanted."
+                "The nice, human father who didn't sneak out at night to buy placebo pills for my... condition, if you'd call it that."
+                He looked at the claws on his knuckles.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Milford walked to him. However, instead of silencing him with a finishing move, he sat down next to him.
+                He didn't raise a single finger. He heard him speak his last words.
+                "My son always got bullied in school." the man whispered.
+                "'You got a daddy who's different, you got a daddy who's a monster.'"
+                """);
+        wait2seconds();
+        System.out.println("""
+                
+                He always came home crying, and crying.
+                He loved me, but I know he wished sometimes I was different.
+                "I worked hard as a teacher for a salary, living off water and no human meat, weakening myself."
+                "All because I wanted to be better for him. I don't want him to see his father as a killer."
+                """);
+        wait(3);
+        System.out.println(ConsoleUtility.GREEN + """
+                
+                - B AND C REQUIRE A LOT OF READING, SO THERE ARE SUMMARIES YOU CAN CHOOSE TO READ AFTER THE GAME ENDS. -
+                - YOU CAN PRESS A AND GO STRAIGHT TO THE REMAINING DIALOGUE -
+                
+                a. (Remain silent, skips backstories and gets straight to dialogue)
+                b. Could you tell me what happened that night? (Tells about the man's backstory)
+                c. I understand too. (Explains Milford's backstory, most preferred)
+                """ + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        if (userInput.equals("b")) {
+            System.out.println("""
+                
+                He looked at the gothic textures and statues of the castle ceiling, breathing in hoarse breaths.
+                Milford was coughing, realizing his chest was burning again, his throat feeling as if it was aflame.
+                """);
+            wait2seconds();
+            System.out.println("""
+                
+                "At night, on full moons, I purchase these pills from third parties."
+                "I sneak out, without my son knowing. The pills keep me from... turning."
+                But on the night of the Sound Moon, the Moon turned yellow and...
+                """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                
+                "Nobody knew. The Sound Moon never really has a specific date.
+                It happens every 10 years, but that night, it struck like a silent bullet train.
+                I was outside, looking for my 'clients', but they were nowhere.
+                It didn't take long for this... sound to echo through my head....
+                Like a broken record screeching a vulgar tune.."
+                """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                
+                "I was outside when it happened. The disguised couldn't stay disguised anymore.
+                Some already began to go berserk, turning and killing anybody on spot.
+                It didn't take long for chaos to break out. People ran. Shops and cars were overturned.
+                Bodies began to turn into food. Werewolves tearing everybody into pieces.
+                """);
+            wait(4);
+            System.out.println("""
+                
+                "I ran home to my house, hollering for my son first thing.
+                I found our dog dead on the doorsteps, claw marks on his pelt.
+                When I ran to my bedroom, I saw.."
+                His voice trembled.
+                "I saw my son on the floor. Something was already feasting on his intestines..."
+                """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                
+                "I don't know what finally turned me into a beast... but I can assure you.. it wasn't hunger."
+                He clenched his fists. "Rage. Revenge. Anger. Remorse."
+                "I killed him with my own hands, and all I saw was yellow, yellow with occasional blood red."
+                "I killed everything on sight that night."
+                """);
+            wait(3);
+            System.out.println("""
+                
+                The man looked at the floor. They both stayed silent for a few seconds before the man spoke up.
+                "Son... we both got blood on our hands."
+                "You chose power to feel useful. I chose revenge to feel useful."
+                "But, we ain't monsters because we kill. We're monsters for the mentality we set in ourselves."
+                """);
+            wait(4);
+        } else if (userInput.equals("c")) {
+            System.out.println("""
+                
+                Milford was coughing, realizing his chest was burning again, his throat feeling as if it was aflame.
+                He settles down looking at the man with tired eyes. "I understand too."
+                The man looked at him. "Son.."
+                He struggles to lean himself up. "I want to know your story."
+                Milford looked at him, then looked back down at the floor. "Well.."
+                "I used to be nice, believed that the world was a place for hope, believed that goodness was still alive."
+                """);
+            wait(4);
+            System.out.println("""
+                
+                "But, a year before that Sound Moon that devestated the both of us.."
+                Back when I was human.. before I got my surgical powers to become this lightning mutant..
+                An agency sent an assigned group of vampires to attack the building."
+                That is the agency I work for today. The Vengeance Agency."
+                """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                
+                "I tried to protect whoever I could, but I watched so many people die, not being able to defend everybody.
+                Young teenagers were being killed, their blood taken by merciless vampires.
+                All I could do was hold them off, kill a few with a sharp stick.
+                I blame myself."
+                """);
+            wait(3);
+            System.out.println("""
+                
+                "Turns out the leader was looking for a perfect test subject for her new weapon.
+                Seeing how many I managed to kill, she thought I was the best material.
+                They took me away while I lay unconcious, using werewolf type technology to enhance my abilities.
+                To sharpen my speed, and to test a new field of weapons study: electrical arsenal."
+                """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                
+                "My leader and commander, Dee, she turned me from a kind hearted man to a brutal vigilante.
+                Nights I spent grueling through her painful training regiments... torturing myself.
+                Even after I fully mastered my powers, I can still feel myself frying inside out.
+                My body feels like it's on fire. My muscles prickle with pain.
+                I mean, I can't even tell you the number of times my heart gave out, or a key organ in me failed.
+                The amount of surgeries. This armor. It's all what's helping me stay alive.
+                """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                
+                Milford wanted to hide it, but a tear fell down from his yellow and blue eyes.
+                He took off his glasses. He put down his weapon by his side.
+                "All because I feel the burden of those kids in my heart. I just want to do better for them."
+                """);
+            System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+            userInput = scan.nextLine();
+            while (!userInput.equals("q")) {
+                userInput = scan.nextLine();
+            }
+            System.out.println("""
+                
+                "I don't care about myself anymore. I don't care what happens anymore."
+                "I've lost my sense of reasoning many moons ago."
+                "I'm not a dignified man anymore, sir."
+                Milford trembled, coughing his words.
+                The man looked at Milford, listening to him calmly. Milford continued.
+                "I'm no worse of a killer than any werewolf nor vampire."
+                """);
+            wait(4);
+            System.out.println("""
+                
+                The man looked at the floor. They both stayed silent for a few seconds before the man spoke up.
+                "Son... we both got blood on our hands."
+                "You chose power to feel useful. I chose revenge to feel useful."
+                "But, we ain't monsters because we kill. We're monsters for the mentality we set in ourselves."
+                """);
+        } else {
+            System.out.println("""
+                
+                Milford nodded, remaining silent.
+                """);
+            waitASecond();
+            System.out.println("""
+                
+                The man looked at the floor. They both stayed silent for a few seconds before the man spoke up.
+                "Son... we both got blood on our hands."
+                "You chose power to feel useful. I chose revenge to feel useful."
+                "But, we ain't monsters because we kill. We're monsters for the mentality we set in ourselves."
+                """);
+        }
+        wait(4);
+        System.out.println("""
+                
+                "We turned into monsters because we believed it was the right way to set things right."
+                He watched the colors of the colored cathedral glass dance under the moonlight rays which shined through.
+                
+                """);
+
         return true; // stops start
     } //end of start code
 
