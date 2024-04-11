@@ -2236,7 +2236,7 @@ public class Game {
                 2. Vengeance Agency, as well as Voltage Agents / Voltage powers.
                 3. The werewolf's back story (from the castle).
                 4. Markam and Riyun's backstory.
-                5. The Sound Moon.
+                5. The Sound Moon. (VERY IMPORTANT)
                 6. Werewolves.
                 7. Vampires.
                 8. The odd ghost Milford runs into back at the vampires' lair (from the "?" symbol).
@@ -2256,7 +2256,7 @@ public class Game {
                         Personality: Rude, cunning, and quiet. Merciless to his enemies, but has a kind heart for animals and innocent children.
                         Alive or dead?: DEAD
                         Cause Of Death (if applicable): Heart damage.
-                        (FOR THE LOVE OF GOD, THIS ISN'T MR. MILLER!! WHY ON EARTH WOULD IT BE MR. MILLER??)
+                        (FOR THE LOVE OF GOD, THIS ISN'T MR. MILLER!!)
                         
                         Milford used to be a teacher 10 years ago, until his school was attacked by vampires.
                         He tried his best to fight off as many of the vampires as he could while trying to protect everybody.
@@ -2370,9 +2370,10 @@ public class Game {
                         The town eventually falls apart years after Markam's death.
                         """);
             } else if (userInput == 5) {
+                waitASecond();
                 System.out.println("""
                         
-                        The Sound Moon is an astronomical occurence that takes place every 10 years, altering the vision of the moon.
+                        The Sound Moon is an astronomical occurence that takes place every 10 years, altering the vision of the full moon.
                         During the Sound Moon, the moon is filtered in the sky to appear as a dark yellow, a color which visually disturbs the common werewolf.
                         To add to this, an unsettling sound wave is constantly released, which tempers with the nerves in a werewolf to make them physically hostile and violent.
                         This leads to the violent killing of humans and vampires, which helps to control the growing population.
@@ -2385,7 +2386,7 @@ public class Game {
                         Werewolves were also a creation of the government, used as assets that were vulnerable to the Sound Moon.
                         Using solar technology and satellites, the color filter and the sound waves alter the vision of the full moon, and thus, makes werewolves go insane.
                         The world slowly descends into chaos, but the human population begins to diminish as a result.
-                        Here is a sample warning that aired on public television in the U.S. district on June 21, 2074.
+                        Here is a sample warning that aired on public television in the U.S. district on June 21, 2074:
                         """);
                 wait(5);
                 System.out.println(ConsoleUtility.RED + """
@@ -2410,14 +2411,60 @@ public class Game {
                         
                         THE UNITED STATES MILITARY, AND THE VENGEANCE AGENCY, WILL SEND RESCUE AND AID SOON.
                         STAY STRONG AND VIGILANT. MAY GOD BLESS AMERICA AND IT'S PEOPLE.
-                        """);
+                        """ + ConsoleUtility.PURPLE);
                 waitASecond();
             } else if (userInput == 6) {
                 waitASecond();
+                System.out.println("""
+                        
+                        Werewolves are a species that were biologically invented by the government to control the human population.
+                        These unholy beasts require the nutrients of human meat in order to live, and have abilities that make them 10x more stronger than the average human.
+                        Every full moon, what may seem like a perfectly normal human will turn into a werewolf, killing anybody to sustain it's hunger.
+                        The more hungry it is, the more dangerous and desperate it becomes, and the more harder it is to control it's turning.
+                        Werewolves can also feast on vampires, but their main nutrition comes from humans. Some placebo pills can numb the effects on full moons, but it gradually becomes harder to control.
+                        Werewolves are human carnivores, and therefore cannot rely on vegetation nor human food for survival, only water.
+                        Werewolves are vulnerable to the sound and visual affects of the Sound Moon, and turn several times more powerful and hostile on these nights.
+                        """);
             } else if (userInput == 7) {
                 waitASecond();
+                System.out.println("""
+                        
+                        Vampires are an ENDANGERED species. They were not biologically created by the government and are a natural species that co-exist with humans.
+                        They usually have very long nails meant for slicing and mincing meat, as well as red eyes for better visibility.
+                        They are like bats, and also rely on echolocation to communicate with others.
+                        They are incredibly fast and viscous, and are much more immune to injuries that would otherwise be fatal for a human.
+                        They rely on human blood for nutrition, but they won't necessarily DIE without it (they will just turn incredibly weak and fragile).
+                        However, vampires can die from two things: sunlight and a stab to the heart.
+                        The Sun, vampire hunting, and human sonar technology that alter sounds waves are the main reasons why the species is nearly extinct.
+                        """);
             } else if (userInput == 8) {
                 waitASecond();
+                System.out.println("""
+                        
+                        Character Name: Priscilla
+                        Age: N/A
+                        Height: Appears to be 5'8
+                        Species: Human
+                        Appearance: Pale skinned female, brown hair and green eyes (according to Milford's hallucination).
+                        Personality: Solemn and nostalgic, all she cares about is Milford.
+                        Alive or dead?: Alive.
+                        Cause Of Death (if applicable): N/A
+                        
+                        5 years ago, Priscilla used to be a partner who worked with Milford.
+                        Dee hired her to record the affects and abilities of Milford power as she went with him on invasions.
+                        It's clear that she eventually harbors a love interest and deep care for Milford, but Milford's feelings of her is yet undetermined.
+                        It is unclear whether the two actually had a romantic companionship or not, but Dee soon learns of Priscilla's crush, firing her from her duties.
+                        The two are soon seperated, and Milford, who usually hates everybody, suprisingly tends to miss her.
+                        """);
+                wait(5);
+                System.out.println("""
+                        
+                        They never got into contact after their seperation, and there is no news of her nor her whereabouts.
+                        In the mazes where he navigates through the vampire lair, a "?" symbol is shown.
+                        Crossing this initiates a hallucination Milford has of her.
+                        In case you missed it, she tries to persuade him into quitting his job as a Voltage Agent and to give up his power.
+                        However, Milford refuses to accept this and moves on. This is the only interaction we see of Priscilla in game.
+                        """);
             } else {
                 System.out.println("Wrong input.");
             }
