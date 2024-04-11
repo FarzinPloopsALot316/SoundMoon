@@ -2392,9 +2392,19 @@ public class Game {
         }
         System.out.println(ConsoleUtility.RED + """
                 
-                He threw her into a tight, metal cage.
-                The bars pressed against her body. She was wedged in, stuck. She couldn't move.
+                He threw her onto the ground, wrapping barbed wire around her.
+                She winced as the wire prickled against her skin, piercing it.
+                She squirmed around like a helpless fish as the wire tightened around her.
+                He wrapped the other end of the barbed wire around his Lancer, standing back.
+                """);
+        wait(3);
+        System.out.println(ConsoleUtility.RED + """
                 
+                "Milford! Please! What are you doing! Don't do this!"
+                "Please give me another chance!" She begged, crying, blood falling from her left eye.
+                The wires continued to wrap around his Lancer with every finger turn Milford made.
+                He didn't answer her pleading. Finally, he finished wrapping.
+                The Lancer glowed alive. Dee screamed, begging for mercy.
                 """);
         complete = true;
         afterGame();
