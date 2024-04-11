@@ -2275,7 +2275,7 @@ public class Game {
         while (userInput != 0) {
             if (userInput == 1) {
                 waitASecond();
-                System.out.println("""
+                System.out.println(ConsoleUtility.CYAN + """
                         
                         Character Name: Milford
                         Age: 44
@@ -2314,14 +2314,14 @@ public class Game {
                         He kills Dee after telling her everything about how he felt, and a change in his character can be seen.
                         On June 21, 2094, that same day, Milford takes his last breaths as the final voltage storm he released against Dee fully destroyed the vessels in his heart.
                         """);
-                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue.");
                 userInput = scan.nextInt();
                 while (userInput != 9) {
                     userInput = scan.nextInt();
                 }
             } else if (userInput == 2) {
                 waitASecond();
-                System.out.println("""
+                System.out.println(ConsoleUtility.CYAN + """
                         
                         The Vengeance Agency is a military organization created by the government (and led by Dee) to address and control vampires and werewolves.
                         However, it is also a ploy to distract humans into thinking that they are being defended, when ironically, they aren't.
@@ -2345,14 +2345,14 @@ public class Game {
                         Typically, the experience is constantly painful, like your body is burning on a stove.
                         This is eventually what kills Milford later on, and is a reason why he didn't want Dee to produce the weapon for military use.
                         """);
-                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue.");
                 userInput = scan.nextInt();
                 while (userInput != 9) {
                     userInput = scan.nextInt();
                 }
             } else if (userInput == 3) {
                 waitASecond();
-                System.out.println("""
+                System.out.println(ConsoleUtility.CYAN + """
                         
                         Character Name: N/A
                         Age: 51
@@ -2374,14 +2374,14 @@ public class Game {
                         After that night, he goes berserk, and he eventually holes himself within the solitude of an abandoned castle.
                         He dies years later, on June 21, 2094, to blood loss from a battle with Milford.
                         """);
-                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue.");
                 userInput = scan.nextInt();
                 while (userInput != 9) {
                     userInput = scan.nextInt();
                 }
             } else if (userInput == 4) {
                 waitASecond();
-                System.out.println("""
+                System.out.println(ConsoleUtility.CYAN + """
                         
                         Character Name: Markam
                         Age: 17
@@ -2417,14 +2417,14 @@ public class Game {
                         However, vampires shouldn't die to a bullet in the head, so whether Riyun is actually alive or dead is yet to be seen.
                         The town eventually falls apart years after Markam's death.
                         """);
-                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue.");
                 userInput = scan.nextInt();
                 while (userInput != 9) {
                     userInput = scan.nextInt();
                 }
             } else if (userInput == 5) {
                 waitASecond();
-                System.out.println("""
+                System.out.println(ConsoleUtility.CYAN + """
                         
                         The Sound Moon is an astronomical occurence that takes place every 10 years, altering the vision of the full moon.
                         During the Sound Moon, the moon is filtered in the sky to appear as a dark yellow, a color which visually disturbs the common werewolf.
@@ -2468,14 +2468,14 @@ public class Game {
                         STAY STRONG AND VIGILANT. MAY GOD BLESS AMERICA AND IT'S PEOPLE.
                         """ + ConsoleUtility.PURPLE);
                 waitASecond();
-                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue.");
                 userInput = scan.nextInt();
                 while (userInput != 9) {
                     userInput = scan.nextInt();
                 }
             } else if (userInput == 6) {
                 waitASecond();
-                System.out.println("""
+                System.out.println(ConsoleUtility.CYAN + """
                         
                         Werewolves are a species that were biologically invented by the government to control the human population.
                         These unholy beasts require the nutrients of human meat in order to live, and have abilities that make them 10x more stronger than the average human.
@@ -2485,14 +2485,14 @@ public class Game {
                         Werewolves are human carnivores, and therefore cannot rely on vegetation nor human food for survival, only water.
                         Werewolves are vulnerable to the sound and visual affects of the Sound Moon, and turn several times more powerful and hostile on these nights.
                         """);
-                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue.");
                 userInput = scan.nextInt();
                 while (userInput != 9) {
                     userInput = scan.nextInt();
                 }
             } else if (userInput == 7) {
                 waitASecond();
-                System.out.println("""
+                System.out.println(ConsoleUtility.CYAN + """
                         
                         Vampires are an ENDANGERED species. They were not biologically created by the government and are a natural species that co-exist with humans.
                         They usually have very long nails meant for slicing and mincing meat, as well as red eyes for better visibility.
@@ -2502,14 +2502,14 @@ public class Game {
                         However, vampires can die from two things: sunlight and a stab to the heart.
                         The Sun, vampire hunting, and human sonar technology that alter sounds waves are the main reasons why the species is nearly extinct.
                         """);
-                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue.");
                 userInput = scan.nextInt();
                 while (userInput != 9) {
                     userInput = scan.nextInt();
                 }
             } else if (userInput == 8) {
                 waitASecond();
-                System.out.println("""
+                System.out.println(ConsoleUtility.CYAN + """
                         
                         Character Name: Priscilla
                         Age: N/A
@@ -2535,13 +2535,18 @@ public class Game {
                         In case you missed it, she tries to persuade him into quitting his job as a Voltage Agent and to give up his power.
                         However, Milford refuses to accept this and moves on. This is the only interaction we see of Priscilla in game.
                         """);
-                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue.");
                 userInput = scan.nextInt();
                 while (userInput != 9) {
                     userInput = scan.nextInt();
                 }
             } else {
-                System.out.println("Wrong input.");
+                System.out.println(ConsoleUtility.CYAN + "Wrong input.");
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue.");
+                userInput = scan.nextInt();
+                while (userInput != 9) {
+                    userInput = scan.nextInt();
+                }
             }
             System.out.println("You can press any corresponding number to learn more, or press 0 to finish.");
             System.out.println("""
@@ -4080,6 +4085,10 @@ public class Game {
                 wantedBomb.setBrokeIfSo(); //only happens if uses is 0.
                 if (wantedBomb.getBroke()) {
                     inventory.removeBomb();
+                }
+                if (checkIfDead(bossHealth)) {
+                    System.out.println("The monster was slain!");
+                    return true;
                 }
                 wait(3);
                 System.out.println("Werewolves turn!");
