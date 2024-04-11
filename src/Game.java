@@ -110,6 +110,8 @@ public class Game {
         while (!userInput.equals("q")) {
             userInput = scan.nextLine();
         }
+        waitASecond();
+        ConsoleUtility.clearScreen();
         System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         System.out.println("In a distant future, where the world develops in turmoil and overpopulation...");
         System.out.println("...Lies a land full of viscous beasts and flying creatures.");
@@ -1862,7 +1864,7 @@ public class Game {
         ConsoleUtility.clearScreen();
         int deaths = 0;
         if (lose50) {
-            boolean clearedWolf = bossFight(200, 18); //250, 18
+            boolean clearedWolf = bossFight(200, 15); //250, 18
             while (!clearedWolf) {
                 player.addH(100);
                 System.out.println(ConsoleUtility.PURPLE + "You died. Press q to restart." + ConsoleUtility.YELLOW);
@@ -1871,11 +1873,24 @@ public class Game {
                 while (!userInput.equals("q")) {
                     userInput = scan.nextLine();
                 }
-                clearedWolf = bossFight(200, 18);
+                if (deaths == 3) {
+                    System.out.println(ConsoleUtility.RED + "IT SEEMS YOU'VE DIED 3 TIMES.");
+                    System.out.println("IF YOU ARE TESTING THE GAME, YOU CAN SKIP THE BATTLE AND PRESS T TO CONTINUE.");
+                    System.out.println("IF YOU STILL WISH TO FIGHT, PRESS Q.");
+                    System.out.println(ConsoleUtility.PURPLE + "Press q to begin battle." + ConsoleUtility.YELLOW);
+                    userInput = scan.nextLine();
+                    if (userInput.equals("t")) {
+                        clearedWolf = true;
+                    } else {
+                        clearedWolf = bossFight(200, 15);
+                    }
+                } else {
+                    clearedWolf = bossFight(200, 15);
+                }
             }
             player.setH(100);
         } else {
-            boolean clearedWolf = bossFight(250, 20); //300, 20
+            boolean clearedWolf = bossFight(250, 18); //300, 20
             while (!clearedWolf) {
                 player.addH(100);
                 System.out.println(ConsoleUtility.PURPLE + "You died. Press q to restart." + ConsoleUtility.YELLOW);
@@ -1884,7 +1899,20 @@ public class Game {
                 while (!userInput.equals("q")) {
                     userInput = scan.nextLine();
                 }
-                clearedWolf = bossFight(250, 20);
+                if (deaths == 3) {
+                    System.out.println(ConsoleUtility.RED + "IT SEEMS YOU'VE DIED 3 TIMES.");
+                    System.out.println("IF YOU ARE TESTING THE GAME, YOU CAN SKIP THE BATTLE AND PRESS T TO CONTINUE.");
+                    System.out.println("IF YOU STILL WISH TO FIGHT, PRESS Q.");
+                    System.out.println(ConsoleUtility.PURPLE + "Press q to begin battle." + ConsoleUtility.YELLOW);
+                    userInput = scan.nextLine();
+                    if (userInput.equals("t")) {
+                        clearedWolf = true;
+                    } else {
+                        clearedWolf = bossFight(250, 18);
+                    }
+                } else {
+                    clearedWolf = bossFight(250, 18);
+                }
             }
             player.setH(100);
         }
