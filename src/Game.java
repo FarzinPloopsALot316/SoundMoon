@@ -2425,6 +2425,7 @@ public class Game {
         }
         waitASecond();
         System.out.println("CONGRATS ON FINISHING THE GAME. THANKS FOR PLAYING!");
+        return true;
     }
 
     private void printMaze1 () {
