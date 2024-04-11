@@ -81,9 +81,11 @@ public class Game {
         ConsoleUtility.clearScreen();
         System.out.println(ConsoleUtility.RED + """
                         
-                        WARNING: THIS IS A NATIONAL EMERGENCY. PLEASE TAKE IMMEDIATE ACTION. THIS IS NOT A DRILL.
+                        WARNING: THIS IS A NATIONAL EMERGENCY. PLEASE TAKE IMMEDIATE ACTION.
+                        THIS IS NOT A DRILL.
                         
-                        TONIGHT, ON THIS DATE OF JUNE 21, 2074, AN ASTRONOMICAL OCCURENCE WILL OCCUR.
+                        TONIGHT, ON THIS DATE OF JUNE 21, 2094, AN ASTRONOMICAL OCCURENCE WILL OCCUR.
+                        THE SOUND MOON WILL RISE TONIGHT.
                         SOME ENTITIES IN YOUR AREA MAY BECOME HOSTILE, AND MAY RESORT TO UNREASONABLE FATAL VIOLENCE.
                         
                         DO NOT TRUST ANYBODY.
@@ -101,7 +103,7 @@ public class Game {
                         
                         THE UNITED STATES MILITARY, AND THE VENGEANCE AGENCY, WILL SEND RESCUE AND AID SOON.
                         STAY STRONG AND VIGILANT. MAY GOD BLESS AMERICA AND IT'S PEOPLE.
-                        """);
+                        """ + ConsoleUtility.PURPLE);
         wait(5);
         System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
         userInput = scan.nextLine();
@@ -2210,7 +2212,7 @@ public class Game {
             System.out.println("Ending game...");
             wait2seconds();
             complete = true;
-            //put method here
+            afterGame();
             return true;
         }
         waitASecond();
@@ -2225,9 +2227,9 @@ public class Game {
     public boolean afterGame () {
         Scanner scan = new Scanner(System.in);
         int userInput = 0;
-        System.out.println(ConsoleUtility.PURPLE + "THANK YOU FOR PLAYING!");
+        System.out.println(ConsoleUtility.PURPLE + "YOU HAVE FINISHED THE GAME!");
         waitASecond();
-        System.out.println("There are summaries and backstories available for you to read.");
+        System.out.println("There are summaries and backstories available for you to read if you are confused on anything.");
         waitASecond();
         System.out.println("You can press any corresponding number to learn more, or press 0 to finish.");
         System.out.println("""
@@ -2236,7 +2238,7 @@ public class Game {
                 2. Vengeance Agency, as well as Voltage Agents / Voltage powers.
                 3. The werewolf's back story (from the castle).
                 4. Markam and Riyun's backstory.
-                5. The Sound Moon. (VERY IMPORTANT)
+                5. The Sound Moon and it's origin. (VERY IMPORTANT)
                 6. Werewolves.
                 7. Vampires.
                 8. The odd ghost Milford runs into back at the vampires' lair (from the "?" symbol).
@@ -2253,6 +2255,7 @@ public class Game {
                         Species: Human, with werewolf abilities.
                         Appearance: White caucasian male, blue and yellow eyes with slit pupils, blonde hair.
                         Wears black rimmed glasses, and is constantly spotted in his purple and yellow armored suit.
+                        Has electrical and magnetic powers which enhance his speed, also allowing him to sense disturbances in magnetic fields in the air.
                         Personality: Rude, cunning, and quiet. Merciless to his enemies, but has a kind heart for animals and innocent children.
                         Alive or dead?: DEAD
                         Cause Of Death (if applicable): Heart damage.
@@ -2263,13 +2266,13 @@ public class Game {
                         However, he wasn't able to help and save everybody, so he watched children get slaughtered in front of him.
                         Note that he didn't have any powers at the time.
                         Dee, the leader of the organization which works with the government, wanted to test out a new weapon that was harbored in their labratories.
-                        Seeing Milford's determination, against his will, he took him while he was unconcious that night, doing surgery on him to implement the powers.
-                        She put him through several gruesome training regiments, one which involved fighting creatures in a dark room where sight and sound failed him.
+                        Seeing Milford's determination, against his will, she took him while he was unconcious that night, doing surgery on him to implement the powers.
+                        She put him through several gruesome training regiments, one which involved fighting creatures in a dark room where sight and sound were unreliable.
                         """);
                 wait(5);
                 System.out.println("""
                         
-                        The red memories Milford faced in the vamp lair was of those training regiments, which left scars on his mental state.
+                        The red memories Milford faced in the vamp lair in the mazes was of those training regiments, which left permanent scars on his mental state.
                         Milford still takes on the duty as a Voltage Agent because he feels he is burdened to do so, after his failure to save everybody in the school ambush.
                         But as he proceeds to kill anybody and anything in his way, he starts to slowly realize the similarities between humanity and the monsters.
                         That both will do anything with the will to live, and that no one species is more justified than the other in terms of crime and slaughter.
@@ -2277,26 +2280,31 @@ public class Game {
                 wait(5);
                 System.out.println("""
                         
-                        Eventually, towards the end, the man tells him about how the agency is a fraud.
+                        Eventually, towards the end, the werewolf man in the castle tells him about how the agency is a fraud.
                         After Milford learns about the possibility that Dee could try to make an army with his power, he heads to the building first thing.
                         He didn't want anybody else to suffer the pain he did or to relive his trauma, so he destroys all the studies and samples in the lab.
                         He kills Dee after telling her everything about how he felt, and a change in his character can be seen.
-                        On June 21, 2094, Milford takes his last breaths as the final voltage storm he released fully destroyed the vessels in his heart.
+                        On June 21, 2094, that same day, Milford takes his last breaths as the final voltage storm he released against Dee fully destroyed the vessels in his heart.
                         """);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                userInput = scan.nextInt();
+                while (userInput != 9) {
+                    userInput = scan.nextInt();
+                }
             } else if (userInput == 2) {
                 waitASecond();
                 System.out.println("""
                         
                         The Vengeance Agency is a military organization created by the government (and led by Dee) to address and control vampires and werewolves.
-                        However, it was also a ploy to distract humans into thinking that they were being defended, when ironically, they weren't.
-                        Since the Sound Moon, and the creation of werewolves themselves, were administered by the Government to control overpopulation, the Agency was technically useless.
-                        However, it did have one goal - to study a technological innovation that can be used as a great military asset: electricity.
+                        However, it is also a ploy to distract humans into thinking that they are being defended, when ironically, they aren't.
+                        Since the Sound Moon, and the creation of werewolves themselves, were administered by the Government to control overpopulation, the Agency is technically useless.
+                        However, it does have one goal - to study a technological innovation that can be used as a great military asset: electricity.
                         """);
                 wait(5);
                 System.out.println("""
                         
                         Anatomically, werewolves have greater strength and speed than the average human, because they were created with electrical elements that charge their abilities.
-                        A sample of this power is extracted from their bodies to be used and adjusted so that the human body may survive it.
+                        A sample of this power is extracted from their bodies to be used and adjusted so that the human body may at least handle it without dying.
                         The power is then surgically implemented into the human body, where current is designed to flow through the blood vessels of that human body.
                         This power is known as the Voltage Power, which only special Voltage Agents can be equipped with.
                         """);
@@ -2304,10 +2312,16 @@ public class Game {
                 System.out.println("""
                         
                         However, knowing that it is a very risky arsenal to use, and knowing that the human body isn't built to take current like such, Milford was appointed as a test subject.
+                        His body was used and recorded to see how long humans can go with the power, and whether it is financially worth it to mass produce in military use.
                         The power obviously has several fatal and injurious side affects, which include organ failure, cardiac arrests, and heart failures, even with the "human-friendly" adjustments.
                         Typically, the experience is constantly painful, like your body is burning on a stove.
                         This is eventually what kills Milford later on, and is a reason why he didn't want Dee to produce the weapon for military use.
                         """);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                userInput = scan.nextInt();
+                while (userInput != 9) {
+                    userInput = scan.nextInt();
+                }
             } else if (userInput == 3) {
                 waitASecond();
                 System.out.println("""
@@ -2323,14 +2337,20 @@ public class Game {
                         Alive or dead?: DEAD
                         Cause Of Death (if applicable): Excessive blood loss from battle.
                         
-                        The werewolf from the castle, who's name will remain anonymous, used to be an English teacher.
+                        The werewolf in the castle, who's name will remain anonymous, used to be an English teacher.
                         He was always harmless and kind, and never wished to hurt or kill anybody.
                         Even though werewolves need human meat for proper nutrition, he constantly starved himself on placebo pills and water.
                         He did this so that his son would never have to see him as a monster, but as a father.
                         He used to be in a loving family, with his wife, his son, and their pet dog, Qucumber (with a q because dogs can't spell).
                         However, his wife eventually divorces him, and a year after, a werewolf kills his son on a Sound Moon night.
-                        After that night, he goes berserk, and eventually holes himself within the solitude of an abandoned castle.
+                        After that night, he goes berserk, and he eventually holes himself within the solitude of an abandoned castle.
+                        He dies years later, on June 21, 2094, to blood loss from a battle with Milford.
                         """);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                userInput = scan.nextInt();
+                while (userInput != 9) {
+                    userInput = scan.nextInt();
+                }
             } else if (userInput == 4) {
                 waitASecond();
                 System.out.println("""
@@ -2357,9 +2377,9 @@ public class Game {
                         
                         Markam and Riyun were vampires who partnered with each other to protect a town, after the town's leader had died from an invasion.
                         Vampires require blood as a main source of nutrition, so their job is to kill and bring home human bodies to distribute to the hungry civilization.
-                        The town, however, is slowly falling apart, and Markam slowly goes more lunatic trying to control it.
+                        The town, however, is slowly falling apart, and Markam slowly becomes more lunatic trying to control it.
                         As poverty and hunger slowly rise, they divert a plan to lure agents into planned werewolf attacks, then to kidnap or collect the dead bodies from those attacks.
-                        Milford fell victim to this. Although Markam was proud, Riyun cautioned Markam about Milford's capability.
+                        Milford falls victim to this. Although Markam was proud, Riyun cautions Markam about Milford's capability.
                         """);
                 wait(4);
                 System.out.println("""
@@ -2369,6 +2389,11 @@ public class Game {
                         However, vampires shouldn't die to a bullet in the head, so whether Riyun is actually alive or dead is yet to be seen.
                         The town eventually falls apart years after Markam's death.
                         """);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                userInput = scan.nextInt();
+                while (userInput != 9) {
+                    userInput = scan.nextInt();
+                }
             } else if (userInput == 5) {
                 waitASecond();
                 System.out.println("""
@@ -2386,14 +2411,16 @@ public class Game {
                         Werewolves were also a creation of the government, used as assets that were vulnerable to the Sound Moon.
                         Using solar technology and satellites, the color filter and the sound waves alter the vision of the full moon, and thus, makes werewolves go insane.
                         The world slowly descends into chaos, but the human population begins to diminish as a result.
-                        Here is a sample warning that aired on public television in the U.S. district on June 21, 2074:
+                        Here is a sample warning that aired on public television in the U.S. district on June 21, 2094:
                         """);
                 wait(5);
                 System.out.println(ConsoleUtility.RED + """
                         
-                        WARNING: THIS IS A NATIONAL EMERGENCY. PLEASE TAKE IMMEDIATE ACTION. THIS IS NOT A DRILL.
+                        WARNING: THIS IS A NATIONAL EMERGENCY. PLEASE TAKE IMMEDIATE ACTION.
+                        THIS IS NOT A DRILL.
                         
-                        TONIGHT, ON THIS DATE OF JUNE 21, 2074, AN ASTRONOMICAL OCCURENCE WILL OCCUR.
+                        TONIGHT, ON THIS DATE OF JUNE 21, 2094, AN ASTRONOMICAL OCCURENCE WILL OCCUR.
+                        THE SOUND MOON WILL RISE TONIGHT.
                         SOME ENTITIES IN YOUR AREA MAY BECOME HOSTILE, AND MAY RESORT TO UNREASONABLE FATAL VIOLENCE.
                         
                         DO NOT TRUST ANYBODY.
@@ -2413,6 +2440,11 @@ public class Game {
                         STAY STRONG AND VIGILANT. MAY GOD BLESS AMERICA AND IT'S PEOPLE.
                         """ + ConsoleUtility.PURPLE);
                 waitASecond();
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                userInput = scan.nextInt();
+                while (userInput != 9) {
+                    userInput = scan.nextInt();
+                }
             } else if (userInput == 6) {
                 waitASecond();
                 System.out.println("""
@@ -2425,6 +2457,11 @@ public class Game {
                         Werewolves are human carnivores, and therefore cannot rely on vegetation nor human food for survival, only water.
                         Werewolves are vulnerable to the sound and visual affects of the Sound Moon, and turn several times more powerful and hostile on these nights.
                         """);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                userInput = scan.nextInt();
+                while (userInput != 9) {
+                    userInput = scan.nextInt();
+                }
             } else if (userInput == 7) {
                 waitASecond();
                 System.out.println("""
@@ -2437,13 +2474,18 @@ public class Game {
                         However, vampires can die from two things: sunlight and a stab to the heart.
                         The Sun, vampire hunting, and human sonar technology that alter sounds waves are the main reasons why the species is nearly extinct.
                         """);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                userInput = scan.nextInt();
+                while (userInput != 9) {
+                    userInput = scan.nextInt();
+                }
             } else if (userInput == 8) {
                 waitASecond();
                 System.out.println("""
                         
                         Character Name: Priscilla
                         Age: N/A
-                        Height: Appears to be 5'8
+                        Height: Appears to be 5'8 in Milford's hallucination
                         Species: Human
                         Appearance: Pale skinned female, brown hair and green eyes (according to Milford's hallucination).
                         Personality: Solemn and nostalgic, all she cares about is Milford.
@@ -2452,9 +2494,9 @@ public class Game {
                         
                         5 years ago, Priscilla used to be a partner who worked with Milford.
                         Dee hired her to record the affects and abilities of Milford power as she went with him on invasions.
-                        It's clear that she eventually harbors a love interest and deep care for Milford, but Milford's feelings of her is yet undetermined.
+                        It's clear that she eventually harbors a love interest and deep care for Milford on their journeys, but Milford's feelings of her is yet undetermined.
                         It is unclear whether the two actually had a romantic companionship or not, but Dee soon learns of Priscilla's crush, firing her from her duties.
-                        The two are soon seperated, and Milford, who usually hates everybody, suprisingly tends to miss her.
+                        The two are soon seperated, and Milford, who usually tends to hates everybody, suprisingly grows to miss her.
                         """);
                 wait(5);
                 System.out.println("""
@@ -2465,9 +2507,26 @@ public class Game {
                         In case you missed it, she tries to persuade him into quitting his job as a Voltage Agent and to give up his power.
                         However, Milford refuses to accept this and moves on. This is the only interaction we see of Priscilla in game.
                         """);
+                System.out.println(ConsoleUtility.PURPLE + "Press 9 to continue." + ConsoleUtility.YELLOW);
+                userInput = scan.nextInt();
+                while (userInput != 9) {
+                    userInput = scan.nextInt();
+                }
             } else {
                 System.out.println("Wrong input.");
             }
+            System.out.println("You can press any corresponding number to learn more, or press 0 to finish.");
+            System.out.println("""
+                0. Finish.
+                1. Milford's backstory (also explains the ending).
+                2. Vengeance Agency, as well as Voltage Agents / Voltage powers.
+                3. The werewolf's back story (from the castle).
+                4. Markam and Riyun's backstory.
+                5. The Sound Moon and it's origin. (VERY IMPORTANT)
+                6. Werewolves.
+                7. Vampires.
+                8. The odd ghost Milford runs into back at the vampires' lair (from the "?" symbol).
+                """);
             userInput = scan.nextInt();
         }
         waitASecond();
