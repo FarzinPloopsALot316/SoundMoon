@@ -2231,7 +2231,11 @@ public class Game {
                 The usage of inventory or health stats are no longer required. There is only reading after this.
                 You can choose to skip this ending and end the game (preferable if you are testing the game) or choose to continue.
                 Summaries and explanations will be provided at the end of the game.
+                
+                TW: VULGAR LANGUAGE AND BRUTAL SCENERY IN THE ENDING.
                 """);
+        wait2seconds();
+        System.out.println(ConsoleUtility.RED + "TW: VULGAR LANGUAGE AND BRUTAL SCENERY IN THIS PART." + ConsoleUtility.PURPLE);
         System.out.println("Press q to begin Part 5, or t to end game.");
         userInput = scan.nextLine();
         if (userInput.equals("q")) {
@@ -2249,6 +2253,151 @@ public class Game {
         wait(5);
         ConsoleUtility.clearScreen();
         System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*" + ConsoleUtility.YELLOW);
+        System.out.println("""
+                
+                Dee walks inside the secret labratory entrance.
+                She screams, looking at the destroyed state of the labratory.
+                """);
+        wait(3);
+        System.out.println("""
+                
+                Books were torn and flung everywhere. All the lab assistants were dead on the floor.
+                Tubes and containers were knocked over and destroyed. Yellow liquid was scattered here and there.
+                Capsules were damaged. About years of hard work and research were lost.
+                The lights flickered.
+                In the middle of it all stood Milford.
+                """);
+        wait(3);
+        System.out.println("""
+                
+                Dee stood her guard. "WHAT THE HELL HAPPENED HERE, MILFORD?"
+                He didn't move a muscle. The Lancer in his right hand was covered in blood.
+                His eyes were glowing fully yellow behind his glasses. He stared straight into Dee's eyes.
+                Dee backed up hesitantly, stuttering her words. "W-WHAT DID YOU DO?..."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                "I did what had to be done." Milford's voice was deep and raspy.
+                "I'm not going to let more people suffer what I suffered, Dee."
+                Dee quivered in her stance. "Y-YOU DESTROYED ALL OF OUR RESEARCH!-"
+                "Why wasn't I told that the Sound Moon was fake, Dee?" His voice was calm, but threatening.
+                """);
+        wait(3);
+        System.out.println(ConsoleUtility.RED + """
+                
+                He took a step closer. Dee took a step back.
+                His armor crackled menacingly. The lights flickered again.
+                His Lancer scraped the metal floor as he walked towards her, slowly.
+                "Milford... back up.. Back up, Milford..." She stuttered as she stepped back.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.RED + """
+                
+                "All those people I killed under your command... all those years wasted.." he muttered.
+                "All that pain. Oh that f*cking constant pain, like my skin is scalding alive and my muscles are in flames."
+                Dee backed into the corner, screaming as she touched the walls behind her.
+                She looked at Milford's bloodthirsty eyes.
+                She grabbed an emergency fire thrower from the wall, threatening Milford. But he didn't back up.
+                """);
+        wait(4);
+        System.out.println(ConsoleUtility.RED + """
+                
+                "You used me. I was never more than a card up your sleeve." Milford spoke.
+                The lights flickered again and again.
+                "The Sound Moon was a fraud... Your faulty agency was just a ploy."
+                "You just wanted power! MONEY! FAME!" His screams echoed through.
+                He inched closer and closer to Dee, who was stuck against the corner...
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                "I did was was right! I wanted to be the leader of heroes!" Dee yelled.
+                She aimed the fire thrower at Milford, but Milford kept coming closer.
+                "I TRUSTED YOU AS MY COMPANION!-"
+                """);
+        wait(4);
+        System.out.println(ConsoleUtility.RED + """
+                
+                "LIAR!" Milford finally stood inches away from her, his menacing height towering over her.
+                His yellow eyes stared into her soul as he spoke. "YOU TRUSTED ME AS A SLAVE!"
+                "AND FOR YEARS, I BELIEVED, THAT NO MATTER HOW UNREASONABLE YOUR REQUESTS WERE..."
+                "That maybe... just maybe... they were for GOOD."
+                "BUT YOU LIED TO ME! YOU LIED TO ME! YOU F*CKING POWER HUNGRY B*TCH!"
+                """);
+        wait(4);
+        System.out.println(ConsoleUtility.RED + """
+                
+                Milford grabs her by the neck, brutally slamming her into the wall as he pinned her there.
+                He raised his Lancer as she struggled. She was screaming and kicking in his grip.
+                Dee finally kicks him off, firing the fire thrower at him.
+                """);
+        wait2seconds();
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                Milford drops to the floor. His armor caught on fire.
+                He lied there, motionless.
+                Dee smirked. "Useless." She drops the fire thrower, walking away.
+                """);
+        wait(4);
+        System.out.println(ConsoleUtility.RED + """
+                
+                Suddenly, a metallic whir was heard behind her, followed by clinking and clanking.
+                She turned around, screaming.
+                Milford was standing back up, fire all around him.
+                His fireproof armor extinguished the flame.
+                "I've been frying myself for years now, Dee. You think a little fire will hurt me?"
+                """);
+        wait2seconds();
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.RED + """
+                
+                She ran to the door, pulling at the entrance doors. They were bolted shut.
+                The doors were magnetically closed by Milford. She tried to pry them open, but in vain.
+                """);
+        wait(4);
+        System.out.println(ConsoleUtility.RED + """
+                
+                Milford catches up, punching her into the metal doors, pummeling her head against the window glass.
+                The glasses shatters, and one stabs through her left eyeball. She hollers in pain.
+                Milford repeatedly slammed her head against the metal until she grew dizzy, blood falling from her forehead.
+                "I'm gonna make you feel the same pain I did." He whispers into her ear.
+                She screams, her reactions weak as he dragged her on the floor by her hair.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.RED + """
+                
+                He threw her into a tight, metal cage.
+                The bars pressed against her body. She was wedged in, stuck. She couldn't move.
+                
+                """);
+        complete = true;
+        afterGame();
         return true; // stops start
     } //end of start code
 
