@@ -9,6 +9,7 @@ public class Game {
     Player lostPlayer;
     Inventory lostInv;
     boolean demo;
+    boolean complete;
 
     public Game () {
         this.inventory = new Inventory();
@@ -16,7 +17,8 @@ public class Game {
         this.lostPlayer = new Player();
         this.lostInv = new Inventory();
         lostPlayer.setH(30);
-        demo = false;
+        this.demo = false;
+        this.complete = false;
     }
 
     public void wait(int seconds) {
@@ -2098,13 +2100,208 @@ public class Game {
         System.out.println("""
                 
                 "We turned into monsters because we believed it was the right way to set things right."
+                "To start killing people just because they bear the same yellow or red eyes as your enemies."
                 He watched the colors of the colored cathedral glass dance under the moonlight rays which shined through.
-                
                 """);
-
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                "The number of villages I burnt down to get to a targetted subject.." Milford took deep breaths.
+                "I don't know what to do, sir. I know my commander's demands aren't my destiny, but I took it as such."
+                The man looked at Milford.
+                "Well, now it's time to set your own," he responded.
+                """);
+        wait(3);
+        System.out.println("""
+                
+                The man continued. "Son. You need to know something."
+                "The Sound Moon is human made, organized by the government as a response to overpopulation and scarce resources."
+                "Your agency is a fraud, an organized lie to make the public think that they are being protected."
+                Milford looked up. "W-What.."
+                The man nodded.
+                "It may seem hard to believe, but the agency's only goal was to harbor a new militarized weapon."
+                He pointed at Milford. "Buddy, that means you."
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                Milford stood up, confusion and rage in his eyes. "What."
+                The man sighed, looking at the floor. "I knew you wouldn't believe me."
+                "But your commander's only plans are to use you to test if your power is capable enough for replication."
+                """);
+        wait(4);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println("""
+                
+                "There may currently be samples of your power ready to use on armies."
+                "No." Milford shook his head. "I can't let that happen. I can't let people go through what I did!"
+                The man nodded. He groaned, feeling the pain of the battle wounds searing in.
+                "There is a secret entrance through the library of your organization's building."
+                "You'll see that I mean the truth."
+                """);
+        wait(4);
+        System.out.println("""
+                
+                Milford was already gone, heading towards the building.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        wait2seconds();
+        System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+        wait2seconds();
+        System.out.println(ConsoleUtility.PURPLE + "PART 4 COMPLETED.");
+        System.out.println("""
+                PLEASE NOTE:
+                
+                After this, there are no more boss fights to prepare for.
+                The usage of inventory or health stats are no longer required. There is only reading after this.
+                You can choose to skip this ending and end the game (preferable if you are testing the game) or choose to continue.
+                Summaries and explanations will be provided at the end of the game.
+                """);
+        System.out.println("Press q to begin Part 5, or t to end game.");
+        userInput = scan.nextLine();
+        if (userInput.equals("q")) {
+            System.out.println("Starting next part...");
+        } else if (userInput.equals("t")) {
+            System.out.println("Ending game...");
+            wait2seconds();
+            complete = true;
+            //put method here
+            return true;
+        }
+        waitASecond();
+        System.out.print("Tip: ");
+        randomTip();
+        wait(5);
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*" + ConsoleUtility.YELLOW);
         return true; // stops start
     } //end of start code
 
+    public boolean afterGame () {
+        Scanner scan = new Scanner(System.in);
+        int userInput = 0;
+        System.out.println(ConsoleUtility.PURPLE + "THANK YOU FOR PLAYING!");
+        waitASecond();
+        System.out.println("There are summaries and backstories available for you to read.");
+        waitASecond();
+        System.out.println("You can press any corresponding number to learn more, or press 0 to finish.");
+        System.out.println("""
+                0. Finish.
+                1. Milford's backstory (also explains the ending).
+                2. Vengeance Agency, as well as Voltage Agents / Voltage powers.
+                3. The werewolf's back story (from the castle).
+                4. Markam and Riyun's backstory.
+                5. The Sound Moon.
+                6. Werewolves.
+                7. Vampires.
+                8. The odd ghost Milford runs into back at the vampires' lair (from the "?" symbol).
+                """);
+        userInput = scan.nextInt();
+        while (userInput != 0) {
+            if (userInput == 1) {
+                waitASecond();
+                System.out.println("""
+                        
+                        Character Name: Milford
+                        Height: 6'3
+                        Appearance: White caucasian male, blue and yellow eyes with slit pupils, blonde hair.
+                        Wears black rimmed glasses, and is constantly spotted in his purple and yellow armored suit.
+                        Personality: Rude, cunning, and quiet. Merciless to his enemies, but has a kind heart for animals and innocent children.
+                        Alive or dead?: DEAD
+                        Cause Of Death (if applicable): Heart damage.
+                        (FOR THE LOVE OF GOD, THIS ISN'T MR. MILLER!!)
+                        
+                        Milford used to be a teacher 10 years ago, until his school was attacked by vampires.
+                        He tried his best to fight off as many of the vampires as he could while trying to protect everybody.
+                        However, he wasn't able to help and save everybody, so he watched children get slaughtered in front of him.
+                        Note that he didn't have any powers at the time.
+                        Dee, the leader of the organization which works with the government, wanted to test out a new weapon that was harbored in their labratories.
+                        Seeing Milford's determination, against his will, he took him while he was unconcious that night, doing surgery on him to implement the powers.
+                        She put him through several gruesome training regiments, one which involved fighting creatures in a dark room where sight and sound failed him.
+                        """);
+                wait(5);
+                System.out.println("""
+                        
+                        The red memories Milford faced in the vamp lair was of those training regiments, which left scars on his mental state.
+                        Milford still takes on the duty as a Voltage Agent because he feels he is burdened to do so, after his failure to save everybody in the school ambush.
+                        But as he proceeds to kill anybody and anything in his way, he starts to slowly realize the similarities between humanity and the monsters.
+                        That both will do anything with the will to live, and that no one species is more justified than the other in terms of crime and slaughter.
+                        """);
+                wait(5);
+                System.out.println("""
+                        
+                        Eventually, towards the end, the man tells him about how the agency is a fraud.
+                        After Milford learns about the possibility that Dee could try to make an army with his power, he heads to the building first thing.
+                        He didn't want anybody else to suffer the pain he did or to relive his trauma, so he destroys all the studies and samples in the lab.
+                        He kills Dee after telling her everything about how he felt, and a change in his character can be seen.
+                        On June 21, 2036, Milford takes his last breaths as the final voltage storm he released fully destroyed the vessels in his heart.
+                        """);
+            } else if (userInput == 2) {
+                waitASecond();
+                System.out.println("""
+                        
+                        The Vengeance Agency is a military organization created by the government (and led by Dee) to address and control vampires and werewolves.
+                        However, it was also a ploy to distract humans into thinking that they were being defended, when ironically, they weren't.
+                        Since the Sound Moon, and the creation of werewolves themselves, were administered by the Government to control overpopulation, the Agency was technically useless.
+                        However, it did have one goal - to study a technological innovation that can be used as a great military asset: electricity.
+                        """);
+                wait(5);
+                System.out.println("""
+                        
+                        Anatomically, werewolves have greater strength and speed than the average human, because they were created with electrical elements that charge their abilities.
+                        A sample of this power is extracted from their bodies to be used and adjusted so that the human body may survive it.
+                        The power is then surgically implemented into the human body, where current is designed to flow through the blood vessels of that human body.
+                        This power is known as the Voltage Power, which only special Voltage Agents can be equipped with.
+                        """);
+                wait(5);
+                System.out.println("""
+                        
+                        However, knowing that it is a very risky arsenal to use, and knowing that the human body isn't built to take current like such, Milford was appointed as a test subject.
+                        The power obviously has several fatal and injurious side affects, which include organ failure, cardiac arrests, and heart failures, even with the "human-friendly" adjustments.
+                        Typically, the experience is constantly painful, like your body is burning on a stove.
+                        This is eventually what kills Milford later on, and is a reason why he didn't want Dee to produce the weapon for military use.
+                        """);
+            } else if (userInput == 3) {
+                waitASecond();
+                System.out.println("""
+                        
+                        The werewolf from the castle, who's name will remain anonymous, used to be an English teacher.
+                        He was always harmless and kind, 
+                        """);
+            } else if (userInput == 4) {
+                waitASecond();
+            } else if (userInput == 5) {
+                waitASecond();
+            } else if (userInput == 6) {
+                waitASecond();
+            } else if (userInput == 7) {
+                waitASecond();
+            } else if (userInput == 8) {
+                waitASecond();
+            } else {
+                System.out.println("Wrong input.");
+            }
+            userInput = scan.nextInt();
+        }
+        waitASecond();
+        System.out.println("CONGRATS ON FINISHING THE GAME. THANKS FOR PLAYING!");
+    }
 
     private void printMaze1 () {
         /* this is how the maze should be printed!
