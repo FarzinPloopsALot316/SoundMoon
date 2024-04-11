@@ -79,6 +79,35 @@ public class Game {
         System.out.println(ConsoleUtility.PURPLE + "Remember to have fun! Starting game...");
         wait(3);
         ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.RED + """
+                        
+                        WARNING: THIS IS A NATIONAL EMERGENCY. PLEASE TAKE IMMEDIATE ACTION. THIS IS NOT A DRILL.
+                        
+                        TONIGHT, ON THIS DATE OF JUNE 21, 2074, AN ASTRONOMICAL OCCURENCE WILL OCCUR.
+                        SOME ENTITIES IN YOUR AREA MAY BECOME HOSTILE, AND MAY RESORT TO UNREASONABLE FATAL VIOLENCE.
+                        
+                        DO NOT TRUST ANYBODY.
+                        LOCK ALL DOORS AND BARRICADE ALL WINDOWS.
+                        
+                        IF YOUR LOVED ONE OR COMPANION BEGINS TO DISPLAY ANY HOSTILITY OR UNUSUAL ACTION, KILL THEM ON SIGHT.
+                        
+                        SHELTER YOURSELF WITHIN YOUR HOMES WITH ONLY YOUR LOVED ONES. DO NOT GO OUTSIDE.
+                        KEEP ARMED WEAPONS ON YOURSELF. AGENTS WILL BE SENT TO YOUR LOCATION FOR RESCUE.
+                        DO NOT LEAVE YOUR HOUSE OR SHELTER.
+                        
+                        DO NOT LOOK AT THE FULL MOON.
+                        DO NOT LISTEN TO THE VOICES.
+                        DO NOT LISTEN TO THE MUSIC.
+                        
+                        THE UNITED STATES MILITARY, AND THE VENGEANCE AGENCY, WILL SEND RESCUE AND AID SOON.
+                        STAY STRONG AND VIGILANT. MAY GOD BLESS AMERICA AND IT'S PEOPLE.
+                        """);
+        wait(5);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
         System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
         System.out.println("In a distant future, where the world develops in turmoil and overpopulation...");
         System.out.println("...Lies a land full of viscous beasts and flying creatures.");
@@ -2219,13 +2248,15 @@ public class Game {
                 System.out.println("""
                         
                         Character Name: Milford
+                        Age: 44
                         Height: 6'3
+                        Species: Human, with werewolf abilities.
                         Appearance: White caucasian male, blue and yellow eyes with slit pupils, blonde hair.
                         Wears black rimmed glasses, and is constantly spotted in his purple and yellow armored suit.
                         Personality: Rude, cunning, and quiet. Merciless to his enemies, but has a kind heart for animals and innocent children.
                         Alive or dead?: DEAD
                         Cause Of Death (if applicable): Heart damage.
-                        (FOR THE LOVE OF GOD, THIS ISN'T MR. MILLER!!)
+                        (FOR THE LOVE OF GOD, THIS ISN'T MR. MILLER!! WHY ON EARTH WOULD IT BE MR. MILLER??)
                         
                         Milford used to be a teacher 10 years ago, until his school was attacked by vampires.
                         He tried his best to fight off as many of the vampires as he could while trying to protect everybody.
@@ -2250,7 +2281,7 @@ public class Game {
                         After Milford learns about the possibility that Dee could try to make an army with his power, he heads to the building first thing.
                         He didn't want anybody else to suffer the pain he did or to relive his trauma, so he destroys all the studies and samples in the lab.
                         He kills Dee after telling her everything about how he felt, and a change in his character can be seen.
-                        On June 21, 2036, Milford takes his last breaths as the final voltage storm he released fully destroyed the vessels in his heart.
+                        On June 21, 2094, Milford takes his last breaths as the final voltage storm he released fully destroyed the vessels in his heart.
                         """);
             } else if (userInput == 2) {
                 waitASecond();
@@ -2281,12 +2312,105 @@ public class Game {
                 waitASecond();
                 System.out.println("""
                         
+                        Character Name: N/A
+                        Age: 51
+                        Height: 6'0
+                        Species: Werewolf
+                        Appearance: White caucasian male, yellow eyes with slit pupils, greying hair.
+                        Wears glasses, has a strong, muscular build, with large claws extending from his knuckles on both hands. Has sharp fangs
+                        Personality: Used to be kind and comical, but was depressed and quiet after the loss of his son.
+                        Morally confused and mentally struck.
+                        Alive or dead?: DEAD
+                        Cause Of Death (if applicable): Excessive blood loss from battle.
+                        
                         The werewolf from the castle, who's name will remain anonymous, used to be an English teacher.
-                        He was always harmless and kind, 
+                        He was always harmless and kind, and never wished to hurt or kill anybody.
+                        Even though werewolves need human meat for proper nutrition, he constantly starved himself on placebo pills and water.
+                        He did this so that his son would never have to see him as a monster, but as a father.
+                        He used to be in a loving family, with his wife, his son, and their pet dog, Qucumber (with a q because dogs can't spell).
+                        However, his wife eventually divorces him, and a year after, a werewolf kills his son on a Sound Moon night.
+                        After that night, he goes berserk, and eventually holes himself within the solitude of an abandoned castle.
                         """);
             } else if (userInput == 4) {
                 waitASecond();
+                System.out.println("""
+                        
+                        Character Name: Markam
+                        Age: 17
+                        Height: 5'9
+                        Species: Vampire
+                        Appearance: Colored male with a Caribbean descent, red eyes with slit pupils, short curly hair, long red nails.
+                        Wears a large feathered hat and a heavy cape which shields him from light. Has sharp fangs.
+                        Personality: Energetic and determined. Persistent, will do anything to secure his town.
+                        Alive or dead?: DEAD
+                        Cause Of Death (if applicable): Staking of the heart.
+                        
+                        Character Name: Riyun
+                        Age: 17
+                        Height: 5'11
+                        Species: Vampire
+                        Appearance: Skinny Asian male, red eyes with split pupils, short but straight black hair, long red nails.
+                        Wears a large cape, with wrist blades and a gun underneath. Has sharp fangs.
+                        Personality: Careful, cautious, patient, understanding.
+                        Alive or dead?: Possibly alive.
+                        Cause Of Death (if applicable): N/A
+                        
+                        Markam and Riyun were vampires who partnered with each other to protect a town, after the town's leader had died from an invasion.
+                        Vampires require blood as a main source of nutrition, so their job is to kill and bring home human bodies to distribute to the hungry civilization.
+                        The town, however, is slowly falling apart, and Markam slowly goes more lunatic trying to control it.
+                        As poverty and hunger slowly rise, they divert a plan to lure agents into planned werewolf attacks, then to kidnap or collect the dead bodies from those attacks.
+                        Milford fell victim to this. Although Markam was proud, Riyun cautioned Markam about Milford's capability.
+                        """);
+                wait(4);
+                System.out.println("""
+                        
+                        As they were planning another hoard, Milford sneaks up on them, shooting Riyun in the head.
+                        Under Dee's orders, he stakes Markam after battle, killing the teenage boy within seconds and leaving the town with no surpervision.
+                        However, vampires shouldn't die to a bullet in the head, so whether Riyun is actually alive or dead is yet to be seen.
+                        The town eventually falls apart years after Markam's death.
+                        """);
             } else if (userInput == 5) {
+                System.out.println("""
+                        
+                        The Sound Moon is an astronomical occurence that takes place every 10 years, altering the vision of the moon.
+                        During the Sound Moon, the moon is filtered in the sky to appear as a dark yellow, a color which visually disturbs the common werewolf.
+                        To add to this, an unsettling sound wave is constantly released, which tempers with the nerves in a werewolf to make them physically hostile and violent.
+                        This leads to the violent killing of humans and vampires, which helps to control the growing population.
+                        """);
+                wait(5);
+                System.out.println("""
+                        
+                        As the werewolf from the castle explains, the Sound Moon is a controlled project by NASA and the government, and is not a natural occurence.
+                        Due to the rising overpopulation of humans and poverty, and the growing scarcity of resources, the project was approved and began on June 21st, 2034.
+                        Werewolves were also a creation of the government, used as assets that were vulnerable to the Sound Moon.
+                        Using solar technology and satellites, the color filter and the sound waves alter the vision of the full moon, and thus, makes werewolves go insane.
+                        The world slowly descends into chaos, but the human population begins to diminish as a result.
+                        Here is a sample warning that aired on public television in the U.S. district on June 21, 2074.
+                        """);
+                wait(5);
+                System.out.println(ConsoleUtility.RED + """
+                        
+                        WARNING: THIS IS A NATIONAL EMERGENCY. PLEASE TAKE IMMEDIATE ACTION. THIS IS NOT A DRILL.
+                        
+                        TONIGHT, ON THIS DATE OF JUNE 21, 2074, AN ASTRONOMICAL OCCURENCE WILL OCCUR.
+                        SOME ENTITIES IN YOUR AREA MAY BECOME HOSTILE, AND MAY RESORT TO UNREASONABLE FATAL VIOLENCE.
+                        
+                        DO NOT TRUST ANYBODY.
+                        LOCK ALL DOORS AND BARRICADE ALL WINDOWS.
+                        
+                        IF YOUR LOVED ONE OR COMPANION BEGINS TO DISPLAY ANY HOSTILITY OR UNUSUAL ACTION, KILL THEM ON SIGHT.
+                        
+                        SHELTER YOURSELF WITHIN YOUR HOMES WITH ONLY YOUR LOVED ONES. DO NOT GO OUTSIDE.
+                        KEEP ARMED WEAPONS ON YOURSELF. AGENTS WILL BE SENT TO YOUR LOCATION FOR RESCUE.
+                        DO NOT LEAVE YOUR HOUSE OR SHELTER.
+                        
+                        DO NOT LOOK AT THE FULL MOON.
+                        DO NOT LISTEN TO THE VOICES.
+                        DO NOT LISTEN TO THE MUSIC.
+                        
+                        THE UNITED STATES MILITARY, AND THE VENGEANCE AGENCY, WILL SEND RESCUE AND AID SOON.
+                        STAY STRONG AND VIGILANT. MAY GOD BLESS AMERICA AND IT'S PEOPLE.
+                        """);
                 waitASecond();
             } else if (userInput == 6) {
                 waitASecond();
