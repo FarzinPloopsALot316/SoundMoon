@@ -1,6 +1,6 @@
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.logging.ConsoleHandler;
+import java.util.logging.ConsoleHandler; // i don't remember where this came from but sure!
 
 public class Game {
     private Space[][] maze = new Space[7][7];
@@ -2397,7 +2397,7 @@ public class Game {
                 She squirmed around like a helpless fish as the wire tightened around her.
                 He wrapped the other end of the barbed wire around his Lancer, standing back.
                 """);
-        wait(3);
+        wait(4);
         System.out.println(ConsoleUtility.RED + """
                 
                 "Milford! Please! What are you doing! Don't do this!"
@@ -2406,6 +2406,259 @@ public class Game {
                 He didn't answer her pleading. Finally, he finished wrapping.
                 The Lancer glowed alive. Dee screamed, begging for mercy.
                 """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.RED + """
+                
+                "Have you ever wondered what electricity feels like, Dee?" Milford eyed the Lancer.
+                It hummed with energy. He rubbed his finger against the charge button.
+                "I had that sword made for you... Milford.. and you gonna kill me with it?.."
+                "You didn't make me this. Priscilla did." His heart panged as he mentioned her name.
+                """);
+        wait(4);
+        System.out.println(ConsoleUtility.RED + """
+                
+                Dee's eyes widened. "YOU WOULDN'T! I-I RAISED YOU! I MADE YOU STRONG!.."
+                "You poisoned me, Dee." He laughed, but it wasn't a joyous one.
+                "You tortured me and forged me into a sword of your own." He looks at the sharp edges of his weapon.
+                """);
+        wait(4);
+        System.out.println(ConsoleUtility.RED + """
+                
+                "You made me fight people who were 10x my strength like it was some medieval entertainment to you."
+                "You trapped me in a dark room with crazy creatures for more than a month."
+                "You tortured me, beat me, scarred me, toyed with me, mentally screwed with my head, till the nice in me was gone."
+                "You made me train and workout until I got sick, until I nearly died."
+                "But worst of all... you made me kill innocent people."
+                "Well congrats. You got your damn wish. Turning me into your slave."
+                He stood to the side, a finger on the Lancer's button. "But I won't let you do what you did with me...to others."
+                """);
+        wait(4);
+        System.out.println(ConsoleUtility.RED + """
+                
+                Dee shook her head frantically, screaming and panicking.
+                He pressed the button.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                The moonlight was beautiful as it shone through the labratory windows.
+                The dark yellow was an amazing view.
+                The lights flickered.
+                Milford noticed his own heart was beating slower.
+                It was getting harder to breathe.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue. (TW)" + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                Dee could barely scream as her flesh was being seared alive.
+                Her blood began to boil as the voltage fried her alive.
+                Her eyes were popping out of their sockets, white foam spilling from her mouth.
+                Her body twitched and flopped around as she struggled for air.
+                He stopped electrocuting her for a moment.
+                """);
+        wait(4);
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                She crawled to him, barely able to move.
+                "I'm sorry!... I'm sorry..." Her words were interrupted by coughs of blood.
+                "Please.. I.. I just want to live... give me another chance..."
+                She grabbed his right leg as she begged. "You can be the leader!"
+                "The owner! Think about it!"
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                He sat down, covering his face in agony. He coughed, heaving heavy breaths through frightful sobs.
+                She hugged him. "You'll be able to help whoever you want!"
+                "You can be the hero of heroes! Lead us the way you want!"
+                "All that power would be yours and yours only!"
+                It was silent. Nobody said a word.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                "Is that so?"
+                He had a painful, lunatic smile on his face. His eyes held in years of pain and tears.
+                "That so, Dee?"
+                "That really so?"
+                He pat her head. "You, my partner?"
+                """);
+        wait(8);
+        System.out.println(ConsoleUtility.RED + """
+                
+                "That would be nice."
+                His smile dropped as he grabbed her neck painfully, throwing her off him.
+                He picked up the Lancer again.
+                Dee shook her head frantically.
+                "NO PLEASE!-"
+                He pressed the button yet again, killing her this time.
+                """);
+        wait(3);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.RED + """
+                
+                She could no longer scream as the voltage ran through her body, taking her life like a parasite.
+                Steam evaporated from her cooked body, her eyes wide open as the white, saliva foam bubbled in her mouth.
+                He shut off the Lancer, unwrapping the wire.
+                He looked one last time at her dead body before walking away.
+                """);
+        wait2seconds();
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        waitASecond();
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                People screamed, running out of the flames which soon engulfed the entire research building.
+                Screams echoed from the higher windows of skyscraper. "FIRE! FIRE!"
+                Debris fell down, crushing people beneath.
+                Milford walked away, an empty gasoline can in his hand as he tossed it aside.
+                """);
+        wait(4);
+        System.out.println(ConsoleUtility.YELLOW + """
+                
+                He coughed into his arms seeing the blood it left on his armor.
+                He grabs his chest, feeling his heart tighten from pressure.
+                He limped through the woods, grabbing onto the trees for support as he went on.
+                """);
+        wait(3);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        waitASecond();
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                The sun began to rise as the yellow moon bid farewell for 10 more years.
+                Birds chirped in the trees. The same squirrel burrowed through the soil, digging up an acorn.
+                The squirrel twitched its noise, looking for where it buried its other acorn.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                It wagged it's bushy tail as it sniffed the ground with every step.
+                It stopped at a droplet of blood on the ground.
+                The dumbfounded squirrel perked its ears as it looked around, noticing more droplets.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                It followed the trail of odd blood, still looking for its buried acorn.
+                It wasn't watching where it was going, slamming into a large, metal object.
+                The squirrel squeaked. It sniffed the object curiously.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                A giant sword! The squirrel wagged it's tail, climbing it.
+                A human hand gripped the handle of the sword. It climbed the arm.
+                It nearly slipped on the purple armor, squeaking. It whined, hugging the arm as it hanged off it.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                The kind man who's arm it hung off of smiled, petting the squirrel's head.
+                It held the acorn in his other hand, letting the squirrel hop onto it.
+                It gleefully munched at the acorn. The man coughed, and looked at the brightening blue sky.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                The squirrel trusted the man, hopping onto his chest and burrowing himself onto his metallic surface.
+                He coughed and coughed, taking his glasses off and putting it aside.
+                It felt a soft beat. It pounded slowly under his armor. It felt his heart.
+                It squeaked joyfully, thinking the man would feed it another acorn!
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                It tapped against the man's armor. It squeaked, waiting for his response.
+                The man's eyes were closed, as if he was asleep. He was no longer coughing.
+                There was a smile left on his face. His grip on the sword was fully open.
+                The sun shined on the man, illuminating his still face.
+                """);
+        wait(5);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to continue." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                It tapped him again, clinking on his armor. The armor powered off, the glow disappearing.
+                The Lancer's soft, vibrant hum slowly faded away.
+                The squirrel realized that the slow pounding that it felt on the man's chest moments ago was gone too.
+                """);
+        wait(6);
+        System.out.println(ConsoleUtility.BLUE + """
+                
+                And so it waited for a while.
+                The squirrel rested it's head on the kind man's armor as it watched the sunrise alone.
+                """);
+        wait(6);
+        System.out.println(ConsoleUtility.PURPLE + "~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*" + ConsoleUtility.YELLOW);
+        System.out.println(ConsoleUtility.PURPLE + """
+                PART 6 COMPLETE.
+                """);
+        System.out.println(ConsoleUtility.PURPLE + "Press q to finish." + ConsoleUtility.YELLOW);
+        userInput = scan.nextLine();
+        while (!userInput.equals("q")) {
+            userInput = scan.nextLine();
+        }
+        waitASecond();
         complete = true;
         afterGame();
         return true; // stops start
@@ -2414,8 +2667,10 @@ public class Game {
     public boolean afterGame () {
         Scanner scan = new Scanner(System.in);
         int userInput = 0;
-        System.out.println(ConsoleUtility.PURPLE + "YOU HAVE FINISHED THE GAME!");
+        ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.PURPLE + "CONGRADULATIONS! YOU HAVE FINISHED THE GAME!");
         waitASecond();
+        System.out.println("You can scroll up to reread portions of the story and gameplay.");
         System.out.println("There are summaries and backstories available for you to read if you are confused on anything.");
         waitASecond();
         System.out.println("You can press any corresponding number to learn more, or press 0 to finish.");
