@@ -31,7 +31,7 @@ public class Inventory {
         }
         System.out.println(ConsoleUtility.YELLOW + "Your inventory is full. Would you like to toss anything for replacement?");
         System.out.println("| " + foodInv[0].getName() + " | " + foodInv[1].getName() + " |");
-        System.out.println("Enter 0 to toss " + foodInv[0].getName() + ", 1 to toss " + foodInv[0].getName() + ", or -1 to toss the item.");
+        System.out.println("Enter 0 to toss " + foodInv[0].getName() + ", 1 to toss " + foodInv[1].getName() + ", or -1 to toss the item.");
         userInput = scan.nextInt();
         if (userInput == 0) {
             foodInv[0] = yummy;

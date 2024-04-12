@@ -1864,7 +1864,7 @@ public class Game {
         ConsoleUtility.clearScreen();
         int deaths = 0;
         if (lose50) {
-            boolean clearedWolf = bossFight(200, 15); //250, 18
+            boolean clearedWolf = bossFight(175, 15); //250, 18
             while (!clearedWolf) {
                 player.addH(100);
                 System.out.println(ConsoleUtility.PURPLE + "You died. Press q to restart." + ConsoleUtility.YELLOW);
@@ -1882,15 +1882,15 @@ public class Game {
                     if (userInput.equals("t")) {
                         clearedWolf = true;
                     } else {
-                        clearedWolf = bossFight(200, 15);
+                        clearedWolf = bossFight(175, 15);
                     }
                 } else {
-                    clearedWolf = bossFight(200, 15);
+                    clearedWolf = bossFight(175, 15);
                 }
             }
             player.setH(100);
         } else {
-            boolean clearedWolf = bossFight(250, 18); //300, 20
+            boolean clearedWolf = bossFight(225, 18); //300, 20
             while (!clearedWolf) {
                 player.addH(100);
                 System.out.println(ConsoleUtility.PURPLE + "You died. Press q to restart." + ConsoleUtility.YELLOW);
@@ -1908,10 +1908,10 @@ public class Game {
                     if (userInput.equals("t")) {
                         clearedWolf = true;
                     } else {
-                        clearedWolf = bossFight(250, 18);
+                        clearedWolf = bossFight(225, 18);
                     }
                 } else {
-                    clearedWolf = bossFight(250, 18);
+                    clearedWolf = bossFight(225, 18);
                 }
             }
             player.setH(100);
@@ -2231,8 +2231,6 @@ public class Game {
                 The usage of inventory or health stats are no longer required. There is only reading after this.
                 You can choose to skip this ending and end the game (preferable if you are testing the game) or choose to continue.
                 Summaries and explanations will be provided at the end of the game.
-                
-                TW: VULGAR LANGUAGE AND BRUTAL SCENERY IN THE ENDING.
                 """);
         wait2seconds();
         System.out.println(ConsoleUtility.RED + "TW: VULGAR LANGUAGE AND BRUTAL SCENERY IN THIS PART." + ConsoleUtility.PURPLE);
@@ -2537,7 +2535,7 @@ public class Game {
         System.out.println(ConsoleUtility.YELLOW + """
                 
                 People screamed, running out of the flames which soon engulfed the entire research building.
-                Screams echoed from the higher windows of skyscraper. "FIRE! FIRE!"
+                Screams echoed from the higher windows of the skyscraper. "FIRE! FIRE!"
                 Debris fell down, crushing people beneath.
                 Milford walked away, an empty gasoline can in his hand as he tossed it aside.
                 """);
@@ -2939,6 +2937,7 @@ public class Game {
                         It's clear that she eventually harbors a love interest and deep care for Milford on their journeys, but Milford's feelings of her is yet undetermined.
                         It is unclear whether the two actually had a romantic companionship or not, but Dee soon learns of Priscilla's crush, firing her from her duties.
                         The two are soon seperated, and Milford, who usually tends to hates everybody, suprisingly grows to miss her.
+                        The Lancer, which is Milford's favorite weapon in the game, was handcrafted by her.
                         """);
                 wait(5);
                 System.out.println("""
