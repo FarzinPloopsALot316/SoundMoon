@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="final story updates, still a bit left">
+    <list default="true" id="de4b91cd-86b8-48b8-827f-ccc37aa59fdf" name="Changes" comment="final touches.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_2_24,_8_45_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_2_24__8_45_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inventory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -401,13 +404,27 @@
       <option name="project" value="LOCAL" />
       <updated>1712874973414</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="ending finished.">
+      <option name="closed" value="true" />
+      <created>1712880010244</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1712880010244</updated>
+    </task>
+    <task id="LOCAL-00044" summary="final touches.">
+      <option name="closed" value="true" />
+      <created>1712883358939</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1712883358940</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ConsoleUtility, src classes added, Gun class removed." />
-    <MESSAGE value="Player updated." />
     <MESSAGE value="Food, Inventory, Player, Sword, and Weapons class updated." />
     <MESSAGE value="Updated game class with mazes, problems with Inventory and Food." />
     <MESSAGE value="Created a second maze, intreacted with the Weapons and Swords classes in Inventory." />
@@ -431,7 +448,9 @@
     <MESSAGE value="recovered my progress. last boss fight complete." />
     <MESSAGE value="final story updates" />
     <MESSAGE value="final story updates, still a bit left" />
-    <option name="LAST_COMMIT_MESSAGE" value="final story updates, still a bit left" />
+    <MESSAGE value="ending finished." />
+    <MESSAGE value="final touches." />
+    <option name="LAST_COMMIT_MESSAGE" value="final touches." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
