@@ -61,6 +61,26 @@ public class Game {
         }
         waitASecond();
         ConsoleUtility.clearScreen();
+        System.out.println(ConsoleUtility.RED + "PLEASE NOTE:");
+        System.out.println("""
+                
+                ALL EVENTS AND CHARACTERS IN THIS GAME ARE PURE FICTION FOR THE SAFETY OF REAL LIFE IDENTITIES.
+                ANY CORRELATION TO PEOPLE, OBJECTS, ANIMALS, OR IDEAS IN REAL LIFE IS PURELY COINCIDENTAL AND NOT INTENDED.
+                THIS GAME IS NOT MEANT TO BE FAN MADE OFF OF ANYBODY OR ANYTHING IN REAL LIFE.
+                
+                IN SHORT TERMS, MR MILLER IS NOT IN THIS GAME, AND DOES NOT INSPIRE THE ACTIONS OR CHARACTERISTICS OF ANYBODY IN THIS GAME NEITHER.
+                """);
+        wait(3);
+        System.out.println("""
+                
+                HAVE I MADE MYSELF CLEAR?
+                """);
+        String userAgreement = scan.nextLine();
+        userAgreement = userAgreement.toLowerCase();
+        while (!(userAgreement.equals("yes") || userAgreement.equals("yes."))) {
+            userAgreement = scan.nextLine();
+            userAgreement = userAgreement.toLowerCase();
+        }
         start();
     }
 
